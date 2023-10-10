@@ -7,14 +7,15 @@ sudo apt-get install fish python3 ruby python3-pip tmux flatpak python3-neovim n
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # neovim
 wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-mv nvim.appimage /usr/bin/nvim
+sudo mv nvim.appimage /usr/bin/nvim
+sudo chmod +x /usr/bin/nvim
 CUSTOM_NVIM_PATH=/usr/bin/nvim
 set -u
 sudo update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
 sudo update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
 sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
 sudo update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
-sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 11
+sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
 
 sudo npm install -g npm
 sudo npm install -g neovim
