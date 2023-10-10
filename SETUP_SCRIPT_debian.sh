@@ -3,11 +3,23 @@
 ## Installing
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get install fish python3 ruby python3-pip tmux neovim python3-neovim nodejs cmake libfreetype6-dev libfontconfig1-dev libxcb-xkb-dev g++ ruby-dev exa coreutils xdg-utils w3m-img xdotool curl util-linux
+sudo apt-get install fish python3 ruby python3-pip tmux flatpak python3-neovim nodejs cmake libfreetype6-dev libfontconfig1-dev libxcb-xkb-dev g++ ruby-dev coreutils xdg-utils w3m-img xdotool curl util-linux
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# neovim
+wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+mv nvim.appimage /usr/bin/nvim
+CUSTOM_NVIM_PATH=/usr/bin/nvim
+set -u
+sudo update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
+sudo update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
+sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
+sudo update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
+sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 11
+
 sudo npm install -g npm
 sudo npm install -g neovim
 cargo install alacritty
+cargo install eza
 pip3 install pynvim
 pip3 install tasklib
 gem install neovim
