@@ -1,0 +1,3 @@
+2021-11-23 13:43:42,479: INFO ---------------------------------------------
+2021-11-23 13:43:42,479: INFO sas_url_handler starting: ['/opt/hfs19.0.445/houdini/sas/url_handler/sas_url_handler.py', 'orbolt://install_asset?license_number=284778&amp;session_key=dt31baddaa5oal6v7ckri84lcyn28482&amp;server=www.orbolt.com']
+2021-11-23 13:43:42,480: INFO Calling install_asset with {'license_number': '284778', 'session_key': 'dt31baddaa5oal6v7ckri84lcyn28482', 'server': 'www.orbolt.com'}

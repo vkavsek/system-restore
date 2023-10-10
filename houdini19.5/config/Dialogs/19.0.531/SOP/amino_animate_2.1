@@ -1,0 +1,149 @@
+// Magic: 27586604
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May  8 17:14:09 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+amp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amp.label = PARM_LABEL("Amplitude", "amp") WIDTH(1.5);
+ PARM(float, 1, "amp", none, none) RANGE(-1,1)
+	 LABELREF(amp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Temperature Visualizer") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ramprange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ramprange.label = PARM_LABEL("Temperature Range", "ramprange") WIDTH(1.5);
+   PARM(float, 2, "ramprange", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(ramprange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+switch_atomic_coloring.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("switch_atomic_coloring", "switch_atomic_coloring") toggle VALUE(switch_atomic_coloring.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Elements.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Elements", "Elements") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    Elements.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+
+Temperature_Labels_on.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Temperature_Labels_on", "Temperature Labels on") toggle VALUE(Temperature_Labels_on.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    amp.gad; 
+    sepparm.gad; 
+    input.gad; 
+    ramprange.gad; 
+    sepparm3.gad; 
+    switch_atomic_coloring.gad; 
+    Elements.gad; 
+    sepparm2.gad; 
+    Temperature_Labels_on.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

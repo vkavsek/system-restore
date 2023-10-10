@@ -1,0 +1,634 @@
+// Magic: d4cca5d2
+// Automatically generated PSI dialog (PSI version 19.5.534)
+// Tue Mar 28 14:35:24 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+normal.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    normal.label = PARM_LABEL_SIMPLE("Up Axis", "normal") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    normal.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+gravity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gravity.label = PARM_LABEL("Gravity", "gravity") WIDTH(1.5);
+ PARM(float, 1, "gravity", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(gravity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+
+target.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    target.label = PARM_LABEL_SIMPLE("Deformation Target", "target") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    target.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+
+input.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    input.label = PARM_LABEL_SIMPLE("Input", "input") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    input.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+treatpolysas.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    treatpolysas.label = PARM_LABEL_SIMPLE("Treat Polygons As", "treatpolysas") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    treatpolysas.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+curvestart.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ curvestart.label = PARM_LABEL("Curve Start Frame", "curvestart") WIDTH(1.5);
+ PARM(float, 1, "curvestart", none, none) RANGE(0,10)
+	 LABELREF(curvestart.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+speed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ speed.label = PARM_LABEL("Traversal Speed", "speed") WIDTH(1.5);
+ PARM(float, 1, "speed", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(speed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+enable_supersample.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+enable_supersample.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0, 0) NO_MARGIN_SPACING_SCALE
+
+enable_supersample.gad = PARM_BUTTON("enable_supersample", "") toggle VALUE(enable_supersample.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+supersample_dx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ supersample_dx.label = PARM_LABEL("Supersample", "supersample_dx") WIDTH(1.32);
+ PARM(float, 1, "supersample_dx", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(supersample_dx.label) HSTRETCH;
+
+  {  }
+}
+}	
+}	// Template join.bot
+
+
+edgeblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ edgeblend.label = PARM_LABEL("Edge Blend", "edgeblend") WIDTH(1.5);
+ PARM(float, 1, "edgeblend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(edgeblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+suppress_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ suppress_radius.label = PARM_LABEL("Suppress Radius", "suppress_radius") WIDTH(1.5);
+ PARM(float, 1, "suppress_radius", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(suppress_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+
+enable_falloff.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_falloff", "Attenuate by Distance") toggle VALUE(enable_falloff.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+relative_falloff.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("relative_falloff", "Falloff Range is Relative to Speed") toggle VALUE(relative_falloff.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+falloff_range.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   falloff_range.label = PARM_LABEL("Falloff Range", "falloff_range") WIDTH(1.5);
+   PARM(float, 2, "falloff_range", none, none, "X,Y")
+	RANGE(0,1) LOCK_RANGE_MIN LABELREF(falloff_range.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+magnitude_multiplier.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ magnitude_multiplier.label = PARM_LABEL("Magnitude Multiplier", "magnitude_multiplier") WIDTH(1.5);
+ PARM(float, 1, "magnitude_multiplier", none, none) RANGE(0,1)
+	 LABELREF(magnitude_multiplier.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+magnitude_ramp.si_rampedit = FLOAT_RAMP VALUE(magnitude_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+magnitude_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	magnitude_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(magnitude_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+magnitude_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(magnitude_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(magnitude_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    magnitude_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(magnitude_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    magnitude_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(magnitude_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+magnitude_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    magnitude_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	magnitude_ramp.buttons.gad VSTRETCH;
+
+	magnitude_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+magnitude_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Magnitude Ramp", "magnitude_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(magnitude_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(magnitude_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	magnitude_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	magnitude_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(magnitude_ramp.hideparms.val) HSTRETCH
+	    magnitude_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+phase_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ phase_offset.label = PARM_LABEL("Phase Offset", "phase_offset") WIDTH(1.5);
+ PARM(float, 1, "phase_offset", none, none) RANGE(0,10)
+	 LABELREF(phase_offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+phase_ramp.si_rampedit = FLOAT_RAMP VALUE(phase_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+phase_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	phase_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(phase_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+phase_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(phase_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(phase_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    phase_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(phase_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    phase_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(phase_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+phase_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    phase_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	phase_ramp.buttons.gad VSTRETCH;
+
+	phase_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+phase_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Phase Ramp", "phase_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(phase_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(phase_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	phase_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	phase_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(phase_ramp.hideparms.val) HSTRETCH
+	    phase_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+heightlayer.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    heightlayer.label = PARM_LABEL("Height Layer", "heightlayer") WIDTH(1.5);
+    PARM_FIELD(string, "heightlayer") VALUE(heightlayer.val) 
+	LABELREF(heightlayer.label) HSTRETCH;
+
+    heightlayer.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+outputdisp.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+outputdisp.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0, 0) NO_MARGIN_SPACING_SCALE
+
+outputdisp.gad = PARM_BUTTON("outputdisp", "") toggle VALUE(outputdisp.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+outputdispattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    outputdispattrib.label = PARM_LABEL("Displacement", "outputdispattrib") WIDTH(1.32);
+    PARM_FIELD(string, "outputdispattrib") VALUE(outputdispattrib.val) 
+	LABELREF(outputdispattrib.label) HSTRETCH;
+
+    {  }
+}
+}	
+}	// Template join.bot
+
+outputmask.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+outputmask.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0, 0) NO_MARGIN_SPACING_SCALE
+
+outputmask.gad = PARM_BUTTON("outputmask", "") toggle VALUE(outputmask.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+outputmaskattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    outputmaskattrib.label = PARM_LABEL("Deformation Mask", "outputmaskattrib") WIDTH(1.32);
+    PARM_FIELD(string, "outputmaskattrib") VALUE(outputmaskattrib.val) 
+	LABELREF(outputmaskattrib.label) HSTRETCH;
+
+    {  }
+}
+}	
+}	// Template join.bot
+
+outputcoord.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+outputcoord.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0, 0) NO_MARGIN_SPACING_SCALE
+
+outputcoord.gad = PARM_BUTTON("outputcoord", "") toggle VALUE(outputcoord.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+outputcoordattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    outputcoordattrib.label = PARM_LABEL("Local Coordinates", "outputcoordattrib") WIDTH(1.32);
+    PARM_FIELD(string, "outputcoordattrib") VALUE(outputcoordattrib.val) 
+	LABELREF(outputcoordattrib.label) HSTRETCH;
+
+    {  }
+}
+}	
+}	// Template join.bot
+
+
+fd_output.gad = 
+GROUP collapsible "Output" flat   
+{
+    VALUE(fd_output.gad.val) LAYOUT(vertical) HSTRETCH
+	    heightlayer.gad;		
+	    outputdisp.row.join;		
+	    outputmask.row.join;		
+	    outputcoord.row.join;		
+} 
+
+folder5.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder5.gad"
+    { 
+	VALUE(folder5.gad.val) STRETCH(1,0)
+    } 
+}
+
+fd_spectrum.gad = 
+GROUP collapsible "Spectrum" flat   
+{
+    VALUE(fd_spectrum.gad.val) LAYOUT(vertical) HSTRETCH
+	    magnitude_multiplier.gad;		
+	    magnitude_ramp.gad;		
+	    phase_offset.gad;		
+	    phase_ramp.gad;		
+} 
+
+fd_falloffs.gad = 
+GROUP collapsible "Falloffs" flat   
+{
+    VALUE(fd_falloffs.gad.val) LAYOUT(vertical) HSTRETCH
+	    edgeblend.gad;		
+	    suppress_radius.gad;		
+	    sepparm2.gad;		
+	    enable_falloff.gad;		
+	    relative_falloff.gad;		
+	    falloff_range.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    normal.gad; 
+    gravity.gad; 
+    sepparm.gad; 
+    target.gad; 
+    sepparm3.gad; 
+    input.gad; 
+    treatpolysas.gad; 
+    curvestart.gad; 
+    speed.gad; 
+    enable_supersample.row.join; 
+    fd_falloffs.gad; 
+    fd_spectrum.gad; 
+    fd_output.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

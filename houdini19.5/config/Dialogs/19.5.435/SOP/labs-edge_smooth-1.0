@@ -1,0 +1,172 @@
+// Magic: e6d266d0
+// Automatically generated PSI dialog (PSI version 19.5.435)
+// Sat Jan  7 14:13:43 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+group.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    {  }
+}
+
+includeunshared.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("includeunshared", "Include Unshared Edges") toggle VALUE(includeunshared.val);
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+
+smoothstrength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothstrength.label = PARM_LABEL("Strength", "smoothstrength") WIDTH(1.5);
+ PARM(float, 1, "smoothstrength", none, none) RANGE(0,1000)
+	LOCK_RANGE_MIN LABELREF(smoothstrength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+filterquality.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ filterquality.label = PARM_LABEL("Filter Quality", "filterquality") WIDTH(1.5);
+ PARM(integer, 1, "filterquality", none, none) RANGE(1,5)
+	LOCK_RANGE LABELREF(filterquality.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+nbrrange.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ nbrrange.label = PARM_LABEL("Neighbor Range", "nbrrange") WIDTH(1.5);
+ PARM(integer, 1, "nbrrange", none, none) RANGE(1,10)
+	 LABELREF(nbrrange.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+smoothsteps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothsteps.label = PARM_LABEL("Steps", "smoothsteps") WIDTH(1.5);
+ PARM(integer, 1, "smoothsteps", none, none) RANGE(0,100)
+	 LABELREF(smoothsteps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+visguide.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+visguide.gad = ROW
+{
+    
+    {  }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visguide", "Show Guide") toggle VALUE(visguide.val);
+
+    {  }
+
+    {  }
+}
+
+visgrp.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    PARM_BUTTON("visgrp", "Show Original") toggle VALUE(visgrp.val);
+
+    { HSTRETCH }
+
+    {  }
+}
+}	// Template join.bot
+
+
+folder1.gad = 
+
+GROUP simple "Neighbor Smoothing" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    nbrrange.gad;		
+	    smoothsteps.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Edge Smoothing" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    smoothstrength.gad;		
+	    filterquality.gad;		
+} 
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.row.join; 
+    folder0.gad; 
+    folder1.gad; 
+    visguide.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,240 @@
+// Magic: 65fac49c
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Fri Mar 18 14:11:10 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    input.label = PARM_LABEL("Input", "input") WIDTH(1.5);
+    PARM(float, 3, "input", none, COLOR, "R,G,B") 
+	LABELREF(input.label) HSTRETCH;
+
+    input.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(input.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+scale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+   PARM(float, 3, "scale", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(scale.label)
+	HSTRETCH;
+
+    scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+rotate.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   rotate.label = PARM_LABEL("Rotate", "rotate") WIDTH(1.5);
+   PARM(float, 3, "rotate", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(rotate.label)
+	HSTRETCH;
+
+    rotate.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(rotate.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 3, "offset", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(offset.label)
+	HSTRETCH;
+
+    offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+coord_space.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Coord Space", "coord_space") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    coord_space.menu;
+
+    { HSTRETCH }
+
+    coord_space.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_space.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+pref_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    pref_name.label = PARM_LABEL("Rest Position", "pref_name") WIDTH(1.5);
+    PARM_FIELD(string, "pref_name") VALUE(pref_name.val) 
+	LABELREF(pref_name.label) HSTRETCH;
+
+    pref_name.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(pref_name.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+blend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ blend.label = PARM_LABEL("Blend", "blend") WIDTH(1.5);
+ PARM(float, 1, "blend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(blend.label) HSTRETCH;
+
+    blend.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(blend.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+cell.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("cell", "Cell") toggle VALUE(cell.val);
+
+    { HSTRETCH }
+
+    cell.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(cell.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+cell_rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cell_rotate.label = PARM_LABEL("Rotate", "cell_rotate") WIDTH(1.5);
+ PARM(float, 1, "cell_rotate", none, none) RANGE(-10,10)
+	 LABELREF(cell_rotate.label) HSTRETCH;
+
+    cell_rotate.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(cell_rotate.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+cell_blend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cell_blend.label = PARM_LABEL("Blend", "cell_blend") WIDTH(1.5);
+ PARM(float, 1, "cell_blend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(cell_blend.label) HSTRETCH;
+
+    cell_blend.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(cell_blend.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+rgb.gad = NULL { }
+r.gad = NULL { }
+g.gad = NULL { }
+b.gad = NULL { }
+
+cell_group.gad = 
+
+GROUP simple "Cell" flat 
+{ 
+    VALUE(cell_group.gad.val) LAYOUT(vertical) HSTRETCH 
+	    cell.gad;		
+	    cell_rotate.gad;		
+	    cell_blend.gad;		
+} 
+
+triplanar_group.gad = 
+
+GROUP simple "Triplanar" flat 
+{ 
+    VALUE(triplanar_group.gad.val) LAYOUT(vertical) HSTRETCH 
+	    input.gad;		
+	    scale.gad;		
+	    rotate.gad;		
+	    offset.gad;		
+	    coord_space.gad;		
+	    pref_name.gad;		
+	    blend.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    triplanar_group.gad; 
+    cell_group.gad; 
+    rgb.gad; 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

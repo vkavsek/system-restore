@@ -1,0 +1,87 @@
+// Magic: 24d23aa8
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May 22 14:05:10 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+pinnedprims.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    pinnedprims.label = PARM_LABEL("Favorite Primitives", "pinnedprims") WIDTH(1.5);
+    PARM_FIELD(string, "pinnedprims") VALUE(pinnedprims.val) 
+	LABELREF(pinnedprims.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+resolvercontextassetpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ resolvercontextassetpath.label = PARM_LABEL("Resolver Context Asset Path", "resolvercontextassetpath") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "resolvercontextassetpath") LABELREF(resolvercontextassetpath.label)
+	VALUE(resolvercontextassetpath.val) HSTRETCH;
+
+    resolvercontextassetpath.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(resolvercontextassetpath.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+insertionpointdescriptor.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    insertionpointdescriptor.label = PARM_LABEL("Insertion Point Descriptor", "insertionpointdescriptor") WIDTH(1.5);
+    PARM_FIELD(string, "insertionpointdescriptor") VALUE(insertionpointdescriptor.val) 
+	LABELREF(insertionpointdescriptor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+rendergallerysource.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    rendergallerysource.label = PARM_LABEL("Render Gallery Source", "rendergallerysource") WIDTH(1.5);
+    PARM_FIELD(string, "rendergallerysource") VALUE(rendergallerysource.val) 
+	LABELREF(rendergallerysource.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    pinnedprims.gad; 
+    resolvercontextassetpath.gad; 
+    insertionpointdescriptor.gad; 
+    rendergallerysource.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

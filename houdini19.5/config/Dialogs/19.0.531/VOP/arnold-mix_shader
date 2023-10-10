@@ -1,0 +1,90 @@
+// Magic: ba4ea2f9
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Fri Mar 18 14:16:19 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Mode", "mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mode.menu;
+
+    { HSTRETCH }
+
+    mode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+mix.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mix.label = PARM_LABEL("Mix", "mix") WIDTH(1.5);
+ PARM(float, 1, "mix", none, none) RANGE(0,1)
+	 LABELREF(mix.label) HSTRETCH;
+
+    mix.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mix.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+add_transparency.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("add_transparency", "Add Transparency") toggle VALUE(add_transparency.val);
+
+    { HSTRETCH }
+
+    add_transparency.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(add_transparency.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+shader1.gad = NULL { }
+shader2.gad = NULL { }
+shader.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    mode.gad; 
+    mix.gad; 
+    add_transparency.gad; 
+    shader1.gad; 
+    shader2.gad; 
+    shader.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

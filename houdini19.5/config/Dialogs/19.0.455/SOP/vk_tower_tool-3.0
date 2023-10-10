@@ -1,0 +1,637 @@
+// Magic: 575e17f3
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Tue Dec 21 10:16:00 2021
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+MainTowerHeight.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ MainTowerHeight.label = PARM_LABEL("Main Tower Height", "MainTowerHeight") WIDTH(1.5);
+ PARM(float, 1, "MainTowerHeight", none, none) RANGE(1,20)
+	 LABELREF(MainTowerHeight.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+twist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ twist.label = PARM_LABEL("Twist", "twist") WIDTH(1.5);
+ PARM(integer, 1, "twist", none, none) RANGE(-75,75)
+	 LABELREF(twist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Inset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Inset.label = PARM_LABEL("Inset", "Inset") WIDTH(1.5);
+ PARM(float, 1, "Inset", none, none) RANGE(-1,1)
+	 LABELREF(Inset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Xy_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Xy_scale.label = PARM_LABEL("XZ Scale", "Xy_scale") WIDTH(1.5);
+ PARM(float, 1, "Xy_scale", none, none) RANGE(0,10)
+	 LABELREF(Xy_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+y_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ y_scale.label = PARM_LABEL("Y Scale", "y_scale") WIDTH(1.5);
+ PARM(float, 1, "y_scale", none, none) RANGE(1,20)
+	 LABELREF(y_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+door_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ door_scale.label = PARM_LABEL("Door Scale", "door_scale") WIDTH(1.5);
+ PARM(float, 1, "door_scale", none, none) RANGE(0,2)
+	 LABELREF(door_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+door_pos.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ door_pos.label = PARM_LABEL("Door Position", "door_pos") WIDTH(1.5);
+ PARM(float, 1, "door_pos", none, none) RANGE(0,1)
+	 LABELREF(door_pos.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+balc_onoff.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ balc_onoff.label = PARM_LABEL("Balcony On/Off", "balc_onoff") WIDTH(1.5);
+ PARM(integer, 1, "balc_onoff", none, none) RANGE(0,1)
+	 LABELREF(balc_onoff.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+balc_pos.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ balc_pos.label = PARM_LABEL("Balcony Position", "balc_pos") WIDTH(1.5);
+ PARM(float, 1, "balc_pos", none, none) RANGE(0,1)
+	 LABELREF(balc_pos.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+balc_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ balc_scale.label = PARM_LABEL("Balcony Scale", "balc_scale") WIDTH(1.5);
+ PARM(float, 1, "balc_scale", none, none) RANGE(0,2)
+	 LABELREF(balc_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+balc_door.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ balc_door.label = PARM_LABEL("Balcony Door Scale", "balc_door") WIDTH(1.5);
+ PARM(float, 1, "balc_door", none, none) RANGE(0,2)
+	 LABELREF(balc_door.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+bs_windows.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bs_windows.label = PARM_LABEL("Backside Windows Scale", "bs_windows") WIDTH(1.5);
+ PARM(float, 1, "bs_windows", none, none) RANGE(0,1)
+	 LABELREF(bs_windows.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+num_winX2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_winX2.label = PARM_LABEL("X Number of BS Windows", "num_winX2") WIDTH(1.5);
+ PARM(integer, 1, "num_winX2", none, none) RANGE(0,10)
+	 LABELREF(num_winX2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+num_winY2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_winY2.label = PARM_LABEL("Y Number of BS Windows Y", "num_winY2") WIDTH(1.5);
+ PARM(integer, 1, "num_winY2", none, none) RANGE(0,10)
+	 LABELREF(num_winY2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+height.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height.label = PARM_LABEL("Height", "height") WIDTH(1.5);
+ PARM(float, 1, "height", none, none) RANGE(0,1)
+	 LABELREF(height.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+onoff.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ onoff.label = PARM_LABEL("ON / OFF", "onoff") WIDTH(1.5);
+ PARM(integer, 1, "onoff", none, none) RANGE(0,1)
+	 LABELREF(onoff.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+num_winX.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_winX.label = PARM_LABEL("Number of Windows X", "num_winX") WIDTH(1.5);
+ PARM(integer, 1, "num_winX", none, none) RANGE(0,10)
+	 LABELREF(num_winX.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+num_winY.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_winY.label = PARM_LABEL("Number of Windows Y", "num_winY") WIDTH(1.5);
+ PARM(integer, 1, "num_winY", none, none) RANGE(0,10)
+	 LABELREF(num_winY.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+num_win3.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_win3.label = PARM_LABEL("Number of Windows Z", "num_win3") WIDTH(1.5);
+ PARM(integer, 1, "num_win3", none, none) RANGE(0,10)
+	 LABELREF(num_win3.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+Windows_Scale.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+Windows_Scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Windows_Scale.label = PARM_LABEL("Windows Scale X-Wall", "Windows_Scale") WIDTH(1.5);
+ PARM(float, 1, "Windows_Scale", none, none) RANGE(0,1)
+	 LABELREF(Windows_Scale.label) HSTRETCH;
+
+  {  }
+}
+
+Windows_Scale_Z.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ Windows_Scale_Z.label = PARM_LABEL("Windows Scale Z-Wall", "Windows_Scale_Z") ;
+ PARM(float, 1, "Windows_Scale_Z", none, none) RANGE(0,1)
+	 LABELREF(Windows_Scale_Z.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+wall_right.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ wall_right.label = PARM_LABEL("wall_right_dist", "wall_right") WIDTH(1.5);
+ PARM(float, 1, "wall_right", none, none) RANGE(2,30)
+	 LABELREF(wall_right.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+height_r.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height_r.label = PARM_LABEL("height", "height_r") WIDTH(1.5);
+ PARM(float, 1, "height_r", none, none) RANGE(0,10)
+	 LABELREF(height_r.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+snap_r.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ snap_r.label = PARM_LABEL("snap distance", "snap_r") WIDTH(1.5);
+ PARM(float, 1, "snap_r", none, none) RANGE(0,30)
+	 LABELREF(snap_r.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+wall_left.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ wall_left.label = PARM_LABEL("wall_left_dist", "wall_left") WIDTH(1.5);
+ PARM(float, 1, "wall_left", none, none) RANGE(2,30)
+	 LABELREF(wall_left.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+height_l.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height_l.label = PARM_LABEL("height", "height_l") WIDTH(1.5);
+ PARM(float, 1, "height_l", none, none) RANGE(0,10)
+	 LABELREF(height_l.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+snap_l.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ snap_l.label = PARM_LABEL("snap distance", "snap_l") WIDTH(1.5);
+ PARM(float, 1, "snap_l", none, none) RANGE(0,30)
+	 LABELREF(snap_l.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rooftiles.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rooftiles.label = PARM_LABEL("Rooftiles ON-OFF", "rooftiles") WIDTH(1.5);
+ PARM(integer, 1, "rooftiles", none, none) RANGE(0,1)
+	 LABELREF(rooftiles.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder6.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder6.gad"
+    { 
+	VALUE(folder6.gad.val) STRETCH(1,0)
+
+	TAB "Left Roof"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    height_l.gad;		
+	    snap_l.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder5.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder5.gad"
+    { 
+	VALUE(folder5.gad.val) STRETCH(1,0)
+
+	TAB "Right Roof"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    height_r.gad;		
+	    snap_r.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder4.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder4.gad"
+    { 
+	VALUE(folder4.gad.val) STRETCH(1,0)
+
+	TAB "Wall R"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    wall_right.gad;		
+	    folder5.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Wall L"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    wall_left.gad;		
+	    folder6.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder3.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder3.gad"
+    { 
+	VALUE(folder3.gad.val) STRETCH(1,0)
+
+	TAB "SideWalls"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    onoff.gad;		
+	    num_winX.gad;		
+	    num_winY.gad;		
+	    num_win3.gad;		
+	    Windows_Scale.row.join;		
+	    folder4.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder2.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder2.gad"
+    { 
+	VALUE(folder2.gad.val) STRETCH(1,0)
+
+	TAB "MainTowerBox"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Xy_scale.gad;		
+	    y_scale.gad;		
+	    sepparm2.gad;		
+	    door_scale.gad;		
+	    door_pos.gad;		
+	    sepparm3.gad;		
+	    balc_onoff.gad;		
+	    balc_pos.gad;		
+	    balc_scale.gad;		
+	    balc_door.gad;		
+	    sepparm4.gad;		
+	    bs_windows.gad;		
+	    num_winX2.gad;		
+	    num_winY2.gad;		
+	    height.gad;		
+	    folder3.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Main Tower"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    MainTowerHeight.gad;		
+	    twist.gad;		
+	    Inset.gad;		
+	    folder2.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder7.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder7.gad"
+    { 
+	VALUE(folder7.gad.val) STRETCH(1,0)
+
+	TAB "Geo"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder1.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "TOWER tool"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder7.gad;		
+	    rooftiles.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    sepparm.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

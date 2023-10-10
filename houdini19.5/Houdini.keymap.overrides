@@ -1,0 +1,15 @@
+h.pane.wsheet.create_netbox	"Create Network Box From Selected"	"Creates a network box containing all the selected nodes"	 Shift+B
+h.pane.wsheet.addfileop	"Add File Operator"	"Adds a new File OP"	 -
+h.pane.wsheet.tool:labs::networkwalk_Right	labs::networkwalk_Right	"Walk Right along the connections in the Network View"	 Home
+h.pane.wsheet.tool:labs::networkwalk_Left	labs::networkwalk_Left	"Walk Left along the connections in the Network View"	 Insert
+h.pane.wsheet.tool:labs::networkwalk_Down	labs::networkwalk_Down	"Walk Down along the connections in the Network View"	 PageDown
+h.update_mode_always	"Update Mode 'Auto Update'"	"Update mode 'Auto Update'"	 F3
+h.pane.gview.selectstylebrush	"Brush Selection"	"Switch to brush selection"	 F7
+HCONTEXT	h.pane.gview.state.sop.capturelayerpaint	"capturelayerpaint Operation"	"These keys apply to the captuerlayerpaint operation."
+h.pane.gview.state.sop.capturelayerpaint.select	Select	"Select group"	 G
+h.pane.wsheet.up	"Set Current Above"	"Set current above"	
+h.pane.wsheet.down	"Set Current Below"	"Set current below"	
+h.pane.wsheet.tool:labs::networkwalk_Up	labs::networkwalk_Up	"Walk Up along the connections in the Network View"	 PageUp
+h.pane.gview.selectstylelasso	"Lasso Selection"	"Switch to lasso selection"	 F6
+h.update_mode_never	"Update Mode 'Manual'"	"Update mode 'Manual'"	 F4
+h.merge	Merge	"Merge with a file"	

@@ -1,0 +1,67 @@
+// Magic: 8889f564
+// Automatically generated PSI dialog (PSI version 19.5.435)
+// Thu Dec 15 19:38:33 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+cuspangle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cuspangle.label = PARM_LABEL("Soft Angle", "cuspangle") WIDTH(1.5);
+ PARM(float, 1, "cuspangle", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(cuspangle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+harden_uv_seams.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("harden_uv_seams", "Harden UV Seams") toggle VALUE(harden_uv_seams.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+cuspangle2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cuspangle2.label = PARM_LABEL("Hard Angle", "cuspangle2") WIDTH(1.5);
+ PARM(float, 1, "cuspangle2", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(cuspangle2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cuspangle.gad; 
+    harden_uv_seams.gad; 
+    cuspangle2.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

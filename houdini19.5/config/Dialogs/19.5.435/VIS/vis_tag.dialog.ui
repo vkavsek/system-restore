@@ -1,0 +1,388 @@
+// Magic: 6f1c4a33
+// Automatically generated PSI dialog (PSI version 19.5.435)
+// Sun Dec 25 11:54:03 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+tagstyle.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    tagstyle.label = PARM_LABEL_SIMPLE("Style", "tagstyle") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    tagstyle.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+textsource.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    textsource.label = PARM_LABEL_SIMPLE("Text Source", "textsource") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    textsource.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tagstring.gad = ROW
+{
+
+    LAYOUT(overlap) HSTRETCH JUSTIFY(right, top)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) JUSTIFY(right, top)
+
+    }
+
+    {
+	LAYOUT(vertical) HSTRETCH JUSTIFY(left, top)
+
+	tagstring.label = PARM_LABEL("Tag String", "tagstring");
+	{ HEIGHT(0.06) }
+
+	MULTILINE_PARM_FIELD ("tagstring")
+	    LABELREF(tagstring.label)
+	    VALUE(tagstring.val)
+	    SYNTAX("")
+	    LINES(8,40)
+	    HSTRETCH;
+    }
+
+}
+
+attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attrib.label = PARM_LABEL("Attribute", "attrib") WIDTH(1.5);
+    PARM_FIELD(string, "attrib") VALUE(attrib.val) 
+	LABELREF(attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+iconsource.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    iconsource.label = PARM_LABEL_SIMPLE("Icon Source", "iconsource") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    iconsource.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tagicon.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ tagicon.label = PARM_LABEL("Icon File", "tagicon") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "tagicon") LABELREF(tagicon.label)
+	VALUE(tagicon.val) HSTRETCH;
+
+    tagicon.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(tagicon.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+placement.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    placement.label = PARM_LABEL_SIMPLE("Preferred Placement", "placement") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    placement.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+allowselection.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("allowselection", "Allow Selecting Object by Clicking on Tag") toggle VALUE(allowselection.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+shownwhenoffscreen.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("shownwhenoffscreen", "Keep Tag In Viewport") toggle VALUE(shownwhenoffscreen.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+icononlywhenoffscreen.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("icononlywhenoffscreen", "Show Icon Only") toggle VALUE(icononlywhenoffscreen.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+font.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ font.label = PARM_LABEL("Font", "font") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "font") LABELREF(font.label)
+	VALUE(font.val) HSTRETCH;
+
+    font.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(font.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+fontsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fontsize.label = PARM_LABEL("Font Size", "fontsize") WIDTH(1.5);
+ PARM(integer, 1, "fontsize", none, none) RANGE(6,24)
+	LOCK_RANGE LABELREF(fontsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iconsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iconsize.label = PARM_LABEL("Icon Size", "iconsize") WIDTH(1.5);
+ PARM(integer, 1, "iconsize", none, none) RANGE(6,64)
+	LOCK_RANGE LABELREF(iconsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+textcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    textcolor.label = PARM_LABEL("Text Color", "textcolor") WIDTH(1.5);
+    PARM(float, 4, "textcolor", none, COLOR, "R,G,B,A") 
+	LABELREF(textcolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+showframe.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showframe", "Show Bounding Box of Tagged Object") toggle VALUE(showframe.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+framecolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    framecolor.label = PARM_LABEL("Box Color", "framecolor") WIDTH(1.5);
+    PARM(float, 4, "framecolor", none, COLOR, "R,G,B,A") 
+	LABELREF(framecolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+showpanel.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showpanel", "Show Back Panel") toggle VALUE(showpanel.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+panelcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    panelcolor.label = PARM_LABEL("Back Panel Color", "panelcolor") WIDTH(1.5);
+    PARM(float, 4, "panelcolor", none, COLOR, "R,G,B,A") 
+	LABELREF(panelcolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+cornerrad.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cornerrad.label = PARM_LABEL("Corner Radius", "cornerrad") WIDTH(1.5);
+ PARM(integer, 1, "cornerrad", none, none) RANGE(0,30)
+	LOCK_RANGE LABELREF(cornerrad.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+padding.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ padding.label = PARM_LABEL("Padding", "padding") WIDTH(1.5);
+ PARM(integer, 1, "padding", none, none) RANGE(0,30)
+	LOCK_RANGE LABELREF(padding.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+placementsection.gad = 
+
+GROUP simple "When Object Off-Screen" flat 
+{ 
+    VALUE(placementsection.gad.val) LAYOUT(vertical) HSTRETCH 
+	    shownwhenoffscreen.gad;		
+	    icononlywhenoffscreen.gad;		
+} 
+
+tabs.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "tabs.gad"
+    { 
+	VALUE(tabs.gad.val) STRETCH(1,0)
+
+	TAB "Contents"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    tagstyle.gad;		
+	    textsource.gad;		
+	    tagstring.gad;		
+	    attrib.gad;		
+	    iconsource.gad;		
+	    tagicon.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Behaviour"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    placement.gad;		
+	    allowselection.gad;		
+	    placementsection.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Appearance"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    font.gad;		
+	    fontsize.gad;		
+	    iconsize.gad;		
+	    textcolor.gad;		
+	    showframe.gad;		
+	    framecolor.gad;		
+	    showpanel.gad;		
+	    panelcolor.gad;		
+	    cornerrad.gad;		
+	    padding.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    tabs.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,504 @@
+// Magic: 6eaae376
+// Automatically generated PSI dialog (PSI version 19.5.303)
+// Wed Feb 15 08:58:58 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    type.label = PARM_LABEL_SIMPLE("Solid Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ext_inset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ext_inset.label = PARM_LABEL("Extrude Inset", "ext_inset") WIDTH(1.5);
+ PARM(float, 1, "ext_inset", none, none) RANGE(-1,1)
+	 LABELREF(ext_inset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ext_dist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ext_dist.label = PARM_LABEL("Extrude Distance", "ext_dist") WIDTH(1.5);
+ PARM(float, 1, "ext_dist", none, none) RANGE(-1,1)
+	 LABELREF(ext_dist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ offset.label = PARM_LABEL("Bevel Distance", "offset") WIDTH(1.5);
+ PARM(float, 1, "offset", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+divisions.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divisions.label = PARM_LABEL("Bevel Divisions", "divisions") WIDTH(1.5);
+ PARM(integer, 1, "divisions", none, none) RANGE(1,20)
+	LOCK_RANGE_MIN LABELREF(divisions.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Wire Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radius.label = PARM_LABEL("Wire Radius", "radius") WIDTH(1.5);
+ PARM(float, 1, "radius", none, none) RANGE(0,10)
+	 LABELREF(radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+numitr_boxboolean.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Iterations", "numitr_boxboolean") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(numitr_boxboolean.val)
+
+        numitr_boxboolean.field = PARM_FIELD (integer, "numitr_boxboolean")
+				VALUE(numitr_boxboolean.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(numitr_boxboolean.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(numitr_boxboolean.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(numitr_boxboolean.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+numitr_boxboolean.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+numitr_boxboolean.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    SWITCHER tight
+    {
+	LAYOUT(overlap!)
+        VALUE(numitr_boxboolean.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    numitr_boxboolean.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    numitr_boxboolean.multilist;
+}
+
+numitr_faceboolean.parm =
+{
+    LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Iterations", "numitr_faceboolean") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center) VALUE(numitr_faceboolean.val)
+
+        numitr_faceboolean.field = PARM_FIELD (integer, "numitr_faceboolean")
+				VALUE(numitr_faceboolean.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(numitr_faceboolean.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(numitr_faceboolean.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(numitr_faceboolean.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+numitr_faceboolean.multilist = 
+{
+    LAYOUT(vertical) HSTRETCH MARGIN(0.05)
+}
+
+numitr_faceboolean.gad =
+{
+    LAYOUT(vertical) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    SWITCHER tight
+    {
+	LAYOUT(overlap!)
+        VALUE(numitr_faceboolean.multilist_hide_buttons.val)
+	{
+	    LAYOUT(vertical) HSTRETCH
+	    numitr_faceboolean.parm;
+	    {LOOK(none) HEIGHT(0.02)}
+	}
+	{
+	}
+    }
+    numitr_faceboolean.multilist;
+}
+
+thicknessscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ thicknessscale.label = PARM_LABEL("Scale", "thicknessscale") WIDTH(1.5);
+ PARM(float, 1, "thicknessscale", none, none) RANGE(0,10)
+	 LABELREF(thicknessscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radscale.label = PARM_LABEL("Hold Size", "radscale") WIDTH(1.5);
+ PARM(float, 1, "radscale", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(radscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+height.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height.label = PARM_LABEL("Hold Depth", "height") WIDTH(1.5);
+ PARM(float, 1, "height", none, none) RANGE(0,10)
+	 LABELREF(height.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+offset2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ offset2.label = PARM_LABEL("Hold Bevel Distance", "offset2") WIDTH(1.5);
+ PARM(float, 1, "offset2", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(offset2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+input.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    input.label = PARM_LABEL_SIMPLE("Use Guard", "input") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    input.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+thres.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ thres.label = PARM_LABEL("Length Threshold", "thres") WIDTH(1.5);
+ PARM(float, 1, "thres", none, none) RANGE(0,1)
+	 LABELREF(thres.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dist.label = PARM_LABEL("Distance", "dist") WIDTH(1.5);
+ PARM(float, 1, "dist", none, none) RANGE(-1,1)
+	 LABELREF(dist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+inset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ inset.label = PARM_LABEL("Inset", "inset") WIDTH(1.5);
+ PARM(float, 1, "inset", none, none) RANGE(-1,1)
+	 LABELREF(inset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("execute", "Bake Texture")
+	push VALUE(execute.val);
+
+    { WIDTH(0.1) }
+}
+
+sOutputFile.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ sOutputFile.label = PARM_LABEL("Output Directory", "sOutputFile") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "sOutputFile") LABELREF(sOutputFile.label)
+	VALUE(sOutputFile.val) HSTRETCH;
+
+    sOutputFile.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(sOutputFile.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+i2Resolution.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   i2Resolution.label = PARM_LABEL("Resolution", "i2Resolution") WIDTH(1.5);
+   PARM(integer, 2, "i2Resolution", none, none, "#1,#2")
+	RANGE(1,1000) LOCK_RANGE_MIN LABELREF(i2Resolution.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+_input2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    _input2.label = PARM_LABEL_SIMPLE("Update UV", "_input2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    _input2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+brightness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ brightness.label = PARM_LABEL("Rust Strength", "brightness") WIDTH(1.5);
+ PARM(float, 1, "brightness", none, none) RANGE(-1,1)
+	 LABELREF(brightness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+string1.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    string1.label = PARM_LABEL("Body Material Path", "string1") WIDTH(1.5);
+    PARM_FIELD(string, "string1") VALUE(string1.val) 
+	LABELREF(string1.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+string2.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    string2.label = PARM_LABEL("Metal Material Path", "string2") WIDTH(1.5);
+    PARM_FIELD(string, "string2") VALUE(string2.val) 
+	LABELREF(string2.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "BoxBoolean"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    numitr_boxboolean.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "FaceBoolean"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    numitr_faceboolean.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "FaceGuard"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    thicknessscale.gad;		
+	    radscale.gad;		
+	    height.gad;		
+	    offset2.gad;		
+	    input.gad;		
+	    thres.gad;		
+	    dist.gad;		
+	    inset.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Texture"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    execute.gad;		
+	    sOutputFile.gad;		
+	    i2Resolution.gad;		
+	    _input2.gad;		
+	    brightness.gad;		
+	    string1.gad;		
+	    string2.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    type.gad; 
+    ext_inset.gad; 
+    ext_dist.gad; 
+    offset.gad; 
+    divisions.gad; 
+    scale.gad; 
+    radius.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

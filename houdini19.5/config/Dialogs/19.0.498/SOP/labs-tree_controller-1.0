@@ -1,0 +1,2433 @@
+// Magic: ab45fa11
+// Automatically generated PSI dialog (PSI version 19.0.498)
+// Mon Jan 31 09:39:28 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Randomize", "seed") WIDTH(1.5);
+ PARM(integer, 1, "seed", none, none) RANGE(0,100)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+enable_bend.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_bend", "Enable") toggle VALUE(enable_bend.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bend_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bend_strength.label = PARM_LABEL("Strength", "bend_strength") WIDTH(1.5);
+ PARM(float, 1, "bend_strength", none, none) RANGE(-1,1)
+	 LABELREF(bend_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bend_ramp.si_rampedit = FLOAT_RAMP VALUE(bend_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+bend_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	bend_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(bend_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+bend_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(bend_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(bend_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    bend_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(bend_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    bend_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(bend_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+bend_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    bend_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	bend_ramp.buttons.gad VSTRETCH;
+
+	bend_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+bend_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Falloff", "bend_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(bend_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(bend_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	bend_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	bend_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(bend_ramp.hideparms.val) HSTRETCH
+	    bend_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+bend_mult.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bend_mult", "Multiply Intensity by Branch Level") toggle VALUE(bend_mult.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_grav.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_grav", "Enable") toggle VALUE(enable_grav.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+grav_dir.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   grav_dir.label = PARM_LABEL("Direction", "grav_dir") WIDTH(1.5);
+   PARM(float, 3, "grav_dir", none, none, "X,Y,Z")
+	RANGE(-1,1) LOCK_RANGE LABELREF(grav_dir.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+grav_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ grav_strength.label = PARM_LABEL("Strength", "grav_strength") WIDTH(1.5);
+ PARM(float, 1, "grav_strength", none, none) RANGE(-1,1)
+	 LABELREF(grav_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+gravity_ramp.si_rampedit = FLOAT_RAMP VALUE(gravity_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+gravity_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	gravity_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(gravity_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+gravity_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(gravity_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(gravity_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    gravity_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(gravity_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    gravity_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(gravity_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+gravity_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    gravity_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	gravity_ramp.buttons.gad VSTRETCH;
+
+	gravity_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+gravity_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Falloff", "gravity_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(gravity_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(gravity_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	gravity_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	gravity_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(gravity_ramp.hideparms.val) HSTRETCH
+	    gravity_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+grav_mult.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("grav_mult", "Multiply Intensity by Branch Level") toggle VALUE(grav_mult.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_light.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_light", "Enable") toggle VALUE(enable_light.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+light_dir.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   light_dir.label = PARM_LABEL("Direction", "light_dir") WIDTH(1.5);
+   PARM(float, 3, "light_dir", none, none, "X,Y,Z")
+	RANGE(-1,1) LOCK_RANGE LABELREF(light_dir.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+light_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ light_strength.label = PARM_LABEL("Strength", "light_strength") WIDTH(1.5);
+ PARM(float, 1, "light_strength", none, none) RANGE(-1,1)
+	 LABELREF(light_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+light_ramp.si_rampedit = FLOAT_RAMP VALUE(light_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+light_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	light_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(light_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+light_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(light_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(light_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    light_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(light_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    light_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(light_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+light_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    light_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	light_ramp.buttons.gad VSTRETCH;
+
+	light_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+light_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Falloff", "light_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(light_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(light_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	light_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	light_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(light_ramp.hideparms.val) HSTRETCH
+	    light_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+light_mult.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("light_mult", "Multiply Intensity by Branch Level") toggle VALUE(light_mult.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_thigmo.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_thigmo", "Enable") toggle VALUE(enable_thigmo.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+objpath1.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ objpath1.label = PARM_LABEL("Object 1", "objpath1") WIDTH(1.5);
+ PARM_FIELD(pathstring, "objpath1") VALUE(objpath1.val) 
+	LABELREF(objpath1.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(objpath1.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(objpath1.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+thigmo_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ thigmo_strength.label = PARM_LABEL("Strength", "thigmo_strength") WIDTH(1.5);
+ PARM(float, 1, "thigmo_strength", none, none) RANGE(0,1)
+	 LABELREF(thigmo_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+thigmo_ramp.si_rampedit = FLOAT_RAMP VALUE(thigmo_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+thigmo_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	thigmo_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(thigmo_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+thigmo_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(thigmo_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(thigmo_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    thigmo_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(thigmo_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    thigmo_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(thigmo_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+thigmo_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    thigmo_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	thigmo_ramp.buttons.gad VSTRETCH;
+
+	thigmo_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+thigmo_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Falloff", "thigmo_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(thigmo_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(thigmo_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	thigmo_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	thigmo_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(thigmo_ramp.hideparms.val) HSTRETCH
+	    thigmo_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+enable_line_noise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_line_noise", "Enable") toggle VALUE(enable_line_noise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Noise Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+line_noise_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ line_noise_amount.label = PARM_LABEL("Intensity", "line_noise_amount") WIDTH(1.5);
+ PARM(float, 1, "line_noise_amount", none, none) RANGE(-1,1)
+	 LABELREF(line_noise_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+line_noise_size.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ line_noise_size.label = PARM_LABEL("Frequency", "line_noise_size") WIDTH(1.5);
+ PARM(float, 1, "line_noise_size", none, none) RANGE(0.01,10)
+	LOCK_RANGE_MIN LABELREF(line_noise_size.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+line_noise_rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ line_noise_rough.label = PARM_LABEL("Roughness", "line_noise_rough") WIDTH(1.5);
+ PARM(float, 1, "line_noise_rough", none, none) RANGE(0,0.5)
+	 LABELREF(line_noise_rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+h.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ h.label = PARM_LABEL("Step Size", "h") WIDTH(1.5);
+ PARM(float, 1, "h", none, none) RANGE(0.001,1)
+	LOCK_RANGE_MIN LABELREF(h.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+line_noise_rand.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("line_noise_rand", "Randomize Offset") toggle VALUE(line_noise_rand.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+line_noise_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ line_noise_offset.label = PARM_LABEL("Offset", "line_noise_offset") WIDTH(1.5);
+ PARM(float, 1, "line_noise_offset", none, none) RANGE(0,10)
+	 LABELREF(line_noise_offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+line_noise_amount2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ line_noise_amount2.label = PARM_LABEL("Intensity", "line_noise_amount2") WIDTH(1.5);
+ PARM(float, 1, "line_noise_amount2", none, none) RANGE(-1,1)
+	 LABELREF(line_noise_amount2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+line_noise_size2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ line_noise_size2.label = PARM_LABEL("Frequency", "line_noise_size2") WIDTH(1.5);
+ PARM(float, 1, "line_noise_size2", none, none) RANGE(0.01,10)
+	LOCK_RANGE_MIN LABELREF(line_noise_size2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+line_noise_rough2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ line_noise_rough2.label = PARM_LABEL("Roughness", "line_noise_rough2") WIDTH(1.5);
+ PARM(float, 1, "line_noise_rough2", none, none) RANGE(0,0.5)
+	 LABELREF(line_noise_rough2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+line_noise_rand2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("line_noise_rand2", "Randomize Offset") toggle VALUE(line_noise_rand2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+line_noise_offset2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ line_noise_offset2.label = PARM_LABEL("Offset", "line_noise_offset2") WIDTH(1.5);
+ PARM(float, 1, "line_noise_offset2", none, none) RANGE(0,10)
+	 LABELREF(line_noise_offset2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+line_noise_intensity_ramp.si_rampedit = FLOAT_RAMP VALUE(line_noise_intensity_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+line_noise_intensity_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	line_noise_intensity_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(line_noise_intensity_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+line_noise_intensity_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(line_noise_intensity_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(line_noise_intensity_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    line_noise_intensity_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(line_noise_intensity_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    line_noise_intensity_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(line_noise_intensity_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+line_noise_intensity_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    line_noise_intensity_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	line_noise_intensity_ramp.buttons.gad VSTRETCH;
+
+	line_noise_intensity_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+line_noise_intensity_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Intensity Ramp", "line_noise_intensity_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(line_noise_intensity_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(line_noise_intensity_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	line_noise_intensity_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	line_noise_intensity_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(line_noise_intensity_ramp.hideparms.val) HSTRETCH
+	    line_noise_intensity_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+enable_mesh_noise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_mesh_noise", "Enable") toggle VALUE(enable_mesh_noise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mesh_noise_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Type", "mesh_noise_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mesh_noise_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mesh_noise_size.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   mesh_noise_size.label = PARM_LABEL("Frequency", "mesh_noise_size") WIDTH(1.5);
+   PARM(float, 3, "mesh_noise_size", none, none, "X,Y,Z")
+	RANGE(0.01,10) LOCK_RANGE_MIN LABELREF(mesh_noise_size.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+mesh_noise_rand.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mesh_noise_rand", "Randomize Offset") toggle VALUE(mesh_noise_rand.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mesh_noise_offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mesh_noise_offset.label = PARM_LABEL("Offset", "mesh_noise_offset") WIDTH(1.5);
+ PARM(float, 1, "mesh_noise_offset", none, none) RANGE(0,10)
+	 LABELREF(mesh_noise_offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+mesh_noise_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mesh_noise_amount.label = PARM_LABEL("Intensity", "mesh_noise_amount") WIDTH(1.5);
+ PARM(float, 1, "mesh_noise_amount", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(mesh_noise_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+mesh_noise_inherit.gad = NULL { }
+
+mesh_noise_.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mesh_noise_", "Reduce Intensity Per Branch Level") toggle VALUE(mesh_noise_.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mesh_noise_rad.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mesh_noise_rad", "Multiply Intensity by Radius") toggle VALUE(mesh_noise_rad.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mesh_noise_intensity_ramp.si_rampedit = FLOAT_RAMP VALUE(mesh_noise_intensity_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+mesh_noise_intensity_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	mesh_noise_intensity_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(mesh_noise_intensity_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+mesh_noise_intensity_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(mesh_noise_intensity_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(mesh_noise_intensity_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    mesh_noise_intensity_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(mesh_noise_intensity_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    mesh_noise_intensity_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(mesh_noise_intensity_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+mesh_noise_intensity_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    mesh_noise_intensity_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	mesh_noise_intensity_ramp.buttons.gad VSTRETCH;
+
+	mesh_noise_intensity_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+mesh_noise_intensity_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Intensity Ramp", "mesh_noise_intensity_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(mesh_noise_intensity_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(mesh_noise_intensity_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	mesh_noise_intensity_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	mesh_noise_intensity_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(mesh_noise_intensity_ramp.hideparms.val) HSTRETCH
+	    mesh_noise_intensity_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+up_angle.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   up_angle.label = PARM_LABEL( "Upward Facing Angle", "up_angle" ) WIDTH(1.5);
+   PARM(float, 1, "up_angle", none, none) RANGE(0, 180)
+	LABELREF( up_angle.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+down_angle.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   down_angle.label = PARM_LABEL( "Downward Facing Angle", "down_angle" ) WIDTH(1.5);
+   PARM(float, 1, "down_angle", none, none) RANGE(0, 180)
+	LABELREF( down_angle.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+sepparm8.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+dir_angle.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   dir_angle.label = PARM_LABEL( "Directional Angle", "dir_angle" ) WIDTH(1.5);
+   PARM(float, 1, "dir_angle", none, none) RANGE(0, 180)
+	LABELREF( dir_angle.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+dir.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    dir.label = PARM_LABEL("Direction", "dir") WIDTH(1.5);
+    PARM(float, 3, "dir", none, none) LABELREF(dir.label)
+	HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+up_angle2.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   up_angle2.label = PARM_LABEL( "Upward Facing Angle", "up_angle2" ) WIDTH(1.5);
+   PARM(float, 1, "up_angle2", none, none) RANGE(0, 180)
+	LABELREF( up_angle2.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+down_angle2.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   down_angle2.label = PARM_LABEL( "Downward Facing Angle", "down_angle2" ) WIDTH(1.5);
+   PARM(float, 1, "down_angle2", none, none) RANGE(0, 180)
+	LABELREF( down_angle2.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+sepparm24.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+dir_angle2.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   dir_angle2.label = PARM_LABEL( "Directional Angle", "dir_angle2" ) WIDTH(1.5);
+   PARM(float, 1, "dir_angle2", none, none) RANGE(0, 180)
+	LABELREF( dir_angle2.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+dir2.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    dir2.label = PARM_LABEL("Direction", "dir2") WIDTH(1.5);
+    PARM(float, 3, "dir2", none, none) LABELREF(dir2.label)
+	HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+seam_options.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Intersection Behavior", "seam_options") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    seam_options.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bool_smooth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bool_smooth.label = PARM_LABEL("Smooth Amount", "bool_smooth") WIDTH(1.5);
+ PARM(float, 1, "bool_smooth", none, none) RANGE(0,1)
+	 LABELREF(bool_smooth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+blend_falloff.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ blend_falloff.label = PARM_LABEL("Blend Falloff", "blend_falloff") WIDTH(1.5);
+ PARM(float, 1, "blend_falloff", none, none) RANGE(0,1)
+	 LABELREF(blend_falloff.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+uv_blend.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("uv_blend", "Enable UV Blending") toggle VALUE(uv_blend.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+uv_blend_dist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ uv_blend_dist.label = PARM_LABEL("Blend Distance", "uv_blend_dist") WIDTH(1.5);
+ PARM(float, 1, "uv_blend_dist", none, none) RANGE(0,1)
+	 LABELREF(uv_blend_dist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+uv_blend_smooth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ uv_blend_smooth.label = PARM_LABEL("Blend Falloff", "uv_blend_smooth") WIDTH(1.5);
+ PARM(float, 1, "uv_blend_smooth", none, none) RANGE(0,1)
+	 LABELREF(uv_blend_smooth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm25.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+endcaptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("End Cap Type", "endcaptype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    endcaptype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+capdivs.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+capdivs.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ capdivs.label = PARM_LABEL("Cap Divisions", "capdivs") WIDTH(1.5);
+ PARM(integer, 1, "capdivs", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(capdivs.label) HSTRETCH;
+
+  {  }
+}
+
+triangularpoles.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("triangularpoles", "Triangular Poles") toggle VALUE(triangularpoles.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+capscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ capscale.label = PARM_LABEL("End Cap Scale", "capscale") WIDTH(1.5);
+ PARM(float, 1, "capscale", none, none) RANGE(0,1)
+	 LABELREF(capscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+caproundness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ caproundness.label = PARM_LABEL("End Cap Roundness", "caproundness") WIDTH(1.5);
+ PARM(float, 1, "caproundness", none, none) RANGE(0,1)
+	 LABELREF(caproundness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+caps_.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("caps_", "Reduce Cap Resolution Per Branch Level") toggle VALUE(caps_.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm5.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+branch_profile.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+ { WIDTH(0.18) }
+
+ branch_profile.label = PARM_LABEL("Custom Branch Profile", "branch_profile") WIDTH(1.5);
+ PARM_FIELD(pathstring, "branch_profile") VALUE(branch_profile.val) 
+	LABELREF(branch_profile.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(branch_profile.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(branch_profile.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+ { WIDTH(0.1) }
+}
+
+res.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ res.label = PARM_LABEL("Resolution", "res") WIDTH(1.5);
+ PARM(float, 1, "res", none, none) RANGE(0.01,1)
+	LOCK_RANGE_MIN LABELREF(res.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+res_refine.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ res_refine.label = PARM_LABEL("Refinement Amount", "res_refine") WIDTH(1.5);
+ PARM(float, 1, "res_refine", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(res_refine.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+divs.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divs.label = PARM_LABEL("Divisions", "divs") WIDTH(1.5);
+ PARM(float, 1, "divs", none, none) RANGE(0.01,1)
+	LOCK_RANGE_MIN LABELREF(divs.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+divs_.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("divs_", "Reduce Divisions Per Branch Level") toggle VALUE(divs_.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+basecolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    basecolor.label = PARM_LABEL("Base Color", "basecolor") WIDTH(1.5);
+    PARM(float, 3, "basecolor", none, COLOR, "R,G,B") 
+	LABELREF(basecolor.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+basecolor_useTexture.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("basecolor_useTexture", "Use Texture") toggle VALUE(basecolor_useTexture.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+basecolor_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ basecolor_texture.label = PARM_LABEL("Texture", "basecolor_texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "basecolor_texture") LABELREF(basecolor_texture.label)
+	VALUE(basecolor_texture.val) HSTRETCH;
+
+    basecolor_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(basecolor_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+IOR.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ IOR.label = PARM_LABEL("IOR", "IOR") WIDTH(1.5);
+ PARM(float, 1, "IOR", none, none) RANGE(1,3)
+	 LABELREF(IOR.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+horizon_fade.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ horizon_fade.label = PARM_LABEL("Horizon Smoothing", "horizon_fade") WIDTH(1.5);
+ PARM(float, 1, "horizon_fade", none, none) RANGE(0,1)
+	 LABELREF(horizon_fade.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+invert_rough.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_rough", "Invert Roughness") toggle VALUE(invert_rough.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+rough_useTexture.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("rough_useTexture", "Use Texture") toggle VALUE(rough_useTexture.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+rough_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ rough_texture.label = PARM_LABEL("Texture", "rough_texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "rough_texture") LABELREF(rough_texture.label)
+	VALUE(rough_texture.val) HSTRETCH;
+
+    rough_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(rough_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+rough_monoChannel.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Channel", "rough_monoChannel") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    rough_monoChannel.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+metallic.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ metallic.label = PARM_LABEL("Metallic", "metallic") WIDTH(1.5);
+ PARM(float, 1, "metallic", none, none) RANGE(0,1)
+	 LABELREF(metallic.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+metallic_useTexture.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("metallic_useTexture", "Use Texture") toggle VALUE(metallic_useTexture.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+metallic_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ metallic_texture.label = PARM_LABEL("Texture", "metallic_texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "metallic_texture") LABELREF(metallic_texture.label)
+	VALUE(metallic_texture.val) HSTRETCH;
+
+    metallic_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(metallic_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+metallic_monoChannel.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Channel", "metallic_monoChannel") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    metallic_monoChannel.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+baseBumpAndNormal_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("baseBumpAndNormal_enable", "Enable") toggle VALUE(baseBumpAndNormal_enable.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+baseNormal_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ baseNormal_texture.label = PARM_LABEL("Texture Path", "baseNormal_texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "baseNormal_texture") LABELREF(baseNormal_texture.label)
+	VALUE(baseNormal_texture.val) HSTRETCH;
+
+    baseNormal_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(baseNormal_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+baseNormal_scale.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+baseNormal_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ baseNormal_scale.label = PARM_LABEL("Effect Scale", "baseNormal_scale") WIDTH(1.5);
+ PARM(float, 1, "baseNormal_scale", none, none) RANGE(0,1)
+	 LABELREF(baseNormal_scale.label) HSTRETCH;
+
+  {  }
+}
+
+baseNormal_flipX.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("baseNormal_flipX", "Flip X") toggle VALUE(baseNormal_flipX.val);
+
+    {  }
+
+    {  }
+}
+
+baseNormal_flipY.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("baseNormal_flipY", "Flip Y") toggle VALUE(baseNormal_flipY.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+use_mikkt.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_mikkt", "Use Model's Tangent ") toggle VALUE(use_mikkt.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+occlusion.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ occlusion.label = PARM_LABEL("Occlusion", "occlusion") WIDTH(1.5);
+ PARM(float, 1, "occlusion", none, none) RANGE(0,1)
+	 LABELREF(occlusion.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+occlusion_useTexture.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("occlusion_useTexture", "Use Texture") toggle VALUE(occlusion_useTexture.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+occlusion_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ occlusion_texture.label = PARM_LABEL("Texture", "occlusion_texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "occlusion_texture") LABELREF(occlusion_texture.label)
+	VALUE(occlusion_texture.val) HSTRETCH;
+
+    occlusion_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(occlusion_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+occlusion_monoChannel.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Channel", "occlusion_monoChannel") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    occlusion_monoChannel.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_disp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_disp", "Enable Displacement") toggle VALUE(enable_disp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+disp_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ disp_texture.label = PARM_LABEL("Displacement Texture", "disp_texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "disp_texture") LABELREF(disp_texture.label)
+	VALUE(disp_texture.val) HSTRETCH;
+
+    disp_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(disp_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+disp_intensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ disp_intensity.label = PARM_LABEL("Displacement Intensity", "disp_intensity") WIDTH(1.5);
+ PARM(float, 1, "disp_intensity", none, none) RANGE(-1,1)
+	 LABELREF(disp_intensity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+subdiv_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subdiv_amount.label = PARM_LABEL("Subdivision Amount", "subdiv_amount") WIDTH(1.5);
+ PARM(integer, 1, "subdiv_amount", none, none) RANGE(0,6)
+	LOCK_RANGE_MIN LABELREF(subdiv_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+disp_reduce_toggle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("disp_reduce_toggle", "Reduce Resolution") toggle VALUE(disp_reduce_toggle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+res_count.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ res_count.label = PARM_LABEL("Polygon Count", "res_count") WIDTH(1.5);
+ PARM(integer, 1, "res_count", none, none) RANGE(1,10000)
+	LOCK_RANGE_MIN LABELREF(res_count.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+res_tolerance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ res_tolerance.label = PARM_LABEL("Tolerance", "res_tolerance") WIDTH(1.5);
+ PARM(float, 1, "res_tolerance", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(res_tolerance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+ PARM(float, 1, "offset", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+lod_start.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ lod_start.label = PARM_LABEL("Start at Level", "lod_start") WIDTH(1.5);
+ PARM(integer, 1, "lod_start", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(lod_start.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+enable_vis.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_vis", "Color") toggle VALUE(enable_vis.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+enable_curve.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_curve", "Curves only") toggle VALUE(enable_curve.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder14.gad = 
+
+GROUP simple "Occlusion" flat 
+{ 
+    VALUE(folder14.gad.val) LAYOUT(vertical) HSTRETCH 
+	    occlusion.gad;		
+	    occlusion_useTexture.gad;		
+	    occlusion_texture.gad;		
+	    occlusion_monoChannel.gad;		
+} 
+
+shading_16.gad = 
+
+GROUP simple "Normal" flat 
+{ 
+    VALUE(shading_16.gad.val) LAYOUT(vertical) HSTRETCH 
+	    baseBumpAndNormal_enable.gad;		
+	    baseNormal_texture.gad;		
+	    baseNormal_scale.row.join;		
+	    use_mikkt.gad;		
+} 
+
+folder12.gad = 
+
+GROUP simple "Metallic" flat 
+{ 
+    VALUE(folder12.gad.val) LAYOUT(vertical) HSTRETCH 
+	    metallic.gad;		
+	    metallic_useTexture.gad;		
+	    metallic_texture.gad;		
+	    metallic_monoChannel.gad;		
+} 
+
+folder4.gad = 
+
+GROUP simple "Roughness" flat 
+{ 
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    IOR.gad;		
+	    rough.gad;		
+	    horizon_fade.gad;		
+	    invert_rough.gad;		
+	    rough_useTexture.gad;		
+	    rough_texture.gad;		
+	    rough_monoChannel.gad;		
+} 
+
+folder7.gad = 
+
+GROUP simple "Albedo" flat 
+{ 
+    VALUE(folder7.gad.val) LAYOUT(vertical) HSTRETCH 
+	    basecolor.gad;		
+	    basecolor_useTexture.gad;		
+	    basecolor_texture.gad;		
+} 
+
+endcaps_folder.gad = 
+
+GROUP simple "End Caps" flat 
+{ 
+    VALUE(endcaps_folder.gad.val) LAYOUT(vertical) HSTRETCH 
+	    endcaptype.gad;		
+	    capdivs.row.join;		
+	    capscale.gad;		
+	    caproundness.gad;		
+	    caps_.gad;		
+} 
+
+folder21.gad = 
+
+GROUP simple "By End Angle" flat 
+{ 
+    VALUE(folder21.gad.val) LAYOUT(vertical) HSTRETCH 
+	    up_angle2.gad;		
+	    down_angle2.gad;		
+	    sepparm24.gad;		
+	    dir_angle2.gad;		
+	    dir2.gad;		
+} 
+
+folder9.gad = 
+
+GROUP simple "By Initial Angle" flat 
+{ 
+    VALUE(folder9.gad.val) LAYOUT(vertical) HSTRETCH 
+	    up_angle.gad;		
+	    down_angle.gad;		
+	    sepparm8.gad;		
+	    dir_angle.gad;		
+	    dir.gad;		
+} 
+
+folder20.gad = 
+
+GROUP simple "Secondary" flat 
+{ 
+    VALUE(folder20.gad.val) LAYOUT(vertical) HSTRETCH 
+	    line_noise_amount2.gad;		
+	    line_noise_size2.gad;		
+	    line_noise_rough2.gad;		
+	    line_noise_rand2.gad;		
+	    line_noise_offset2.gad;		
+} 
+
+folder5.gad = 
+
+GROUP simple "Primary" flat 
+{ 
+    VALUE(folder5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    type.gad;		
+	    line_noise_amount.gad;		
+	    line_noise_size.gad;		
+	    line_noise_rough.gad;		
+	    h.gad;		
+	    line_noise_rand.gad;		
+	    line_noise_offset.gad;		
+} 
+
+folder3.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder3.gad"
+    { 
+	VALUE(folder3.gad.val) STRETCH(1,0)
+
+	TAB "Line Noise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    enable_line_noise.gad;		
+	    folder5.gad;		
+	    folder20.gad;		
+	    line_noise_intensity_ramp.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Mesh Noise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    enable_mesh_noise.gad;		
+	    mesh_noise_type.gad;		
+	    mesh_noise_size.gad;		
+	    mesh_noise_rand.gad;		
+	    mesh_noise_offset.gad;		
+	    mesh_noise_amount.gad;		
+	    mesh_noise_inherit.gad;		
+	    mesh_noise_.gad;		
+	    mesh_noise_rad.gad;		
+	    mesh_noise_intensity_ramp.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder10.gad = 
+
+GROUP simple "Thigmotropism" flat 
+{ 
+    VALUE(folder10.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_thigmo.gad;		
+	    objpath1.gad;		
+	    thigmo_strength.gad;		
+	    thigmo_ramp.gad;		
+} 
+
+folder8.gad = 
+
+GROUP simple "Phototropism" flat 
+{ 
+    VALUE(folder8.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_light.gad;		
+	    light_dir.gad;		
+	    light_strength.gad;		
+	    light_ramp.gad;		
+	    light_mult.gad;		
+} 
+
+folder6.gad = 
+
+GROUP simple "Gravitropism" flat 
+{ 
+    VALUE(folder6.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_grav.gad;		
+	    grav_dir.gad;		
+	    grav_strength.gad;		
+	    gravity_ramp.gad;		
+	    grav_mult.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Bend Along Parent" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_bend.gad;		
+	    bend_strength.gad;		
+	    bend_ramp.gad;		
+	    bend_mult.gad;		
+} 
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Tropism"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder2.gad;		
+	    folder6.gad;		
+	    folder8.gad;		
+	    folder10.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Noise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder3.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Prune"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder9.gad;		
+	    folder21.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Meshing"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    seam_options.gad;		
+	    bool_smooth.gad;		
+	    blend_falloff.gad;		
+	    sepparm3.gad;		
+	    uv_blend.gad;		
+	    uv_blend_dist.gad;		
+	    uv_blend_smooth.gad;		
+	    sepparm25.gad;		
+	    endcaps_folder.gad;		
+	    sepparm5.gad;		
+	    branch_profile.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Resolution"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    res.gad;		
+	    res_refine.gad;		
+	    divs.gad;		
+	    divs_.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Material"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    folder7.gad;		
+	    folder4.gad;		
+	    folder12.gad;		
+	    shading_16.gad;		
+	    folder14.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Displacement"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    enable_disp.gad;		
+	    disp_texture.gad;		
+	    disp_intensity.gad;		
+	    subdiv_amount.gad;		
+	    disp_reduce_toggle.gad;		
+	    res_count.gad;		
+	    res_tolerance.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "LOD"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    offset.gad;		
+	    lod_start.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Visualization"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    enable_vis.gad;		
+	    sepparm4.gad;		
+	    enable_curve.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    seed.gad; 
+    sepparm.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

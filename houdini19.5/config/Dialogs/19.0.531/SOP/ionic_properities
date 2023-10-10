@@ -1,0 +1,163 @@
+// Magic: d8f80bfd
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May  8 18:48:34 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "IE_1 Color") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ramprange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ramprange.label = PARM_LABEL("Range", "ramprange") WIDTH(1.5);
+   PARM(float, 2, "ramprange", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(ramprange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+IE_2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("IE_2", "IE_2 Color") toggle VALUE(IE_2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ramprange3.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ramprange3.label = PARM_LABEL("Range", "ramprange3") WIDTH(1.5);
+   PARM(float, 2, "ramprange3", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(ramprange3.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+IE_3.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("IE_3", "IE_3 Color") toggle VALUE(IE_3.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ramprange4.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ramprange4.label = PARM_LABEL("Range", "ramprange4") WIDTH(1.5);
+   PARM(float, 2, "ramprange4", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(ramprange4.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+
+ptdel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    ptdel.label = PARM_LABEL("Delete Attributes", "ptdel") WIDTH(1.5);
+    PARM_FIELD(string, "ptdel") VALUE(ptdel.val) 
+	LABELREF(ptdel.label) HSTRETCH;
+
+    ptdel.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    input.gad; 
+    ramprange.gad; 
+    sepparm.gad; 
+    IE_2.gad; 
+    ramprange3.gad; 
+    sepparm2.gad; 
+    IE_3.gad; 
+    ramprange4.gad; 
+    sepparm3.gad; 
+    ptdel.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,632 @@
+// Magic: 83d15d42
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sat Jun 11 14:46:47 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+do_viz.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_viz", "Visualize Up Vector") toggle VALUE(do_viz.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+compute_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Compute Method", "compute_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    compute_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+entity.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Entity", "entity") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    entity.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+style.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Style", "style") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    style.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+attribname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribname.label = PARM_LABEL("Attribute Name", "attribname") WIDTH(1.5);
+    PARM_FIELD(string, "attribname") VALUE(attribname.val) 
+	LABELREF(attribname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+Non.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+Non.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+Non.gad = PARM_BUTTON("Non", "") toggle VALUE(Non.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+N.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    N.label = PARM_LABEL("Normal Name", "N") WIDTH(1.32);
+    PARM_FIELD(string, "N") VALUE(N.val) 
+	LABELREF(N.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+tangentuon.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tangentuon.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tangentuon.gad = PARM_BUTTON("tangentuon", "") toggle VALUE(tangentuon.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+tangentu.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    tangentu.label = PARM_LABEL("Tangent Name", "tangentu") WIDTH(1.32);
+    PARM_FIELD(string, "tangentu") VALUE(tangentu.val) 
+	LABELREF(tangentu.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+tangentvon.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tangentvon.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+tangentvon.gad = PARM_BUTTON("tangentvon", "") toggle VALUE(tangentvon.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+tangentv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    tangentv.label = PARM_LABEL("Bitangent Name", "tangentv") WIDTH(1.32);
+    PARM_FIELD(string, "tangentv") VALUE(tangentv.val) 
+	LABELREF(tangentv.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+ortho.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ortho", "Make Frame Orthogonal") toggle VALUE(ortho.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+lefthanded.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("lefthanded", "Left-Handed Frame") toggle VALUE(lefthanded.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_normal.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_normal", "Compute Normals") toggle VALUE(do_normal.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_up.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_up", "Create Up ") toggle VALUE(do_up.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+auto_up.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("auto_up", "Auto Up") toggle VALUE(auto_up.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+up_vector.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   up_vector.label = PARM_LABEL("Up Vector", "up_vector") WIDTH(1.5);
+   PARM(float, 3, "up_vector", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(up_vector.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+invert_N.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_N", "Invert N") toggle VALUE(invert_N.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invert_up.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_up", "Invert Up") toggle VALUE(invert_up.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_cross.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_cross", "Cross Up Vector") toggle VALUE(do_cross.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+do_curl.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_curl", "Enable Curl Noise") toggle VALUE(do_curl.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_blur.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_blur", "Enable Blur") toggle VALUE(do_blur.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bias.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bias.label = PARM_LABEL("Blend with Original", "bias") WIDTH(1.5);
+ PARM(float, 1, "bias", none, none) RANGE(0,1)
+	 LABELREF(bias.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+use_rest.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_rest", "Use Rest Position") toggle VALUE(use_rest.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Noise Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+freq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   freq.label = PARM_LABEL("Frequency", "freq") WIDTH(1.5);
+   PARM(float, 3, "freq", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(freq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 3, "offset", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+amp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amp.label = PARM_LABEL("Amplitude", "amp") WIDTH(1.5);
+ PARM(float, 1, "amp", none, none) RANGE(-1,1)
+	 LABELREF(amp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+atten.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ atten.label = PARM_LABEL("Attenuation", "atten") WIDTH(1.5);
+ PARM(float, 1, "atten", none, none) RANGE(0,1)
+	 LABELREF(atten.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+turb.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ turb.label = PARM_LABEL("Turbulence", "turb") WIDTH(1.5);
+ PARM(integer, 1, "turb", none, none) RANGE(1,12)
+	 LABELREF(turb.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+h.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ h.label = PARM_LABEL("Step Size", "h") WIDTH(1.5);
+ PARM(float, 1, "h", none, none) RANGE(0,1)
+	 LABELREF(h.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Blurring Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,100)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stepsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stepsize.label = PARM_LABEL("Step Size", "stepsize") WIDTH(1.5);
+ PARM(float, 1, "stepsize", none, none) RANGE(0,1)
+	 LABELREF(stepsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+influencetype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Influence Type", "influencetype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    influencetype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Curl Noise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    bias.gad;		
+	    use_rest.gad;		
+	    type.gad;		
+	    freq.gad;		
+	    offset.gad;		
+	    amp.gad;		
+	    rough.gad;		
+	    atten.gad;		
+	    turb.gad;		
+	    h.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Blur"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    iterations.gad;		
+	    stepsize.gad;		
+	    influencetype.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder3.gad = 
+
+GROUP simple "Up Vector" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    auto_up.gad;		
+	    up_vector.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "N and Up" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    do_normal.gad;		
+	    do_up.gad;		
+	    folder3.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Compute From Polygons" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    group.gad;		
+	    entity.gad;		
+	    style.gad;		
+	    attribname.gad;		
+	    Non.row.join;		
+	    tangentuon.row.join;		
+	    tangentvon.row.join;		
+	    ortho.gad;		
+	    lefthanded.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    do_viz.gad; 
+    compute_method.gad; 
+    folder1.gad; 
+    folder2.gad; 
+    invert_N.gad; 
+    invert_up.gad; 
+    do_cross.gad; 
+    sepparm.gad; 
+    do_curl.gad; 
+    do_blur.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

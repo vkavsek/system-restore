@@ -1,0 +1,99 @@
+Current HDAs:
+
+Deoxyribonucleotides Visualizer HDA:
+
+Let's you visualize and isolate select Deoxyribonucleotides in the Protein.
+Let's you count how many there are in the protein
+Counts the different elements contained inside of the molecules
+Color and Visualization Options
+Allows for different visualization options for space filling and wireframe
+
+Ribonucleotides Visualizer HDA: 
+
+Let's you visualize and isolate select Ribonucleotides in the Protein.
+Let's you count how many there are in the protein
+Counts the different elements contained inside of the molecules
+Color and Visualization Options
+Allows for different visualization options for space filling and wireframe
+
+Amino Acid HDA:
+
+Let's you visualize and isolate select Amino Acids in the Protein.
+Let's you count how many there are in the protein
+Counts the different elements contained inside of the molecules
+Color and Visualization Options
+Allows for different visualization options for space filling and wireframe
+
+Amino Animate HDA:
+
+Animates the protein by the temperature factor of the particles.
+Visualization options for the average, minimum , and maximum temperature per atom
+Color options for visualizing the temperature throughout the protein.
+
+Isolate Chain HDA:
+
+Isolates the different chains inside the structure. 
+Allows for visual guides to see which chain you are visualizing
+
+Space filling HDA: 
+
+Allows for an overall Space filling diagram to be created throughout the structure. 
+Allows for different visualizations of elements throughout the structure
+Allows for correct atomical counts in the structure
+
+
+Ribbon Diagram HDA:
+
+Allows for Ribbon diagrams to be formed from the protein 
+Allows you to isolate and visualize certain amino acids on the ribbons 
+Works in tandem with the isolate Chain HDA.
+Color Options
+
+Open and Closed State Virus HDA:
+
+This HDA only works with Virus Proteins
+This HDA works with both the open and closed states of the protein to let you visualize the in-between states of the solve.
+Works in tandem with the Isolate Chain HDA
+Allows for animation of the protein
+
+Residue Isolator HDA
+
+- Isolates the residues/small molecules within the structure.
+- Works similarly to the Amioacid HDA
+- Color and visualization options for elements
+
+Sequence Similarities HDA
+
+- Allows you to compare the similar ResSeq between different proteins
+- Spacefilling options
+- Element color visualization options
+
+Atomic Properties HDA:
+
+Assigns properties onto the different elements contains in the structure:
+This includes Density, Atomic weight, Boiling Point, Melting Point, and Charge
+Options for deleting attributes that are unneeded. 
+
+Ionic Properities HDA:
+
+- Creates up to 3 ionic energies per element
+- Color Visualization Options
+- Options for deleting unessicary attributes
+
+Charge Visualization HDA:
+
+- Visualizes the charges associated with the elements
+- Trail and atomic modelling options
+- color adjustment options
+
+Electronegativity Visualization HDA
+
+- Visualizes the Electronegativity associated with the elements
+- Trail and atomic modelling options
+- color adjustment options
+
+van der Wall Visualization HDA
+
+- Visualizes the van der Wall radius associated with the elements
+- Trail and atomic modelling options
+- color adjustment options

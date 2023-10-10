@@ -1,0 +1,715 @@
+// Magic: 57c41f7f
+// Automatically generated PSI dialog (PSI version 19.5.493)
+// Wed Feb 22 19:36:34 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+inattrib.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+inattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    inattrib.label = PARM_LABEL("Input Attribute", "inattrib") WIDTH(1.5);
+    PARM_FIELD(string, "inattrib") VALUE(inattrib.val) 
+	LABELREF(inattrib.label) HSTRETCH;
+
+    inattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    {  }
+}
+
+intype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    intype.menu;
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+vecmode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    vecmode.label = PARM_LABEL_SIMPLE("Extract", "vecmode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vecmode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+projattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    projattrib.label = PARM_LABEL("Projection Direction", "projattrib") WIDTH(1.5);
+    PARM_FIELD(string, "projattrib") VALUE(projattrib.val) 
+	LABELREF(projattrib.label) HSTRETCH;
+
+    projattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+outattrib_f.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    outattrib_f.label = PARM_LABEL("Output Float Attribute", "outattrib_f") WIDTH(1.5);
+    PARM_FIELD(string, "outattrib_f") VALUE(outattrib_f.val) 
+	LABELREF(outattrib_f.label) HSTRETCH;
+
+    outattrib_f.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+outattrib_v.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    outattrib_v.label = PARM_LABEL("Output Vector Attribute", "outattrib_v") WIDTH(1.5);
+    PARM_FIELD(string, "outattrib_v") VALUE(outattrib_v.val) 
+	LABELREF(outattrib_v.label) HSTRETCH;
+
+    outattrib_v.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+sepparm.gad = NULL { }
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    method.label = PARM_LABEL_SIMPLE("Method", "method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+time_high.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ time_high.label = PARM_LABEL("Higher-End Time", "time_high") WIDTH(1.5);
+ PARM(float, 1, "time_high", none, none) RANGE(0,200)
+	LOCK_RANGE_MIN LABELREF(time_high.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+time_low.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ time_low.label = PARM_LABEL("Lower-End Time", "time_low") WIDTH(1.5);
+ PARM(float, 1, "time_low", none, none) RANGE(0,200)
+	LOCK_RANGE_MIN LABELREF(time_low.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+speedattrib_high.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    speedattrib_high.label = PARM_LABEL("Higher-End Attribute", "speedattrib_high") WIDTH(1.5);
+    PARM_FIELD(string, "speedattrib_high") VALUE(speedattrib_high.val) 
+	LABELREF(speedattrib_high.label) HSTRETCH;
+
+    speedattrib_high.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+speedattrib_low.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    speedattrib_low.label = PARM_LABEL("Lower-End Attribute", "speedattrib_low") WIDTH(1.5);
+    PARM_FIELD(string, "speedattrib_low") VALUE(speedattrib_low.val) 
+	LABELREF(speedattrib_low.label) HSTRETCH;
+
+    speedattrib_low.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+strength_high.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ strength_high.label = PARM_LABEL("Higher-End Strength", "strength_high") WIDTH(1.5);
+ PARM(float, 1, "strength_high", none, none) RANGE(0,200)
+	LOCK_RANGE_MIN LABELREF(strength_high.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+strength_low.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ strength_low.label = PARM_LABEL("Lower-End Strength", "strength_low") WIDTH(1.5);
+ PARM(float, 1, "strength_low", none, none) RANGE(0,200)
+	LOCK_RANGE_MIN LABELREF(strength_low.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+filter_high.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ filter_high.label = PARM_LABEL("Higher-End Filter", "filter_high") WIDTH(1.5);
+ PARM(integer, 1, "filter_high", none, none) RANGE(1,5)
+	LOCK_RANGE LABELREF(filter_high.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+filter_low.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ filter_low.label = PARM_LABEL("Lower-End Filter", "filter_low") WIDTH(1.5);
+ PARM(integer, 1, "filter_low", none, none) RANGE(1,5)
+	LOCK_RANGE LABELREF(filter_low.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+model_high.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    model_high.label = PARM_LABEL_SIMPLE("Higher-End Model", "model_high") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    model_high.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+model_low.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    model_low.label = PARM_LABEL_SIMPLE("Lower-End Model", "model_low") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    model_low.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+time_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ time_scale.label = PARM_LABEL("Time Scale", "time_scale") WIDTH(1.5);
+ PARM(float, 1, "time_scale", none, none) RANGE(0,0.00050000000000000001)
+	LOCK_RANGE_MIN LABELREF(time_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+strength_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ strength_scale.label = PARM_LABEL("Strength Scale", "strength_scale") WIDTH(1.5);
+ PARM(float, 1, "strength_scale", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(strength_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+invert.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert", "Invert Extraction Direction") toggle VALUE(invert.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+constrboundary.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("constrboundary", "Constrain Boundary Points") toggle VALUE(constrboundary.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+boundary_high.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    boundary_high.label = PARM_LABEL("Higher-End Points", "boundary_high") WIDTH(1.5);
+    PARM_FIELD(string, "boundary_high") VALUE(boundary_high.val) 
+	LABELREF(boundary_high.label) HSTRETCH;
+
+    boundary_high.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(boundary_high.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+boundary_low.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    boundary_low.label = PARM_LABEL("Lower-End Points", "boundary_low") WIDTH(1.5);
+    PARM_FIELD(string, "boundary_low") VALUE(boundary_low.val) 
+	LABELREF(boundary_low.label) HSTRETCH;
+
+    boundary_low.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(boundary_low.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+recomputenorm.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("recomputenorm", "Recompute Output Normals") toggle VALUE(recomputenorm.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vis.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vis", "Visualize Extracted Spectrum") toggle VALUE(vis.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm5.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+visramp_float.si_rampedit = COLOR_RAMP VALUE(visramp_float.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+visramp_float.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	visramp_float.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(visramp_float.pointno.val) HSTRETCH;
+    }
+}
+
+visramp_float.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(visramp_float.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(visramp_float.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    visramp_float.toggleparms.gad
+      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+	HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+	VALUE(visramp_float.toggle.val)
+	LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+}
+
+visramp_float.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    visramp_float.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	visramp_float.buttons.gad VSTRETCH;
+
+	visramp_float.si_rampedit HSTRETCH;
+    }
+}
+
+visramp_float.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Float Color Gradient", "visramp_float");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(visramp_float.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(visramp_float.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	visramp_float.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	visramp_float.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(visramp_float.hideparms.val) HSTRETCH
+	    visramp_float.multiramp;
+	    {}
+	}
+    }
+}
+
+vecvismode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    vecvismode.label = PARM_LABEL_SIMPLE("Vector Color Gradient", "vecvismode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vecvismode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+veccdscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ veccdscale.label = PARM_LABEL("Visualized Vector Scale", "veccdscale") WIDTH(1.5);
+ PARM(float, 1, "veccdscale", none, none) RANGE(0,500)
+	LOCK_RANGE_MIN LABELREF(veccdscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fd_viscontrol.gad = 
+
+{
+    VALUE(fd_viscontrol.gad.val) LAYOUT(vertical) HSTRETCH SPACING(0.02)
+	    sepparm5.gad;		
+	    visramp_float.gad;		
+	    vecvismode.gad;		
+	    veccdscale.gad;		
+} 
+
+fd_vis.gad = 
+GROUP collapsible "Visualization" flat   
+{
+    VALUE(fd_vis.gad.val) LAYOUT(vertical) HSTRETCH
+	    recomputenorm.gad;		
+	    vis.gad;		
+	    fd_viscontrol.gad;		
+} 
+
+fd_boundary.gad = 
+GROUP collapsible "Constrained Points" flat   
+{
+    VALUE(fd_boundary.gad.val) LAYOUT(vertical) HSTRETCH
+	    constrboundary.gad;		
+	    boundary_high.gad;		
+	    boundary_low.gad;		
+} 
+
+fd_advanced.gad = 
+GROUP collapsible "Advanced" flat   
+{
+    VALUE(fd_advanced.gad.val) LAYOUT(vertical) HSTRETCH
+	    time_scale.gad;		
+	    strength_scale.gad;		
+	    invert.gad;		
+} 
+
+fd_strength.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "fd_strength.gad"
+    { 
+	VALUE(fd_strength.gad.val) STRETCH(1,0)
+
+	TAB "Smooth Strengths"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    strength_high.gad;		
+	    strength_low.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Smooth Filter Qualities"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    filter_high.gad;		
+	    filter_low.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Smooth Models"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    model_high.gad;		
+	    model_low.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+fd_smooth.gad = 
+
+{
+    VALUE(fd_smooth.gad.val) LAYOUT(vertical) HSTRETCH SPACING(0.02)
+	    fd_strength.gad;		
+} 
+
+fd_time.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "fd_time.gad"
+    { 
+	VALUE(fd_time.gad.val) STRETCH(1,0)
+
+	TAB "Diffusion Times"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    time_high.gad;		
+	    time_low.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Diffusion Speed Attributes"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    speedattrib_high.gad;		
+	    speedattrib_low.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+fd_diffusion.gad = 
+
+{
+    VALUE(fd_diffusion.gad.val) LAYOUT(vertical) HSTRETCH SPACING(0.02)
+	    fd_time.gad;		
+} 
+
+fd_extract.gad = 
+
+GROUP simple "Frequency Spectrum Extraction" flat 
+{ 
+    VALUE(fd_extract.gad.val) LAYOUT(vertical) HSTRETCH 
+	    sepparm.gad;		
+	    method.gad;		
+	    fd_diffusion.gad;		
+	    fd_smooth.gad;		
+	    fd_advanced.gad;		
+	    fd_boundary.gad;		
+	    fd_vis.gad;		
+} 
+
+fd_vec.gad = 
+
+{
+    VALUE(fd_vec.gad.val) LAYOUT(vertical) HSTRETCH SPACING(0.02)
+	    sepparm2.gad;		
+	    vecmode.gad;		
+	    projattrib.gad;		
+	    sepparm3.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    inattrib.row.join; 
+    fd_vec.gad; 
+    outattrib_f.gad; 
+    outattrib_v.gad; 
+    sepparm4.gad; 
+    fd_extract.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

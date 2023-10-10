@@ -1,0 +1,440 @@
+// Magic: f9a55803
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Tue Apr 26 23:46:13 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+background.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Background", "background") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    background.menu;
+
+    { HSTRETCH }
+
+    background.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(background.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+background_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    background_color.label = PARM_LABEL("Background Color", "background_color") WIDTH(1.5);
+    PARM(float, 3, "background_color", none, COLOR, "R,G,B") 
+	LABELREF(background_color.label) HSTRETCH;
+
+    background_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(background_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+alpha_mask.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("alpha_mask", "Alpha Mask") toggle VALUE(alpha_mask.val);
+
+    { HSTRETCH }
+
+    alpha_mask.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alpha_mask.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+shadow_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    shadow_color.label = PARM_LABEL("Shadow Color", "shadow_color") WIDTH(1.5);
+    PARM(float, 3, "shadow_color", none, COLOR, "R,G,B") 
+	LABELREF(shadow_color.label) HSTRETCH;
+
+    shadow_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(shadow_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+shadow_opacity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ shadow_opacity.label = PARM_LABEL("Shadow Opacity", "shadow_opacity") WIDTH(1.5);
+ PARM(float, 1, "shadow_opacity", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(shadow_opacity.label) HSTRETCH;
+
+    shadow_opacity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(shadow_opacity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+backlighting.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ backlighting.label = PARM_LABEL("Backlighting", "backlighting") WIDTH(1.5);
+ PARM(float, 1, "backlighting", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(backlighting.label) HSTRETCH;
+
+    backlighting.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(backlighting.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+indirect_diffuse_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("indirect_diffuse_enable", "Indirect Diffuse") toggle VALUE(indirect_diffuse_enable.val);
+
+    { HSTRETCH }
+
+    indirect_diffuse_enable.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(indirect_diffuse_enable.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+diffuse_use_background.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("diffuse_use_background", "Use Background Color") toggle VALUE(diffuse_use_background.val);
+
+    { HSTRETCH }
+
+    diffuse_use_background.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(diffuse_use_background.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+diffuse_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    diffuse_color.label = PARM_LABEL("Diffuse Color", "diffuse_color") WIDTH(1.5);
+    PARM(float, 3, "diffuse_color", none, COLOR, "R,G,B") 
+	LABELREF(diffuse_color.label) HSTRETCH;
+
+    diffuse_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(diffuse_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+diffuse_intensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ diffuse_intensity.label = PARM_LABEL("Diffuse Intensity", "diffuse_intensity") WIDTH(1.5);
+ PARM(float, 1, "diffuse_intensity", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(diffuse_intensity.label) HSTRETCH;
+
+    diffuse_intensity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(diffuse_intensity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+indirect_specular_enable.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("indirect_specular_enable", "Indirect Specular") toggle VALUE(indirect_specular_enable.val);
+
+    { HSTRETCH }
+
+    indirect_specular_enable.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(indirect_specular_enable.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+specular_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    specular_color.label = PARM_LABEL("Specular Color", "specular_color") WIDTH(1.5);
+    PARM(float, 3, "specular_color", none, COLOR, "R,G,B") 
+	LABELREF(specular_color.label) HSTRETCH;
+
+    specular_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(specular_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+specular_intensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ specular_intensity.label = PARM_LABEL("Specular Intensity", "specular_intensity") WIDTH(1.5);
+ PARM(float, 1, "specular_intensity", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(specular_intensity.label) HSTRETCH;
+
+    specular_intensity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(specular_intensity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+specular_IOR.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ specular_IOR.label = PARM_LABEL("Specular IOR", "specular_IOR") WIDTH(1.5);
+ PARM(float, 1, "specular_IOR", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(specular_IOR.label) HSTRETCH;
+
+    specular_IOR.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(specular_IOR.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+specular_roughness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ specular_roughness.label = PARM_LABEL("Specular Roughness", "specular_roughness") WIDTH(1.5);
+ PARM(float, 1, "specular_roughness", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(specular_roughness.label) HSTRETCH;
+
+    specular_roughness.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(specular_roughness.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+aov_shadow.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    aov_shadow.label = PARM_LABEL("Shadow", "aov_shadow") WIDTH(1.5);
+    PARM_FIELD(string, "aov_shadow") VALUE(aov_shadow.val) 
+	LABELREF(aov_shadow.label) HSTRETCH;
+
+    aov_shadow.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(aov_shadow.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+aov_shadow_diff.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    aov_shadow_diff.label = PARM_LABEL("Shadow Diff", "aov_shadow_diff") WIDTH(1.5);
+    PARM_FIELD(string, "aov_shadow_diff") VALUE(aov_shadow_diff.val) 
+	LABELREF(aov_shadow_diff.label) HSTRETCH;
+
+    aov_shadow_diff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(aov_shadow_diff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+aov_shadow_mask.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    aov_shadow_mask.label = PARM_LABEL("Shadow Mask", "aov_shadow_mask") WIDTH(1.5);
+    PARM_FIELD(string, "aov_shadow_mask") VALUE(aov_shadow_mask.val) 
+	LABELREF(aov_shadow_mask.label) HSTRETCH;
+
+    aov_shadow_mask.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(aov_shadow_mask.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+aov_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    aov_group.label = PARM_LABEL("Aov Group", "aov_group") WIDTH(1.5);
+    PARM_FIELD(string, "aov_group") VALUE(aov_group.val) 
+	LABELREF(aov_group.label) HSTRETCH;
+
+    aov_group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    aov_group.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(aov_group.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+rgba.gad = NULL { }
+r.gad = NULL { }
+g.gad = NULL { }
+b.gad = NULL { }
+a.gad = NULL { }
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Shadow"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    background.gad;		
+	    background_color.gad;		
+	    alpha_mask.gad;		
+	    shadow_color.gad;		
+	    shadow_opacity.gad;		
+	    backlighting.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Indirect"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    indirect_diffuse_enable.gad;		
+	    diffuse_use_background.gad;		
+	    diffuse_color.gad;		
+	    diffuse_intensity.gad;		
+	    indirect_specular_enable.gad;		
+	    specular_color.gad;		
+	    specular_intensity.gad;		
+	    specular_IOR.gad;		
+	    specular_roughness.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "AOVs"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    aov_shadow.gad;		
+	    aov_shadow_diff.gad;		
+	    aov_shadow_mask.gad;		
+	    aov_group.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder1.gad; 
+    rgba.gad; 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+    a.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

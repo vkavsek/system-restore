@@ -1,0 +1,786 @@
+// Magic: 278207b8
+// Automatically generated PSI dialog (PSI version 19.5.534)
+// Mon Apr  3 10:00:54 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+invis.gad = NULL { }
+
+inf_start.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    inf_start.label = PARM_LABEL("Infection start group", "inf_start") WIDTH(1.5);
+    PARM_FIELD(string, "inf_start") VALUE(inf_start.val) 
+	LABELREF(inf_start.label) HSTRETCH;
+
+    inf_start.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(inf_start.script_action)
+	HELP("Select geometry from an available viewport.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+l_switch.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("l_switch", "Import limit attribute") toggle VALUE(l_switch.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+keep_starting_pts.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keep_starting_pts", "Limit ignores Starting Pts") toggle VALUE(keep_starting_pts.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+cust.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("cust", "Custom multiplier attribute") toggle VALUE(cust.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enab.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enab", "Enable noise multiplier") toggle VALUE(enab.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+preview.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("preview", "Noise Preview") toggle VALUE(preview.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    type.label = PARM_LABEL_SIMPLE("Noise Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+freq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   freq.label = PARM_LABEL("Frequency", "freq") WIDTH(1.5);
+   PARM(float, 3, "freq", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(freq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 3, "offset", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+amp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amp.label = PARM_LABEL("Amplitude", "amp") WIDTH(1.5);
+ PARM(float, 1, "amp", none, none) RANGE(-1,1)
+	 LABELREF(amp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+atten.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ atten.label = PARM_LABEL("Attenuation", "atten") WIDTH(1.5);
+ PARM(float, 1, "atten", none, none) RANGE(0,1)
+	 LABELREF(atten.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+labelparm.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+         LAYOUT(horizontal) HSTRETCH
+         { WIDTH(0.05) }
+         LABEL VALUE(labelparm.val[0]) HSTRETCH;
+    }
+    SEPARATOR HEIGHT(0.02) BGCOLOR("GroupHeaderOpen0") LOOKFLAT;
+    { HEIGHT(0.05) }
+}
+
+srcmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ srcmin.label = PARM_LABEL("Source Min", "srcmin") WIDTH(1.5);
+ PARM(float, 1, "srcmin", none, none) RANGE(0,1)
+	 LABELREF(srcmin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+srcmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ srcmax.label = PARM_LABEL("Source Max", "srcmax") WIDTH(1.5);
+ PARM(float, 1, "srcmax", none, none) RANGE(0,1)
+	 LABELREF(srcmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+destmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ destmin.label = PARM_LABEL("Output Min", "destmin") WIDTH(1.5);
+ PARM(float, 1, "destmin", none, none) RANGE(0,1)
+	 LABELREF(destmin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+destmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ destmax.label = PARM_LABEL("Output Max", "destmax") WIDTH(1.5);
+ PARM(float, 1, "destmax", none, none) RANGE(0,1)
+	 LABELREF(destmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+resimulate.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("resimulate", "Reset Simulation")
+	push VALUE(resimulate.val);
+
+    { WIDTH(0.1) }
+}
+
+startframe.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ startframe.label = PARM_LABEL("Start Frame", "startframe") WIDTH(1.5);
+ PARM(integer, 1, "startframe", none, none) RANGE(1,240)
+	 LABELREF(startframe.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cachemaxsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cachemaxsize.label = PARM_LABEL("Cache Memory (MB)", "cachemaxsize") WIDTH(1.5);
+ PARM(integer, 1, "cachemaxsize", none, none) RANGE(0,1000)
+	LOCK_RANGE_MIN LABELREF(cachemaxsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+name_attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    name_attrib.label = PARM_LABEL("Name Attribute", "name_attrib") WIDTH(1.5);
+    PARM_FIELD(string, "name_attrib") VALUE(name_attrib.val) 
+	LABELREF(name_attrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+infection_import_threshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ infection_import_threshold.label = PARM_LABEL("Min. import value", "infection_import_threshold") WIDTH(1.5);
+ PARM(float, 1, "infection_import_threshold", none, none) RANGE(0,1)
+	 LABELREF(infection_import_threshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm5.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+search_radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ search_radius.label = PARM_LABEL("Neigh. pts. search Radius", "search_radius") WIDTH(1.5);
+ PARM(float, 1, "search_radius", none, none) RANGE(0,1)
+	 LABELREF(search_radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+max_pts.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ max_pts.label = PARM_LABEL("Max Search Pts", "max_pts") WIDTH(1.5);
+ PARM(integer, 1, "max_pts", none, none) RANGE(0,10)
+	 LABELREF(max_pts.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+general_multiplier.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ general_multiplier.label = PARM_LABEL("General Strength Multiplier", "general_multiplier") WIDTH(1.5);
+ PARM(float, 1, "general_multiplier", none, none) RANGE(0,5)
+	 LABELREF(general_multiplier.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+min_infection.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ min_infection.label = PARM_LABEL("Min val. to start Infection", "min_infection") WIDTH(1.5);
+ PARM(float, 1, "min_infection", none, none) RANGE(0,1)
+	 LABELREF(min_infection.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+input2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input2", "Only keep max Infection value") toggle VALUE(input2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Blurring Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,100)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stepsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stepsize.label = PARM_LABEL("Step Size", "stepsize") WIDTH(1.5);
+ PARM(float, 1, "stepsize", none, none) RANGE(0,1)
+	 LABELREF(stepsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+proxrad.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ proxrad.label = PARM_LABEL("Proximity Radius", "proxrad") WIDTH(1.5);
+ PARM(float, 1, "proxrad", none, none) RANGE(0,10)
+	 LABELREF(proxrad.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxneigh.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxneigh.label = PARM_LABEL("Max Neighbors", "maxneigh") WIDTH(1.5);
+ PARM(integer, 1, "maxneigh", none, none) RANGE(0,50)
+	 LABELREF(maxneigh.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Enable") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+min_infection2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ min_infection2.label = PARM_LABEL("Min Infection Val", "min_infection2") WIDTH(1.5);
+ PARM(float, 1, "min_infection2", none, none) RANGE(0,2)
+	 LABELREF(min_infection2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+max_infection.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ max_infection.label = PARM_LABEL("Max Infection Val", "max_infection") WIDTH(1.5);
+ PARM(float, 1, "max_infection", none, none) RANGE(0,2)
+	 LABELREF(max_infection.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dntdel.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dntdel", "Don't Delete") toggle VALUE(dntdel.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+exp.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("exp", "Export infection as Color") toggle VALUE(exp.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ramprange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ramprange.label = PARM_LABEL("Range", "ramprange") WIDTH(1.5);
+   PARM(float, 2, "ramprange", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(ramprange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ramp.si_rampedit = COLOR_RAMP VALUE(ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(ramp.pointno.val) HSTRETCH;
+    }
+}
+
+ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ramp.toggleparms.gad
+      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+	HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+	VALUE(ramp.toggle.val)
+	LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+}
+
+ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	ramp.buttons.gad VSTRETCH;
+
+	ramp.si_rampedit HSTRETCH;
+    }
+}
+
+ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Attribute Ramp", "ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(ramp.hideparms.val) HSTRETCH
+	    ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+Color.gad = 
+GROUP collapsible "Cd Control" flat   
+{
+    VALUE(Color.gad.val) LAYOUT(vertical) HSTRETCH
+	    ramprange.gad;		
+	    ramp.gad;		
+} 
+
+folder1.gad = 
+
+{
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH SPACING(0.02)
+	    enab.gad;		
+	    preview.gad;		
+	    sepparm.gad;		
+	    type.gad;		
+	    freq.gad;		
+	    offset.gad;		
+	    amp.gad;		
+	    rough.gad;		
+	    atten.gad;		
+	    sepparm2.gad;		
+	    labelparm.gad;		
+	    srcmin.gad;		
+	    srcmax.gad;		
+	    destmin.gad;		
+	    destmax.gad;		
+} 
+
+xn__FieldMultiplierControl_suak.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "xn__FieldMultiplierControl_suak.gad"
+    { 
+	VALUE(xn__FieldMultiplierControl_suak.gad.val) STRETCH(1,0)
+
+	TAB "Field Multiplier Control"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    cust.gad;		
+	    folder1.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Infection Control"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    resimulate.gad;		
+	    startframe.gad;		
+	    cachemaxsize.gad;		
+	    sepparm3.gad;		
+	    name_attrib.gad;		
+	    infection_import_threshold.gad;		
+	    sepparm5.gad;		
+	    search_radius.gad;		
+	    max_pts.gad;		
+	    general_multiplier.gad;		
+	    min_infection.gad;		
+	    input2.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Post-Bluring"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    iterations.gad;		
+	    stepsize.gad;		
+	    sepparm4.gad;		
+	    proxrad.gad;		
+	    maxneigh.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Edge Detect"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    input.gad;		
+	    min_infection2.gad;		
+	    max_infection.gad;		
+	    dntdel.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    invis.gad; 
+    inf_start.gad; 
+    l_switch.gad; 
+    keep_starting_pts.gad; 
+    xn__FieldMultiplierControl_suak.gad; 
+    exp.gad; 
+    Color.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

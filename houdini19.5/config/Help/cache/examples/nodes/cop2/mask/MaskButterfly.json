@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["MaskButterfly"]}, {"type": "para", "indent": 0, "text": ["This example shows various masking techniques with the Mask COP."], "extent": [0, 65]}], "examplefor": "/nodes/cop2/mask", "examplefile": "/examples/nodes/cop2/mask/MaskButterfly.otl"}

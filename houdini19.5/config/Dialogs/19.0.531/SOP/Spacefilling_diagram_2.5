@@ -1,0 +1,336 @@
+// Magic: 62d7d8a0
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May  8 17:17:02 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+Atom_Total_Count.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Atom_Total_Count", "Atom Total Count") toggle VALUE(Atom_Total_Count.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Element_Count.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Element_Count", "Element Count") toggle VALUE(Element_Count.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Pscale_C.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_C.label = PARM_LABEL("Pscale_C", "Pscale_C") WIDTH(1.5);
+ PARM(float, 1, "Pscale_C", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_C.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_O.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_O.label = PARM_LABEL("Pscale_O", "Pscale_O") WIDTH(1.5);
+ PARM(float, 1, "Pscale_O", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_O.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_N.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_N.label = PARM_LABEL("Pscale_N", "Pscale_N") WIDTH(1.5);
+ PARM(float, 1, "Pscale_N", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_N.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_S.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_S.label = PARM_LABEL("Pscale_S", "Pscale_S") WIDTH(1.5);
+ PARM(float, 1, "Pscale_S", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_S.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_H.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_H.label = PARM_LABEL("Pscale_H", "Pscale_H") WIDTH(1.5);
+ PARM(float, 1, "Pscale_H", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_H.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_SL.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_SL.label = PARM_LABEL("Pscale_SL", "Pscale_SL") WIDTH(1.5);
+ PARM(float, 1, "Pscale_SL", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_SL.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_SE.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_SE.label = PARM_LABEL("Pscale_SE", "Pscale_SE") WIDTH(1.5);
+ PARM(float, 1, "Pscale_SE", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_SE.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Color_On.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Color_On", "Color On") toggle VALUE(Color_On.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+Oxygen_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Oxygen_Color.label = PARM_LABEL("Oxygen Color", "Oxygen_Color") WIDTH(1.5);
+    PARM(float, 3, "Oxygen_Color", none, COLOR, "R,G,B") 
+	LABELREF(Oxygen_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Carbon_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Carbon_Color.label = PARM_LABEL("Carbon Color", "Carbon_Color") WIDTH(1.5);
+    PARM(float, 3, "Carbon_Color", none, COLOR, "R,G,B") 
+	LABELREF(Carbon_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Nitrogen_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Nitrogen_Color.label = PARM_LABEL("Nitrogen Color", "Nitrogen_Color") WIDTH(1.5);
+    PARM(float, 3, "Nitrogen_Color", none, COLOR, "R,G,B") 
+	LABELREF(Nitrogen_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Sulfur_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Sulfur_Color.label = PARM_LABEL("Sulfur Color", "Sulfur_Color") WIDTH(1.5);
+    PARM(float, 3, "Sulfur_Color", none, COLOR, "R,G,B") 
+	LABELREF(Sulfur_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Selenium_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Selenium_color.label = PARM_LABEL("Selenium Color", "Selenium_color") WIDTH(1.5);
+    PARM(float, 3, "Selenium_color", none, COLOR, "R,G,B") 
+	LABELREF(Selenium_color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Chlorine_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Chlorine_color.label = PARM_LABEL("Chlorine Color", "Chlorine_color") WIDTH(1.5);
+    PARM(float, 3, "Chlorine_color", none, COLOR, "R,G,B") 
+	LABELREF(Chlorine_color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Chain_Text.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Chain_Text", "Chain Text") toggle VALUE(Chain_Text.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Chain_Color.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Chain_Color", "Chain Color") toggle VALUE(Chain_Color.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+input.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ input.label = PARM_LABEL("Chain Isolate", "input") WIDTH(1.5);
+ PARM(integer, 1, "input", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(input.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Atomic Size"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Pscale_C.gad;		
+	    Pscale_O.gad;		
+	    Pscale_N.gad;		
+	    Pscale_S.gad;		
+	    Pscale_H.gad;		
+	    Pscale_SL.gad;		
+	    Pscale_SE.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Atomic Color"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Color_On.gad;		
+	    sepparm.gad;		
+	    Oxygen_Color.gad;		
+	    Carbon_Color.gad;		
+	    Nitrogen_Color.gad;		
+	    Sulfur_Color.gad;		
+	    Selenium_color.gad;		
+	    Chlorine_color.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Chain Information"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Chain_Text.gad;		
+	    Chain_Color.gad;		
+	    input.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    Atom_Total_Count.gad; 
+    Element_Count.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

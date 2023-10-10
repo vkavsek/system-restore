@@ -1,0 +1,95 @@
+// Magic: bc79b66e
+// Automatically generated PSI dialog (PSI version 19.5.435)
+// Sun Dec 18 19:04:38 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+orient.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    orient.label = PARM_LABEL_SIMPLE("Orientation", "orient") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    orient.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+radius.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   radius.label = PARM_LABEL("Radius", "radius") WIDTH(1.5);
+   PARM(float, 2, "radius", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(radius.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+divisions.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divisions.label = PARM_LABEL("Divisions", "divisions") WIDTH(1.5);
+ PARM(integer, 1, "divisions", none, none) RANGE(2,10)
+	 LABELREF(divisions.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+t.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   t.label = PARM_LABEL("Center", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    orient.gad; 
+    radius.gad; 
+    divisions.gad; 
+    t.gad; 
+    r.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

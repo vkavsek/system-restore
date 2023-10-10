@@ -1,0 +1,138 @@
+HIP
+{
+/media/vk/H_ssd/HOUDINI/Houdini DESKTOP/2022-/Rebelway/Fracture_101/frac_101_recovered_recovered_recovered_recovered_recovered.hiplc
+/media/vk/H_ssd/HOUDINI/HoudiniDESKTOP/2022-/Rebelway/Fracture_101/frac_101_recovered_recovered_recovered_recovered_recovered.hiplc
+/home/vk/Downloads/Wood_RnD_Example_File_v2.hiplc
+/media/vk/H_ssd/HOUDINI/HoudiniDESKTOP/2022-/Rebelway/Fracture_101/FRACTURE_MAIN.hiplc
+/home/vk/Desktop/WaterFX/waterFX.hiplc
+/home/vk/Desktop/Houdini/WaterFX_week01/waterFX.hiplc
+/home/vk/Desktop/Houdini/Dejana/backup/proj_hands_bak101.hiplc
+/home/vk/Downloads/intersection_analysis_01.hiplc
+/home/vk/Desktop/Houdini/Dejana/proj_hands.hiplc
+/home/vk/Desktop/Houdini/Sun/Filament-Based-Plasma/FilamentBasedPlasmaSupplementCode.hipnc
+/home/vk/Desktop/Houdini/Sun/sun.hiplc
+/home/vk/Desktop/Houdini/Sun/Filament-Based-Plasma/modified.hiplc
+}
+PIC
+{
+$HIP/src/smooth_sharp_tdpsdbcda/tdpsdbcda_4K_Albedo.jpg
+$HIP/src/smooth_sharp_tdpsdbcda/tdpsdbcda_4K_Albedo.rat
+$HIP/src/smooth_sharp_tdpscfcda/tdpscfcda_4K_Albedo.rat
+/run/media/vk/H_ssd/Programs/Megascans/Downloaded/surface/ground_gravel_tbxkajlk
+/run/media/vk/H_ssd/Programs/Megascans/Downloaded/surface/ground_gravel_tbxkajlk/tbxkajlk_4K_Albedo.rat
+$HFS/houdini/pic/hdri/HDRIHaven_lenong_1_2k.rat
+$HFS/houdini/pic/hdri/HDRIHaven_kiara_5_noon_2k.rat
+/run/media/vk/H_ssd/HOUDINI/HDRI/cloud_layers_4k.hdr
+$HOME/Downloads/meteor-museu-de-lemporda/source/ME2525_opt/ME2525_opt_ao_map.jpg
+$HOME/Downloads/meteor-museu-de-lemporda/source/ME2525_opt/ME2525_opt_normal_corregit.jpg
+$HOME/Downloads/meteor-museu-de-lemporda/source/ME2525_opt/ME2525_opt_corregit.jpg
+/run/media/vk/H_ssd/Programs/Megascans/Downloaded/surface/coal_debris_vbzoecbdy/vbzoecbdy_4K_Albedo.rat
+}
+GEO
+{
+$HIP/sim/ocean/v1/ocean_v1.$F4.bgeo.sc
+$HOME/Downloads/guppy/source/guppy_F/guppy_F.FBX
+$HOME/Downloads/Praying_Hands_3D_Model_-_Albrecht_Durer.usdz
+$HIP/geoUSD/ground.usd
+$HOME/Downloads/meteor-museu-de-lemporda/source/ME2525_opt/ME2525_corregit.obj
+$HOME/Desktop/Houdini/Sun/Filament-Based-Plasma/geo/2011-April-19.bgeo.sc
+$HOME/Desktop/Houdini/Sun/Filament-Based-Plasma/geo/Siggraph_Logo_curves.bgeo.sc
+$HOME/Desktop/Houdini/Sun/Filament-Based-Plasma/geo/Random_Flux_Data_curves.bgeo.sc
+$HOME/Desktop/Houdini/Sun/Filament-Based-Plasma/geo/Siggraph_Logo.bgeo.sc
+$HOME/Desktop/Houdini/Sun/Filament-Based-Plasma/geo/2011-Oct-21_curves.bgeo.sc
+$HIP/geo/Siggraph_Logo.bgeo.sc
+$HIP/geo/Random_Flux_Data.bgeo.sc
+}
+CLIP
+{
+$HIP/Downloads/Fegs Final.mp3
+$HOME/Downloads/Fegs Final.mp3
+$HOME/Downloads/Aya - Sean edit.wav
+$HOME/Music/MARE_mjuzik/Silicon.mp3
+$HOME/Music/MARE_mjuzik/dumek3.wav
+$HOME/Music/MARE_mjuzik/dumek za vida.wav
+$HOME/Music/MARE_mjuzik/dumek4.wav
+$HOME/Music/MARE_mjuzik/dumek za vida.mp3
+$HIP/src/dumek za vida.mp3
+$HIP/src/dumekforrest2.mp3
+$HIP/src/dumek_AUDACITY.wav
+}
+LUT
+{
+$HOME/Programs/OpenColorIO-Configs/aces_1.0.3/baked/houdini/Rec.709 for ACEScg Houdini.lut
+$HOME/Programs/OpenColorIO-Configs/aces_1.0.3/baked/houdini/Rec.709 for ACES2065-1 Houdini.lut
+$HOME/Programs/OpenColorIO-Configs/aces_1.0.3/baked/houdini/sRGB for ACES2065-1 Houdini.lut
+$HOME/Programs/OpenColorIO-Configs/aces_1.0.3/baked/houdini/sRGB (D60 sim.) for ACEScg Houdini.lut
+$HOME/Programs/OpenColorIO-Configs/aces_1.0.3/baked/houdini/sRGB for ACEScg Houdini.lut
+}
+FONT
+{
+Fira Sans Condensed Eight Regular
+Fira Sans Compressed Medium
+Nimbus Sans L
+Liberation Sans Bold
+Century Schoolbook L
+Century Schoolbook L Bold
+Courier
+Helvetica
+Helvetica-Bold
+Helvetica Bold
+Lato Bold
+Lato
+}
+OTL
+{
+/home/vk/houdini19.0/otls/sop_kickbase.dev.min_max_average.1.0.hdalc
+/opt/hfs19.5.303/houdini/help/examples/nodes/sop/magnet/MagnetBubbles.otl
+/opt/hfs19.5.303/houdini/help/examples/nodes/sop/magnet/MagnetDistortion.otl
+/home/vk/htoa/htoa-6.0.2.2_r01f7d08_houdini-19.0.531.py3/htoa-6.0.2.2_r01f7d08_houdini-19.0.531.py3/otls/arnold_light.otl
+/home/vk/htoa/htoa-6.0.2.2_r01f7d08_houdini-19.0.531.py3/htoa-6.0.2.2_r01f7d08_houdini-19.0.531.py3/otls/arnold_rop.otl
+$HOUDINI_USER_PREF_DIR/otls/sop_vk.dev.VK_Recursive_fracture.1.0.hdalc
+/opt/hfs19.5.435/houdini/help/examples/nodes/top/sendemail/SendAnEmail.hda
+$HOUDINI_USER_PREF_DIR/otls/sop_vk.dev.VK_Wood_Fracture.1.0.hdalc
+$HOUDINI_USER_PREF_DIR/otls/sop_vk.dev.VK_Wood_Upres.1.0.hdalc
+$HOUDINI_USER_PREF_DIR/otls/sop_vk.dev.VK_Compute_mass.1.0.hdalc
+$HOUDINI_USER_PREF_DIR/otls/sop_vk.dev.VK_Infection_solver.1.0.hdalc
+$HOUDINI_USER_PREF_DIR/otls/sop_vk.dev.VK_Random_Rotation.1.0.hdalc
+}
+MISC
+{
+$HIP/renders/r&d_3/r&d_$F4.exr
+$HIP/renders/r&d_3_$OS/r&d_$F4.exr
+$HIP/renders/r&d_4_$OS/r&d_$F4.exr
+$JOB/Desktop/Houdini/Dejana/renders/r&d_4_cam3/r&d_$F4.exr
+$JOB/Desktop/Houdini/Dejana/renders/r&d_4_cam3/r&d_*
+$HIP/video/$HIPNAME.r&d_4.`@pdg_index`.mp4
+$HIP/video/$HIPNAME.r&d_ripple.`@pdg_index`.mp4
+$JOB/Desktop/Houdini/Dejana/renders/ripple_render/ripple.$F4.png
+$JOB/Desktop/Houdini/Dejana/renders/ripple_render/ripple.*
+$HIP/renders/r&d_4_$OS/r&d_$F4.png
+$HIP/renders/r&d_5_$OS/r&d_$F4.png
+$HIP/render1/$HIPNAME.$OS.$F4.exr
+}
+SIM
+{
+$HIP/checkpoint/cache.$OS.$SF.sim
+$HIP/checkpoint/cache.dopnetCENTER_ATTRACT.$SF.sim
+$HIP/checkpoint_.15/cache.$OS.$SF.sim
+}
+PRJ
+{
+/home/vk/Desktop/Houdini/REBELWAY/week10/karma_101
+/home/vk/Desktop/Houdini/REBELWAY/week8/flip_fluid_002/assetPrep
+}
+DIRECTORY
+{
+$HIP/sim/water/flood_wedges
+$HIP/sim/water
+$HIP/geo/week2
+$HIP/sim/week2
+$HIP/wedging/sim/water
+$HIP/geo/temp
+$HIP/tmp
+$HIP/geo/ocean
+$HIP/sim/ocean_WW/
+$HIP/sim/ocean/
+$HIP/sim/
+$HIP/sim
+}

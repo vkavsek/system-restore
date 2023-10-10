@@ -1,0 +1,46 @@
+{
+	"stats":{
+		"start_time":1685345967,
+		"end_time":1685436219,
+		"idle_time":90075,
+		"log_id":"0x86765762-0x106C1A61-0x647456B0-0x000007A5",
+		"persistent_stats":{
+			"colors_scheme":"Smoke"
+		},
+		"flags":[
+		],
+		"counts":{
+			"tools/network/Object|object_geo":1,
+			"tools/network/Sop|sop_attribwrangle":2,
+			"hotkey/h.pane.textport.next":1,
+			"tools/network/Sop|sop_add":1,
+			"hotkey/h.pane.textport.prev":1,
+			"hotkey/h.pane.gview.state.view.frame_selection":1
+		},
+		"logs":{
+		},
+		"sums_and_counts":{
+		},
+		"strings":{
+		},
+		"checksum":"b93ccd5e6ff1ffb1bf52c270785699d6"
+	},
+	"machine_config":{
+		"houdini_major_version":"19",
+		"houdini_minor_version":"5",
+		"houdini_build_version":"534",
+		"application_name":"hindie",
+		"license_category":"Indie",
+		"platform":"linux-x86_64-gcc9.3",
+		"operating_system":"Fedora release 37 (Thirty Seven)",
+		"number_of_processors":16,
+		"system_memory":"31.28 GB",
+		"graphics_card":"NVIDIA GeForce RTX 2080 SUPER/PCIe/SSE2",
+		"graphics_card_version":"4.6.0 NVIDIA 530.30.02",
+		"mac_address_hash":"96798927defb7938d45916258a5c0d8a",
+		"user_config_version":20140523,
+		"system_resolution":"1920x1080",
+		"cpu_info":"AMD Ryzen 7 3700X 8-Core Processor",
+		"config_hash":"4173ab00e96c267ece8943225d8da6a7"
+	}
+}

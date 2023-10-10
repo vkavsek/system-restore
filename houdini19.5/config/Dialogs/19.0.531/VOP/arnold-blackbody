@@ -1,0 +1,92 @@
+// Magic: a0b9959d
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sat Apr 23 16:19:09 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+temperature.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ temperature.label = PARM_LABEL("Temperature", "temperature") WIDTH(1.5);
+ PARM(float, 1, "temperature", none, none) RANGE(0,1)
+	 LABELREF(temperature.label) HSTRETCH;
+
+    temperature.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(temperature.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+normalize.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("normalize", "Normalize") toggle VALUE(normalize.val);
+
+    { HSTRETCH }
+
+    normalize.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(normalize.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+intensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ intensity.label = PARM_LABEL("Intensity", "intensity") WIDTH(1.5);
+ PARM(float, 1, "intensity", none, none) RANGE(0,1)
+	 LABELREF(intensity.label) HSTRETCH;
+
+    intensity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(intensity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+rgba.gad = NULL { }
+r.gad = NULL { }
+g.gad = NULL { }
+b.gad = NULL { }
+a.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    temperature.gad; 
+    normalize.gad; 
+    intensity.gad; 
+    rgba.gad; 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+    a.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

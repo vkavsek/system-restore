@@ -1,0 +1,112 @@
+// Magic: a2b05aef
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Tue Apr 26 20:00:02 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+ar_filename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ ar_filename.label = PARM_LABEL("Geometry File", "ar_filename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "ar_filename") LABELREF(ar_filename.label)
+	VALUE(ar_filename.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(ar_filename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+ar_frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ar_frame.label = PARM_LABEL("Frame", "ar_frame") WIDTH(1.5);
+ PARM(float, 1, "ar_frame", none, none) RANGE(0,1)
+	 LABELREF(ar_frame.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ar_procedural_type.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    ar_procedural_type.label = PARM_LABEL("Procedural Type", "ar_procedural_type") WIDTH(1.5);
+    PARM_FIELD(string, "ar_procedural_type") VALUE(ar_procedural_type.val) 
+	LABELREF(ar_procedural_type.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ar_display_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Display As", "ar_display_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    ar_display_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ar_fps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ar_fps.label = PARM_LABEL("Frame Rate", "ar_fps") WIDTH(1.5);
+ PARM(float, 1, "ar_fps", none, none) RANGE(0,1)
+	 LABELREF(ar_fps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ar_layers.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    ar_layers.label = PARM_LABEL("Alembic layers", "ar_layers") WIDTH(1.5);
+    PARM_FIELD(string, "ar_layers") VALUE(ar_layers.val) 
+	LABELREF(ar_layers.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    ar_filename.gad; 
+    ar_frame.gad; 
+    ar_procedural_type.gad; 
+    ar_display_type.gad; 
+    ar_fps.gad; 
+    ar_layers.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

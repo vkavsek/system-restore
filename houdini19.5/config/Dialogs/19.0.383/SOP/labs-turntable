@@ -1,0 +1,72 @@
+// Magic: a786581c
+// Automatically generated PSI dialog (PSI version 19.0.383)
+// Mon Nov  1 20:44:35 2021
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+axis.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Axis", "axis") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    axis.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+num_turns.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ num_turns.label = PARM_LABEL("Number of Turns", "num_turns") WIDTH(1.5);
+ PARM(float, 1, "num_turns", none, none) RANGE(0,5)
+	 LABELREF(num_turns.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rotate_around_origin.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("rotate_around_origin", "Rotate Around Origin") toggle VALUE(rotate_around_origin.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    axis.gad; 
+    num_turns.gad; 
+    rotate_around_origin.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

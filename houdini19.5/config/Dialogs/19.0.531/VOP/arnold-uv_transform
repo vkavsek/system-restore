@@ -1,0 +1,510 @@
+// Magic: f4ec4b39
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Tue Apr 26 21:15:00 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+passthrough.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    passthrough.label = PARM_LABEL("Passthrough", "passthrough") WIDTH(1.5);
+    PARM(float, 4, "passthrough", none, COLOR, "R,G,B,A") 
+	LABELREF(passthrough.label) HSTRETCH;
+
+    passthrough.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(passthrough.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+uvset.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    uvset.label = PARM_LABEL("UV Set", "uvset") WIDTH(1.5);
+    PARM_FIELD(string, "uvset") VALUE(uvset.val) 
+	LABELREF(uvset.label) HSTRETCH;
+
+    uvset.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    uvset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(uvset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+unit.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Rotation Units", "unit") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    unit.menu;
+
+    { HSTRETCH }
+
+    unit.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(unit.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+scale_frame.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   scale_frame.label = PARM_LABEL("Scale Frame", "scale_frame") WIDTH(1.5);
+   PARM(float, 2, "scale_frame", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(scale_frame.label)
+	HSTRETCH;
+
+    scale_frame.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scale_frame.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+translate_frame.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   translate_frame.label = PARM_LABEL("Translate Frame", "translate_frame") WIDTH(1.5);
+   PARM(float, 2, "translate_frame", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(translate_frame.label)
+	HSTRETCH;
+
+    translate_frame.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(translate_frame.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+rotate_frame.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rotate_frame.label = PARM_LABEL("Rotate Frame", "rotate_frame") WIDTH(1.5);
+ PARM(float, 1, "rotate_frame", none, none) RANGE(-180,180)
+	 LABELREF(rotate_frame.label) HSTRETCH;
+
+    rotate_frame.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(rotate_frame.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+pivot_frame.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pivot_frame.label = PARM_LABEL("Pivot Frame", "pivot_frame") WIDTH(1.5);
+   PARM(float, 2, "pivot_frame", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(pivot_frame.label)
+	HSTRETCH;
+
+    pivot_frame.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(pivot_frame.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+sep.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+coverage.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   coverage.label = PARM_LABEL("Coverage", "coverage") WIDTH(1.5);
+   PARM(float, 2, "coverage", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(coverage.label)
+	HSTRETCH;
+
+    coverage.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coverage.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+wrap_frame_u.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Wrap U", "wrap_frame_u") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    wrap_frame_u.menu;
+
+    { HSTRETCH }
+
+    wrap_frame_u.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(wrap_frame_u.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+wrap_frame_v.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Wrap V", "wrap_frame_v") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    wrap_frame_v.menu;
+
+    { HSTRETCH }
+
+    wrap_frame_v.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(wrap_frame_v.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+wrap_frame_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    wrap_frame_color.label = PARM_LABEL("Wrap Color", "wrap_frame_color") WIDTH(1.5);
+    PARM(float, 4, "wrap_frame_color", none, COLOR, "R,G,B,A") 
+	LABELREF(wrap_frame_color.label) HSTRETCH;
+
+    wrap_frame_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(wrap_frame_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+repeat.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   repeat.label = PARM_LABEL("Repeat", "repeat") WIDTH(1.5);
+   PARM(float, 2, "repeat", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(repeat.label)
+	HSTRETCH;
+
+    repeat.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(repeat.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 2, "offset", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(offset.label)
+	HSTRETCH;
+
+    offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+rotate.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rotate.label = PARM_LABEL("Rotate", "rotate") WIDTH(1.5);
+ PARM(float, 1, "rotate", none, none) RANGE(-180,180)
+	 LABELREF(rotate.label) HSTRETCH;
+
+    rotate.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(rotate.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+pivot.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   pivot.label = PARM_LABEL("Pivot", "pivot") WIDTH(1.5);
+   PARM(float, 2, "pivot", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(pivot.label)
+	HSTRETCH;
+
+    pivot.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(pivot.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+noise.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   noise.label = PARM_LABEL("Noise", "noise") WIDTH(1.5);
+   PARM(float, 2, "noise", none, none, "#1,#2")
+	RANGE(0,1)  LABELREF(noise.label)
+	HSTRETCH;
+
+    noise.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(noise.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+mirror_u.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mirror_u", "Mirror U") toggle VALUE(mirror_u.val);
+
+    { HSTRETCH }
+
+    mirror_u.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mirror_u.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+mirror_v.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mirror_v", "Mirror V") toggle VALUE(mirror_v.val);
+
+    { HSTRETCH }
+
+    mirror_v.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mirror_v.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+flip_u.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("flip_u", "Flip U") toggle VALUE(flip_u.val);
+
+    { HSTRETCH }
+
+    flip_u.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(flip_u.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+flip_v.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("flip_v", "Flip V") toggle VALUE(flip_v.val);
+
+    { HSTRETCH }
+
+    flip_v.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(flip_v.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+swap_uv.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("swap_uv", "Swap U & V") toggle VALUE(swap_uv.val);
+
+    { HSTRETCH }
+
+    swap_uv.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(swap_uv.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+
+stagger.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("stagger", "Stagger") toggle VALUE(stagger.val);
+
+    { HSTRETCH }
+
+    stagger.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(stagger.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    { WIDTH(0.1) }
+}
+rgba.gad = NULL { }
+r.gad = NULL { }
+g.gad = NULL { }
+b.gad = NULL { }
+a.gad = NULL { }
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Frame"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    scale_frame.gad;		
+	    translate_frame.gad;		
+	    rotate_frame.gad;		
+	    pivot_frame.gad;		
+	    sep.gad;		
+	    coverage.gad;		
+	    wrap_frame_u.gad;		
+	    wrap_frame_v.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Transform"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    wrap_frame_color.gad;		
+	    repeat.gad;		
+	    offset.gad;		
+	    rotate.gad;		
+	    pivot.gad;		
+	    noise.gad;		
+	    mirror_u.gad;		
+	    mirror_v.gad;		
+	    flip_u.gad;		
+	    flip_v.gad;		
+	    swap_uv.gad;		
+	    stagger.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    passthrough.gad; 
+    uvset.gad; 
+    unit.gad; 
+    folder1.gad; 
+    rgba.gad; 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+    a.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

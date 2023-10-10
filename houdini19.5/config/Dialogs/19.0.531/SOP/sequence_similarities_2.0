@@ -1,0 +1,298 @@
+// Magic: 94ed6597
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May  8 18:40:38 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+Switch_sequence_comparision.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Switch_sequence_comparision", "Switch_sequence_comparision") toggle VALUE(Switch_sequence_comparision.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Switch_spacefilling.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Switch_spacefilling", "Switch_spacefilling") toggle VALUE(Switch_spacefilling.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+Isolate_ResSeq.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Isolate_ResSeq", "Isolate ResSeq") toggle VALUE(Isolate_ResSeq.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+reseq.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("reseq", "reseq") toggle VALUE(reseq.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Pscale_C.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_C.label = PARM_LABEL("Pscale_C", "Pscale_C") WIDTH(1.5);
+ PARM(float, 1, "Pscale_C", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_C.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_O.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_O.label = PARM_LABEL("Pscale_O", "Pscale_O") WIDTH(1.5);
+ PARM(float, 1, "Pscale_O", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_O.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_N.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_N.label = PARM_LABEL("Pscale_N", "Pscale_N") WIDTH(1.5);
+ PARM(float, 1, "Pscale_N", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_N.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_S.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_S.label = PARM_LABEL("Pscale_S", "Pscale_S") WIDTH(1.5);
+ PARM(float, 1, "Pscale_S", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_S.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Pscale_H.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Pscale_H.label = PARM_LABEL("Pscale_H", "Pscale_H") WIDTH(1.5);
+ PARM(float, 1, "Pscale_H", none, LOGSCALE) RANGE(0,10)
+	 LABELREF(Pscale_H.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Atomic_Color_On.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Atomic_Color_On", "Atomic Color On") toggle VALUE(Atomic_Color_On.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+Carbon_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Carbon_Color.label = PARM_LABEL("Carbon Color", "Carbon_Color") WIDTH(1.5);
+    PARM(float, 3, "Carbon_Color", none, COLOR, "R,G,B") 
+	LABELREF(Carbon_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Oxygen_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Oxygen_Color.label = PARM_LABEL("Oxygen Color", "Oxygen_Color") WIDTH(1.5);
+    PARM(float, 3, "Oxygen_Color", none, COLOR, "R,G,B") 
+	LABELREF(Oxygen_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Nitrogen_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Nitrogen_Color.label = PARM_LABEL("Nitrogen Color", "Nitrogen_Color") WIDTH(1.5);
+    PARM(float, 3, "Nitrogen_Color", none, COLOR, "R,G,B") 
+	LABELREF(Nitrogen_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+Color_Structure.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Color_Structure.label = PARM_LABEL("Color Structure", "Color_Structure") WIDTH(1.5);
+    PARM(float, 3, "Color_Structure", none, COLOR, "R,G,B") 
+	LABELREF(Color_Structure.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+ResSeq_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    ResSeq_Color.label = PARM_LABEL("ResSeq Color", "ResSeq_Color") WIDTH(1.5);
+    PARM(float, 3, "ResSeq_Color", none, COLOR, "R,G,B") 
+	LABELREF(ResSeq_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+xn__AtomSize_dia.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "xn__AtomSize_dia.gad"
+    { 
+	VALUE(xn__AtomSize_dia.gad.val) STRETCH(1,0)
+
+	TAB "Atom Size"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Pscale_C.gad;		
+	    Pscale_O.gad;		
+	    Pscale_N.gad;		
+	    Pscale_S.gad;		
+	    Pscale_H.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Element Color"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Atomic_Color_On.gad;		
+	    sepparm2.gad;		
+	    Carbon_Color.gad;		
+	    Oxygen_Color.gad;		
+	    Nitrogen_Color.gad;		
+	    sepparm.gad;		
+	    Color_Structure.gad;		
+	    ResSeq_Color.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    Switch_sequence_comparision.gad; 
+    Switch_spacefilling.gad; 
+    sepparm3.gad; 
+    Isolate_ResSeq.gad; 
+    reseq.gad; 
+    xn__AtomSize_dia.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

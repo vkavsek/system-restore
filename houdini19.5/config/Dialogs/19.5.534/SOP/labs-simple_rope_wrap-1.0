@@ -1,0 +1,352 @@
+// Magic: 78e4d968
+// Automatically generated PSI dialog (PSI version 19.5.534)
+// Mon Apr  3 12:34:50 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ length.label = PARM_LABEL("Resolution", "length") WIDTH(1.5);
+ PARM(float, 1, "length", none, none) RANGE(0.0050000000000000001,0.10000000000000001)
+	LOCK_RANGE_MIN LABELREF(length.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+inline.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+inline.gad = ROW
+{
+    
+    {  }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("inline", "Optimize Curves") toggle VALUE(inline.val);
+
+    {  }
+
+    {  }
+}
+
+inlinedist.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ inlinedist.label = PARM_LABEL("Tolerance", "inlinedist") ;
+ PARM(float, 1, "inlinedist", none, LOGSCALE) RANGE(0,0.10000000000000001)
+	 LABELREF(inlinedist.label) HSTRETCH;
+
+  {  }
+}
+}	// Template join.bot
+
+simulated.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+simulated.gad = ROW
+{
+    
+    {  }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("simulated", "Simulated") toggle VALUE(simulated.val);
+
+    {  }
+
+    {  }
+}
+
+quasistaticframes.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ quasistaticframes.label = PARM_LABEL("Frames", "quasistaticframes") ;
+ PARM(integer, 1, "quasistaticframes", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(quasistaticframes.label) HSTRETCH;
+
+  {  }
+}
+}	// Template join.bot
+
+shape.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+shape.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    shape.label = PARM_LABEL_SIMPLE("Style", "shape") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    shape.menu;
+
+    {  }
+
+    {  }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ scale.label = PARM_LABEL("Diameter", "scale") ;
+ PARM(float, 1, "scale", none, none) RANGE(0.01,1)
+	 LABELREF(scale.label) HSTRETCH;
+
+  {  }
+}
+}	// Template join.bot
+
+
+incroll.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ incroll.label = PARM_LABEL("Degrees Twist per Unit", "incroll") WIDTH(1.5);
+ PARM(float, 1, "incroll", none, none) RANGE(0,1000)
+	 LABELREF(incroll.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+divs.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divs.label = PARM_LABEL("Rows", "divs") WIDTH(1.5);
+ PARM(integer, 1, "divs", none, none) RANGE(3,50)
+	LOCK_RANGE_MIN LABELREF(divs.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cuspangle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cuspangle.label = PARM_LABEL("Cusp Angle", "cuspangle") WIDTH(1.5);
+ PARM(float, 1, "cuspangle", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(cuspangle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+uvscale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   uvscale.label = PARM_LABEL("UV Scale", "uvscale") WIDTH(1.5);
+   PARM(float, 2, "uvscale", none, none, "X,Y")
+	RANGE(0.10000000000000001,10)  LABELREF(uvscale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+uvrotation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ uvrotation.label = PARM_LABEL("UV Rotation", "uvrotation") WIDTH(1.5);
+ PARM(float, 1, "uvrotation", none, none) RANGE(-180,180)
+	 LABELREF(uvrotation.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+polyreduce.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("polyreduce", "Optimize Surface") toggle VALUE(polyreduce.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+percentage.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ percentage.label = PARM_LABEL("Percent To Keep", "percentage") WIDTH(1.5);
+ PARM(float, 1, "percentage", none, none) RANGE(0,100)
+	LOCK_RANGE LABELREF(percentage.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+qualitytolerance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ qualitytolerance.label = PARM_LABEL("Tolerance", "qualitytolerance") WIDTH(1.5);
+ PARM(float, 1, "qualitytolerance", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(qualitytolerance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+mass.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mass.label = PARM_LABEL("Mass", "mass") WIDTH(1.5);
+ PARM(float, 1, "mass", none, none) RANGE(0,10)
+	 LABELREF(mass.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stretchrestscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stretchrestscale.label = PARM_LABEL("Rest Length Scale", "stretchrestscale") WIDTH(1.5);
+ PARM(float, 1, "stretchrestscale", none, none) RANGE(0,2)
+	 LABELREF(stretchrestscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stretchstiffness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stretchstiffness.label = PARM_LABEL("Stretch Stiffness", "stretchstiffness") WIDTH(1.5);
+ PARM(float, 1, "stretchstiffness", none, none) RANGE(0,10)
+	 LABELREF(stretchstiffness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bendstiffness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bendstiffness.label = PARM_LABEL("Bend Stiffness", "bendstiffness") WIDTH(1.5);
+ PARM(float, 1, "bendstiffness", none, none) RANGE(0,10)
+	 LABELREF(bendstiffness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fd_simulationsettings.gad = 
+GROUP collapsible "Simulation Settings" flat   
+{
+    VALUE(fd_simulationsettings.gad.val) LAYOUT(vertical) HSTRETCH
+	    mass.gad;		
+	    stretchrestscale.gad;		
+	    stretchstiffness.gad;		
+	    bendstiffness.gad;		
+} 
+
+fd_optimization.gad = 
+GROUP collapsible "Optimization" flat   
+{
+    VALUE(fd_optimization.gad.val) LAYOUT(vertical) HSTRETCH
+	    polyreduce.gad;		
+	    percentage.gad;		
+	    qualitytolerance.gad;		
+} 
+
+fd_uv.gad = 
+
+GROUP simple "UV" flat 
+{ 
+    VALUE(fd_uv.gad.val) LAYOUT(vertical) HSTRETCH 
+	    uvscale.gad;		
+	    uvrotation.gad;		
+} 
+
+fd_geometry.gad = 
+
+GROUP simple "Geometry" flat 
+{ 
+    VALUE(fd_geometry.gad.val) LAYOUT(vertical) HSTRETCH 
+	    shape.row.join;		
+	    incroll.gad;		
+	    divs.gad;		
+	    cuspangle.gad;		
+} 
+
+fd_curve.gad = 
+
+GROUP simple "Curve" flat 
+{ 
+    VALUE(fd_curve.gad.val) LAYOUT(vertical) HSTRETCH 
+	    length.gad;		
+	    inline.row.join;		
+	    simulated.row.join;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    fd_curve.gad; 
+    fd_geometry.gad; 
+    fd_uv.gad; 
+    fd_optimization.gad; 
+    fd_simulationsettings.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

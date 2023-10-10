@@ -1,0 +1,121 @@
+// Magic: f2623252
+// Automatically generated PSI dialog (PSI version 19.5.493)
+// Mon Feb 27 15:37:34 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+pt_num.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pt_num.label = PARM_LABEL("PTnum  for trans. matrix", "pt_num") WIDTH(1.5);
+ PARM(integer, 1, "pt_num", none, none) RANGE(0,7)
+	LOCK_RANGE_MAX LABELREF(pt_num.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   s.label = PARM_LABEL("Scale down", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+labelparm.gad = NULL { }
+
+labelparm2.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+         LAYOUT(horizontal) HSTRETCH
+         { WIDTH(0.05) }
+         LABEL VALUE(labelparm2.val[0]) HSTRETCH;
+    }
+    SEPARATOR HEIGHT(0.02) BGCOLOR("GroupHeaderOpen0") LOOKFLAT;
+    { HEIGHT(0.05) }
+}
+
+voxelsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxelsize.label = PARM_LABEL("Voxel Size for volume scattering", "voxelsize") WIDTH(1.5);
+ PARM(float, 1, "voxelsize", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(voxelsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+npts.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ npts.label = PARM_LABEL("Fractures per piece", "npts") WIDTH(1.5);
+ PARM(integer, 1, "npts", none, none) RANGE(1,100000)
+	 LABELREF(npts.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+outside_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    outside_group.label = PARM_LABEL("Name Output Prefix", "outside_group") WIDTH(1.5);
+    PARM_FIELD(string, "outside_group") VALUE(outside_group.val) 
+	LABELREF(outside_group.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    pt_num.gad; 
+    s.gad; 
+    labelparm.gad; 
+    labelparm2.gad; 
+    voxelsize.gad; 
+    npts.gad; 
+    sepparm.gad; 
+    outside_group.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

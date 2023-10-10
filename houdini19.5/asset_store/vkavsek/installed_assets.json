@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "organization": {
+        "type": "folder",
+        "guid": "0xFE80927C-0x4C5A11EC-0xAA91216E-0xC2E1C429",
+        "name": "",
+        "entries": [
+            {
+                "type": "folder",
+                "guid": "0xFF95784E-0x4C5A11EC-0xAA91216E-0xC2E1C429",
+                "name": "Tool",
+                "entries": [
+                    {
+                        "type": "asset",
+                        "guid": "0xFF95784F-0x4C5A11EC-0xAA91216E-0xC2E1C429",
+                        "node_type_name": "igel::pen_tool::1.0",
+                        "descriptive_name": "IE|Pen Tool",
+                        "otl_file": "igel__pen_tool__1.0.otl",
+                        "icon": "igel__pen_tool__1.0.png",
+                        "description": "Tool for drawing bezier curves with familliar UX from other DCCs.",
+                        "default_folder": "Tool",
+                        "otl_dependents": [],
+                        "creator": " elovikov",
+                        "created_utc_timestamp": 1624348996,
+                        "version_sequence_number": 2,
+                        "rating": 5.0,
+                        "max_rating": 5,
+                        "num_votes": 9,
+                        "update_available": false
+                    }
+                ]
+            }
+        ]
+    }
+}

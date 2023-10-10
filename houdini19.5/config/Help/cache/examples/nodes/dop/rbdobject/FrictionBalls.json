@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["FrictionBalls"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates the friction parameter on an \nRBD Object."], "extent": [0, 67]}], "examplefor": "/nodes/dop/rbdobject", "examplefile": "/examples/nodes/dop/rbdobject/FrictionBalls.otl"}

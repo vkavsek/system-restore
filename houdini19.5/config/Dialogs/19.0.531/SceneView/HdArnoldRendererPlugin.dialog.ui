@@ -1,0 +1,531 @@
+// Magic: 21aa5aeb
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon May 23 11:48:39 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+enable_progressive_render.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_progressive_render", "Enable Progressive Render") toggle VALUE(enable_progressive_render.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+progressive_min_AA_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ progressive_min_AA_samples.label = PARM_LABEL("Progressive Render Minimum AA Samples", "progressive_min_AA_samples") WIDTH(1.5);
+ PARM(integer, 1, "progressive_min_AA_samples", none, none) RANGE(-4,4)
+	 LABELREF(progressive_min_AA_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+enable_adaptive_sampling.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_adaptive_sampling", "Enable Adaptive Sampling") toggle VALUE(enable_adaptive_sampling.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_gpu_rendering.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_gpu_rendering", "Enable GPU Rendering") toggle VALUE(enable_gpu_rendering.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+interactive_target_fps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ interactive_target_fps.label = PARM_LABEL("Interactive Target FPS", "interactive_target_fps") WIDTH(1.5);
+ PARM(float, 1, "interactive_target_fps", none, none) RANGE(1,60)
+	LOCK_RANGE_MIN LABELREF(interactive_target_fps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+interactive_target_fps_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ interactive_target_fps_min.label = PARM_LABEL("Interactive Target FPS Minimum", "interactive_target_fps_min") WIDTH(1.5);
+ PARM(float, 1, "interactive_target_fps_min", none, none) RANGE(1,30)
+	LOCK_RANGE_MIN LABELREF(interactive_target_fps_min.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+interactive_fps_min.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ interactive_fps_min.label = PARM_LABEL("Interactive FPS Minimum", "interactive_fps_min") WIDTH(1.5);
+ PARM(float, 1, "interactive_fps_min", none, none) RANGE(1,15)
+	LOCK_RANGE_MIN LABELREF(interactive_fps_min.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+threads.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ threads.label = PARM_LABEL("Number of Threads", "threads") WIDTH(1.5);
+ PARM(integer, 1, "threads", none, none) RANGE(-1,0)
+	 LABELREF(threads.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AA_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ AA_samples.label = PARM_LABEL("AA Samples", "AA_samples") WIDTH(1.5);
+ PARM(integer, 1, "AA_samples", none, none) RANGE(1,16)
+	 LABELREF(AA_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+AA_samples_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ AA_samples_max.label = PARM_LABEL("AA Samples Maximum", "AA_samples_max") WIDTH(1.5);
+ PARM(integer, 1, "AA_samples_max", none, none) RANGE(1,30)
+	 LABELREF(AA_samples_max.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_diffuse_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_diffuse_samples.label = PARM_LABEL("Diffuse Samples", "GI_diffuse_samples") WIDTH(1.5);
+ PARM(integer, 1, "GI_diffuse_samples", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_diffuse_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_specular_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_specular_samples.label = PARM_LABEL("Specular Samples", "GI_specular_samples") WIDTH(1.5);
+ PARM(integer, 1, "GI_specular_samples", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_specular_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_transmission_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_transmission_samples.label = PARM_LABEL("Transmission Samples", "GI_transmission_samples") WIDTH(1.5);
+ PARM(integer, 1, "GI_transmission_samples", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_transmission_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_subsurface_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_subsurface_samples.label = PARM_LABEL("Subsurface Samples", "GI_subsurface_samples") WIDTH(1.5);
+ PARM(integer, 1, "GI_subsurface_samples", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_subsurface_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_volume_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_volume_samples.label = PARM_LABEL("Volume Samples", "GI_volume_samples") WIDTH(1.5);
+ PARM(integer, 1, "GI_volume_samples", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_volume_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+auto_transparency_depth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ auto_transparency_depth.label = PARM_LABEL("Auto Trasparency Depth", "auto_transparency_depth") WIDTH(1.5);
+ PARM(integer, 1, "auto_transparency_depth", none, none) RANGE(0,50)
+	LOCK_RANGE_MIN LABELREF(auto_transparency_depth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_diffuse_depth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_diffuse_depth.label = PARM_LABEL("Diffuse Depth", "GI_diffuse_depth") WIDTH(1.5);
+ PARM(integer, 1, "GI_diffuse_depth", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_diffuse_depth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_specular_depth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_specular_depth.label = PARM_LABEL("Specular Depth", "GI_specular_depth") WIDTH(1.5);
+ PARM(integer, 1, "GI_specular_depth", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_specular_depth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_transmission_depth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_transmission_depth.label = PARM_LABEL("Transmission Depth", "GI_transmission_depth") WIDTH(1.5);
+ PARM(integer, 1, "GI_transmission_depth", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_transmission_depth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_volume_depth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_volume_depth.label = PARM_LABEL("Volume Depth", "GI_volume_depth") WIDTH(1.5);
+ PARM(integer, 1, "GI_volume_depth", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(GI_volume_depth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+GI_total_depth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ GI_total_depth.label = PARM_LABEL("Total Depth", "GI_total_depth") WIDTH(1.5);
+ PARM(integer, 1, "GI_total_depth", none, none) RANGE(0,20)
+	LOCK_RANGE_MIN LABELREF(GI_total_depth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ignore_textures.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_textures", "Ignore Textures") toggle VALUE(ignore_textures.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_shaders.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_shaders", "Ignore Shaders") toggle VALUE(ignore_shaders.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_atmosphere.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_atmosphere", "Ignore Atmosphere") toggle VALUE(ignore_atmosphere.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_lights.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_lights", "Ignore Lights") toggle VALUE(ignore_lights.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_shadows.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_shadows", "Ignore shadows") toggle VALUE(ignore_shadows.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_subdivision.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_subdivision", "Ignore Subdivision") toggle VALUE(ignore_subdivision.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_displacement.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_displacement", "Ignore Displacement") toggle VALUE(ignore_displacement.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_bump.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_bump", "Ignore Bump") toggle VALUE(ignore_bump.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_motion.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_motion", "Ignore Motion") toggle VALUE(ignore_motion.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_dof.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_dof", "Ignore DOF") toggle VALUE(ignore_dof.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_smoothing.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_smoothing", "Ignore Smooting") toggle VALUE(ignore_smoothing.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_sss.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_sss", "Ignore SSS") toggle VALUE(ignore_sss.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ignore_operators.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ignore_operators", "Ignore Operators") toggle VALUE(ignore_operators.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    enable_progressive_render.gad; 
+    progressive_min_AA_samples.gad; 
+    enable_adaptive_sampling.gad; 
+    enable_gpu_rendering.gad; 
+    interactive_target_fps.gad; 
+    interactive_target_fps_min.gad; 
+    interactive_fps_min.gad; 
+    threads.gad; 
+    AA_samples.gad; 
+    AA_samples_max.gad; 
+    GI_diffuse_samples.gad; 
+    GI_specular_samples.gad; 
+    GI_transmission_samples.gad; 
+    GI_subsurface_samples.gad; 
+    GI_volume_samples.gad; 
+    auto_transparency_depth.gad; 
+    GI_diffuse_depth.gad; 
+    GI_specular_depth.gad; 
+    GI_transmission_depth.gad; 
+    GI_volume_depth.gad; 
+    GI_total_depth.gad; 
+    ignore_textures.gad; 
+    ignore_shaders.gad; 
+    ignore_atmosphere.gad; 
+    ignore_lights.gad; 
+    ignore_shadows.gad; 
+    ignore_subdivision.gad; 
+    ignore_displacement.gad; 
+    ignore_bump.gad; 
+    ignore_motion.gad; 
+    ignore_dof.gad; 
+    ignore_smoothing.gad; 
+    ignore_sss.gad; 
+    ignore_operators.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

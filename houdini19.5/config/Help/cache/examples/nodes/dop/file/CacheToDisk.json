@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["CacheToDisk"]}, {"type": "para", "indent": 0, "text": ["This example shows how to use the File DOP to cache a simulation to\ndisk and read it back in."], "extent": [0, 94]}], "examplefor": "/nodes/dop/file", "examplefile": "/examples/nodes/dop/file/CacheToDisk.otl"}

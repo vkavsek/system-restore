@@ -1,0 +1,114 @@
+// Magic: f036572d
+// Automatically generated PSI dialog (PSI version 19.0.498)
+// Wed Jan 19 18:29:31 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+physics.row.join =		
+{
+
+  LAYOUT(horizontal) JUSTIFY(left, center) UNSCALABLE
+
+physics.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("physics", "Use Physics") toggle VALUE(physics.val);
+
+    {  }
+
+    {  }
+}
+
+drawsimguide.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("drawsimguide", "Draw Simulation Geometry") toggle VALUE(drawsimguide.val);
+
+    {  }
+
+    {  }
+}
+
+pivotmode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    PARM_LABEL_SIMPLE("Pivot Mode", "pivotmode") ;
+    { WIDTH(0.09) }
+
+    pivotmode.menu;
+
+    {  }
+
+    {  }
+}
+
+localxform.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("localxform", "Local Transform") toggle VALUE(localxform.val);
+
+    {  }
+
+    {  }
+}
+
+addphysics.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("addphysics", "Add Physics")
+	push VALUE(addphysics.val);
+
+    {  }
+}
+
+removephysics.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("removephysics", "Remove Physics")
+	push VALUE(removephysics.val);
+
+    {  }
+}
+
+displayproxies.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("displayproxies", "Display Proxies") toggle VALUE(displayproxies.val);
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+
+# warning cpp warning: "GenV3/subdialog.top.ui":11 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH JUSTIFY(left, center) UNSCALABLE
+    physics.row.join; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val_) HSTRETCH
+
+    dialog_norm.gad;
+}

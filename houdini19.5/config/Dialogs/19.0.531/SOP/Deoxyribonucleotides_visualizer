@@ -1,0 +1,440 @@
+// Magic: dac71a36
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May  8 18:40:12 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+newparameter.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group_Names", "newparameter") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    newparameter.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+voxelsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxelsize.label = PARM_LABEL("Voxel Size", "voxelsize") WIDTH(1.5);
+ PARM(float, 1, "voxelsize", none, none) RANGE(1.0000000000000001e-05,5)
+	LOCK_RANGE_MIN LABELREF(voxelsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radiusscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radiusscale.label = PARM_LABEL("Point Radius Scale", "radiusscale") WIDTH(1.5);
+ PARM(float, 1, "radiusscale", none, none) RANGE(0,2)
+	LOCK_RANGE_MIN LABELREF(radiusscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+SpaceFilling_On.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("SpaceFilling_On", "SpaceFilling On") toggle VALUE(SpaceFilling_On.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+searchradius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ searchradius.label = PARM_LABEL("Search Radius", "searchradius") WIDTH(1.5);
+ PARM(float, 1, "searchradius", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(searchradius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxsearchpoints.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxsearchpoints.label = PARM_LABEL("Max Search Points", "maxsearchpoints") WIDTH(1.5);
+ PARM(integer, 1, "maxsearchpoints", none, none) RANGE(0,1000)
+	LOCK_RANGE_MIN LABELREF(maxsearchpoints.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+Connection_Radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Connection_Radius.label = PARM_LABEL("Connection Radius", "Connection_Radius") WIDTH(1.5);
+ PARM(float, 1, "Connection_Radius", none, none) RANGE(0,10)
+	 LABELREF(Connection_Radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    color.label = PARM_LABEL("Color", "color") WIDTH(1.5);
+    PARM(float, 3, "color", none, COLOR, "R,G,B") 
+	LABELREF(color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Pscale_C.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   Pscale_C.label = PARM_LABEL("Pscale_C", "Pscale_C") WIDTH(1.5);
+   PARM(float, 2, "Pscale_C", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(Pscale_C.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Pscale_O.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   Pscale_O.label = PARM_LABEL("Pscale_O", "Pscale_O") WIDTH(1.5);
+   PARM(float, 4, "Pscale_O", none, none, "#1,#2,#3,#4")
+	RANGE(0,10)  LABELREF(Pscale_O.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Pscale_N.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   Pscale_N.label = PARM_LABEL("Pscale_N", "Pscale_N") WIDTH(1.5);
+   PARM(float, 4, "Pscale_N", none, none, "#1,#2,#3,#4")
+	RANGE(0,10)  LABELREF(Pscale_N.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Pscale_S.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   Pscale_S.label = PARM_LABEL("Pscale_S", "Pscale_S") WIDTH(1.5);
+   PARM(float, 4, "Pscale_S", none, none, "#1,#2,#3,#4")
+	RANGE(0,10)  LABELREF(Pscale_S.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Pscale_H.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   Pscale_H.label = PARM_LABEL("Pscale_H", "Pscale_H") WIDTH(1.5);
+   PARM(float, 4, "Pscale_H", none, none, "#1,#2,#3,#4")
+	RANGE(0,10)  LABELREF(Pscale_H.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Carbon_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Carbon_Color.label = PARM_LABEL("Carbon Color", "Carbon_Color") WIDTH(1.5);
+    PARM(float, 3, "Carbon_Color", none, COLOR, "R,G,B") 
+	LABELREF(Carbon_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Oxygen_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Oxygen_Color.label = PARM_LABEL("Oxygen Color", "Oxygen_Color") WIDTH(1.5);
+    PARM(float, 3, "Oxygen_Color", none, COLOR, "R,G,B") 
+	LABELREF(Oxygen_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Nitrogen_Color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Nitrogen_Color.label = PARM_LABEL("Nitrogen Color", "Nitrogen_Color") WIDTH(1.5);
+    PARM(float, 3, "Nitrogen_Color", none, COLOR, "R,G,B") 
+	LABELREF(Nitrogen_Color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+Color_On.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Color_On", "Color On") toggle VALUE(Color_On.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+
+xn__Total_Atom_Count_f2a.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xn__Total_Atom_Count_f2a", "Total Atom Count:") toggle VALUE(xn__Total_Atom_Count_f2a.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__Deoxyribonucleotides_18a.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xn__Deoxyribonucleotides_18a", "Deoxyribonucleotides:") toggle VALUE(xn__Deoxyribonucleotides_18a.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn___Molecule_Total_Count_pbb.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xn___Molecule_Total_Count_pbb", " Molecule Total Count:") toggle VALUE(xn___Molecule_Total_Count_pbb.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Elements.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Elements", "Elements") toggle VALUE(Elements.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+xn__MoleculeModeling_kpa.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "xn__MoleculeModeling_kpa.gad"
+    { 
+	VALUE(xn__MoleculeModeling_kpa.gad.val) STRETCH(1,0)
+
+	TAB "Molecule Modeling"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    voxelsize.gad;		
+	    radiusscale.gad;		
+	    sepparm.gad;		
+	    SpaceFilling_On.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Connections"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    searchradius.gad;		
+	    maxsearchpoints.gad;		
+	    sepparm2.gad;		
+	    Connection_Radius.gad;		
+	    color.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Atom Size"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Pscale_C.gad;		
+	    Pscale_O.gad;		
+	    Pscale_N.gad;		
+	    Pscale_S.gad;		
+	    Pscale_H.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+xn__CreateModel_2ka.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "xn__CreateModel_2ka.gad"
+    { 
+	VALUE(xn__CreateModel_2ka.gad.val) STRETCH(1,0)
+
+	TAB "Create Model"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    xn__MoleculeModeling_kpa.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Element Visualizer"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    Carbon_Color.gad;		
+	    Oxygen_Color.gad;		
+	    Nitrogen_Color.gad;		
+	    sepparm3.gad;		
+	    Color_On.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    newparameter.gad; 
+    xn__CreateModel_2ka.gad; 
+    sepparm4.gad; 
+    xn__Total_Atom_Count_f2a.gad; 
+    xn__Deoxyribonucleotides_18a.gad; 
+    xn___Molecule_Total_Count_pbb.gad; 
+    Elements.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

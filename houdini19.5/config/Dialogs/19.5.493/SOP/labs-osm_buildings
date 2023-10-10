@@ -1,0 +1,141 @@
+// Magic: e9acd94e
+// Automatically generated PSI dialog (PSI version 19.5.493)
+// Fri Mar  3 09:50:07 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+level_height.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ level_height.label = PARM_LABEL("Standard Level Height", "level_height") WIDTH(1.5);
+ PARM(float, 1, "level_height", none, none) RANGE(0,10)
+	 LABELREF(level_height.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+shrink_factor.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ shrink_factor.label = PARM_LABEL("Shrink Footprints", "shrink_factor") WIDTH(1.5);
+ PARM(float, 1, "shrink_factor", none, none) RANGE(0,10)
+	 LABELREF(shrink_factor.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+boolean_buildings.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("boolean_buildings", "Boolean Buildings") toggle VALUE(boolean_buildings.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+visualize_buildings.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visualize_buildings", "Visualize Buildings") toggle VALUE(visualize_buildings.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+gen_nodata.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("gen_nodata", "Generate Buildings on Missing Data") toggle VALUE(gen_nodata.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Random Seed", "seed") WIDTH(1.5);
+ PARM(float, 1, "seed", none, none) RANGE(0,10)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+height_range.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   height_range.label = PARM_LABEL("Height Range", "height_range") WIDTH(1.5);
+   PARM(float, 2, "height_range", none, none, "Min,Max")
+	RANGE(0,10)  LABELREF(height_range.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+up_axis.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   up_axis.label = PARM_LABEL("Up Axis", "up_axis") WIDTH(1.5);
+   PARM(float, 3, "up_axis", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(up_axis.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    level_height.gad; 
+    shrink_factor.gad; 
+    boolean_buildings.gad; 
+    visualize_buildings.gad; 
+    gen_nodata.gad; 
+    seed.gad; 
+    height_range.gad; 
+    up_axis.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

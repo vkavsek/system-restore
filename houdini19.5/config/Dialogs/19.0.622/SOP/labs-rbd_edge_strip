@@ -1,0 +1,67 @@
+// Magic: 5e65d5c4
+// Automatically generated PSI dialog (PSI version 19.0.622)
+// Tue Jul 26 10:36:54 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+mergepieces.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mergepieces", "Merge Pieces") toggle VALUE(mergepieces.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+insideedgewidth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ insideedgewidth.label = PARM_LABEL("Inside Edge Width", "insideedgewidth") WIDTH(1.5);
+ PARM(float, 1, "insideedgewidth", none, none) RANGE(0,10)
+	 LABELREF(insideedgewidth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+outsideedgewidth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ outsideedgewidth.label = PARM_LABEL("Outside Edge Width", "outsideedgewidth") WIDTH(1.5);
+ PARM(float, 1, "outsideedgewidth", none, none) RANGE(0,10)
+	 LABELREF(outsideedgewidth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    mergepieces.gad; 
+    insideedgewidth.gad; 
+    outsideedgewidth.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

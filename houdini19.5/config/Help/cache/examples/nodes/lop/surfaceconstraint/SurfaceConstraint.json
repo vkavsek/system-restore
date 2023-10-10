@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["SurfaceConstraint"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates various uses of the Surface Constraint LOP."], "extent": [0, 70]}], "examplefor": "/nodes/lop/surfaceconstraint", "examplefile": "/examples/nodes/lop/surfaceconstraint/SurfaceConstraint.otl"}

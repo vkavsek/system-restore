@@ -1,0 +1,407 @@
+// Magic: b1c132f8
+// Automatically generated PSI dialog (PSI version 19.5.493)
+// Thu Feb 23 18:08:42 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+partitionby.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    partitionby.label = PARM_LABEL_SIMPLE("Partition By", "partitionby") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    partitionby.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+connectivity.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("connectivity", "3D Connectivity") toggle VALUE(connectivity.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+uvislands.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("uvislands", "3D and UV Connectivity") toggle VALUE(uvislands.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bucketsize.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bucketsize", "Bucket Size") toggle VALUE(bucketsize.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+targetbucket.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ targetbucket.label = PARM_LABEL("Target Bucket Size", "targetbucket") WIDTH(1.5);
+ PARM(integer, 1, "targetbucket", none, none) RANGE(1,100)
+	 LABELREF(targetbucket.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+clusterseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ clusterseed.label = PARM_LABEL("Bucket Seed", "clusterseed") WIDTH(1.5);
+ PARM(float, 1, "clusterseed", none, none) RANGE(0,10)
+	 LABELREF(clusterseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+customattname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    customattname.label = PARM_LABEL("Attribute Name", "customattname") WIDTH(1.5);
+    PARM_FIELD(string, "customattname") VALUE(customattname.val) 
+	LABELREF(customattname.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+visualizepieces.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visualizepieces", "Visualize Partitions") toggle VALUE(visualizepieces.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm3.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+
+remeshtarget.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    remeshtarget.label = PARM_LABEL_SIMPLE("Remesh Target Type", "remeshtarget") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    remeshtarget.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+targetedgetemp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ targetedgetemp.label = PARM_LABEL("Target Edge Length", "targetedgetemp") WIDTH(1.5);
+ PARM(float, 1, "targetedgetemp", none, none) RANGE(5.0000000000000002e-05,0.5)
+	LOCK_RANGE_MIN LABELREF(targetedgetemp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+edgemult.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ edgemult.label = PARM_LABEL("Edge Length Ratio", "edgemult") WIDTH(1.5);
+ PARM(float, 1, "edgemult", none, none) RANGE(0,10)
+	 LABELREF(edgemult.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+targetpolycount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ targetpolycount.label = PARM_LABEL("Target Polycount", "targetpolycount") WIDTH(1.5);
+ PARM(integer, 1, "targetpolycount", none, none) RANGE(0,2000000)
+	LOCK_RANGE_MIN LABELREF(targetpolycount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+polymult.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ polymult.label = PARM_LABEL("Polycount Ratio", "polymult") WIDTH(1.5);
+ PARM(float, 1, "polymult", none, none) RANGE(0,10)
+	 LABELREF(polymult.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+targetlengthmin.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ targetlengthmin.label = PARM_LABEL("Target Edge Length Min", "targetlengthmin") WIDTH(1.5);
+ PARM(float, 1, "targetlengthmin", none, none) RANGE(0.001,0.5)
+	LOCK_RANGE_MIN LABELREF(targetlengthmin.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+targetlengthmax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ targetlengthmax.label = PARM_LABEL("Target Edge Length Max", "targetlengthmax") WIDTH(1.5);
+ PARM(float, 1, "targetlengthmax", none, none) RANGE(0.001,0.5)
+	LOCK_RANGE_MIN LABELREF(targetlengthmax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+gradation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gradation.label = PARM_LABEL("Gradation", "gradation") WIDTH(1.5);
+ PARM(float, 1, "gradation", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(gradation.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+remeshiterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ remeshiterations.label = PARM_LABEL("Remesh Iterations", "remeshiterations") WIDTH(1.5);
+ PARM(integer, 1, "remeshiterations", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(remeshiterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+smoothing.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothing.label = PARM_LABEL("Smoothing", "smoothing") WIDTH(1.5);
+ PARM(float, 1, "smoothing", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(smoothing.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+remeshseams.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("remeshseams", "Remesh Seams") toggle VALUE(remeshseams.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fusepieces.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fusepieces", "Fuse Remaining Seams") toggle VALUE(fusepieces.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+recomputenormals.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("recomputenormals", "Recompute Normals") toggle VALUE(recomputenormals.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fd_post.gad = 
+
+GROUP simple "Post-processing" flat 
+{ 
+    VALUE(fd_post.gad.val) LAYOUT(vertical) HSTRETCH 
+	    remeshseams.gad;		
+	    fusepieces.gad;		
+	    recomputenormals.gad;		
+} 
+
+fd_adaptive.gad = 
+
+{
+    VALUE(fd_adaptive.gad.val) LAYOUT(vertical) HSTRETCH SPACING(0.02)
+	    targetlengthmin.gad;		
+	    targetlengthmax.gad;		
+	    gradation.gad;		
+} 
+
+fd_remesh.gad = 
+
+GROUP simple "Remesh" flat 
+{ 
+    VALUE(fd_remesh.gad.val) LAYOUT(vertical) HSTRETCH 
+	    remeshtarget.gad;		
+	    targetedgetemp.gad;		
+	    edgemult.gad;		
+	    targetpolycount.gad;		
+	    polymult.gad;		
+	    fd_adaptive.gad;		
+	    sepparm.gad;		
+	    remeshiterations.gad;		
+	    smoothing.gad;		
+} 
+
+fd_connectivity.gad = 
+
+{
+    VALUE(fd_connectivity.gad.val) LAYOUT(vertical) HSTRETCH SPACING(0.02)
+	    connectivity.gad;		
+	    uvislands.gad;		
+	    bucketsize.gad;		
+	    targetbucket.gad;		
+	    clusterseed.gad;		
+} 
+
+fd_parallelprocess.gad = 
+
+GROUP simple "Parallel Processing" flat 
+{ 
+    VALUE(fd_parallelprocess.gad.val) LAYOUT(vertical) HSTRETCH 
+	    partitionby.gad;		
+	    fd_connectivity.gad;		
+	    customattname.gad;		
+	    sepparm2.gad;		
+	    visualizepieces.gad;		
+	    sepparm3.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    fd_parallelprocess.gad; 
+    fd_remesh.gad; 
+    fd_post.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

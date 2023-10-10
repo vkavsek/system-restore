@@ -1,0 +1,421 @@
+// Magic: 89caf2a6
+// Automatically generated PSI dialog (PSI version 19.5.435)
+// Fri Dec 30 01:20:02 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+alwaysTrue.gad = NULL { }
+thirdinput.gad = NULL { }
+
+simulationRange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   simulationRange.label = PARM_LABEL("Simulation Range", "simulationRange") WIDTH(1.5);
+   PARM(integer, 2, "simulationRange", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(simulationRange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bVisChunks.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bVisChunks", "Visualize Chunks") toggle VALUE(bVisChunks.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+sepparm2.gad = NULL { }
+
+bFuseSurface.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bFuseSurface", "Remove Insides") toggle VALUE(bFuseSurface.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fuseDistance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fuseDistance.label = PARM_LABEL("Fuse Distance", "fuseDistance") WIDTH(1.5);
+ PARM(float, 1, "fuseDistance", none, none) RANGE(0,0.0050000000000000001)
+	 LABELREF(fuseDistance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bCuspPolygons.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bCuspPolygons", "Cusp Polygons") toggle VALUE(bCuspPolygons.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mCuspMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    mCuspMode.label = PARM_LABEL_SIMPLE("Cusp", "mCuspMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mCuspMode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+insideprims.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    insideprims.label = PARM_LABEL("Inside Primitives", "insideprims") WIDTH(1.5);
+    PARM_FIELD(string, "insideprims") VALUE(insideprims.val) 
+	LABELREF(insideprims.label) HSTRETCH;
+
+    insideprims.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+cuspangle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+cuspangle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ cuspangle.label = PARM_LABEL("Inside Cusp Angle", "cuspangle") WIDTH(1.5);
+ PARM(float, 1, "cuspangle", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(cuspangle.label) HSTRETCH;
+
+  {  }
+}
+
+method2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    method2.menu;
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+
+outsideprims.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    outsideprims.label = PARM_LABEL("Outside Primitives", "outsideprims") WIDTH(1.5);
+    PARM_FIELD(string, "outsideprims") VALUE(outsideprims.val) 
+	LABELREF(outsideprims.label) HSTRETCH;
+
+    outsideprims.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+cuspangle2.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+cuspangle2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ cuspangle2.label = PARM_LABEL("Outside Cusp Angle", "cuspangle2") WIDTH(1.5);
+ PARM(float, 1, "cuspangle2", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(cuspangle2.label) HSTRETCH;
+
+  {  }
+}
+
+method3.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    method3.menu;
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+cuspAngle.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+cuspAngle.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   cuspAngle.label = PARM_LABEL( "Cusp Angle", "cuspAngle" ) WIDTH(1.5);
+   PARM(float, 1, "cuspAngle", none, none) RANGE(0, 180)
+	LABELREF( cuspAngle.label ) HSTRETCH;
+
+   {  }
+}
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    method.menu;
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+
+bGenerateName.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bGenerateName", "Generate Name") toggle VALUE(bGenerateName.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+newName.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    newName.label = PARM_LABEL("Name", "newName") WIDTH(1.5);
+    PARM_FIELD(string, "newName") VALUE(newName.val) 
+	LABELREF(newName.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+optimizeIntoChunks.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("optimizeIntoChunks", "Optimize Pieces Into Chunks") toggle VALUE(optimizeIntoChunks.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bFreezeThreshold.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bFreezeThreshold", "Freeze Threshold") toggle VALUE(bFreezeThreshold.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+freezeThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ freezeThreshold.label = PARM_LABEL("Freeze Threshold", "freezeThreshold") WIDTH(1.5);
+ PARM(float, 1, "freezeThreshold", none, none) RANGE(0,10)
+	 LABELREF(freezeThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bBoundsAdjust.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bBoundsAdjust", "Clamped Bounds") toggle VALUE(bBoundsAdjust.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+clampPos.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   clampPos.label = PARM_LABEL("Clamp Position", "clampPos") WIDTH(1.5);
+   PARM(float, 3, "clampPos", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(clampPos.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+attribname.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attribname.label = PARM_LABEL("Transfer Attributes", "attribname") WIDTH(1.5);
+    PARM_FIELD(string, "attribname") VALUE(attribname.val) 
+	LABELREF(attribname.label) HSTRETCH;
+
+    attribname.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+folder0.gad = 
+
+GROUP simple "Advanced" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    optimizeIntoChunks.gad;		
+	    bFreezeThreshold.gad;		
+	    freezeThreshold.gad;		
+	    bBoundsAdjust.gad;		
+	    clampPos.gad;		
+	    attribname.gad;		
+} 
+
+folder5.gad = 
+
+GROUP simple "Piece Names" flat 
+{ 
+    VALUE(folder5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    bGenerateName.gad;		
+	    newName.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "Cusping" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    bCuspPolygons.gad;		
+	    mCuspMode.gad;		
+	    insideprims.gad;		
+	    cuspangle.row.join;		
+	    outsideprims.gad;		
+	    cuspangle2.row.join;		
+	    cuspAngle.row.join;		
+} 
+
+folder4.gad = 
+
+GROUP simple "Insides" flat 
+{ 
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    bFuseSurface.gad;		
+	    fuseDistance.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Cleanup Properties" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    folder4.gad;		
+	    folder3.gad;		
+	    folder5.gad;		
+	    folder0.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Basic" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    simulationRange.gad;		
+	    bVisChunks.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    alwaysTrue.gad; 
+    thirdinput.gad; 
+    folder2.gad; 
+    sepparm2.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

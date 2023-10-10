@@ -1,0 +1,763 @@
+// Magic: 9b0c4747
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May 22 23:01:41 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+shapeselect.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Shape Selection", "shapeselect") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    shapeselect.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+circpointnum.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ circpointnum.label = PARM_LABEL("Number of Points", "circpointnum") WIDTH(1.5);
+ PARM(integer, 1, "circpointnum", none, none) RANGE(20,256)
+	 LABELREF(circpointnum.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+triangletype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Triangle Type", "triangletype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    triangletype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+isoscelesratio.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ isoscelesratio.label = PARM_LABEL("Isosceles Base Ratio", "isoscelesratio") WIDTH(1.5);
+ PARM(float, 1, "isoscelesratio", none, none) RANGE(0,10)
+	 LABELREF(isoscelesratio.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+polysides.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ polysides.label = PARM_LABEL("Number of Sides", "polysides") WIDTH(1.5);
+ PARM(integer, 1, "polysides", none, none) RANGE(5,16)
+	 LABELREF(polysides.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+starspokes.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ starspokes.label = PARM_LABEL("Number of Spokes", "starspokes") WIDTH(1.5);
+ PARM(integer, 1, "starspokes", none, none) RANGE(5,20)
+	 LABELREF(starspokes.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+starpinchbloat.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ starpinchbloat.label = PARM_LABEL("Pinch/Bloat", "starpinchbloat") WIDTH(1.5);
+ PARM(float, 1, "starpinchbloat", none, none) RANGE(0.10000000000000001,1.2)
+	 LABELREF(starpinchbloat.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+roundpolysides.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ roundpolysides.label = PARM_LABEL("Number of Sides", "roundpolysides") WIDTH(1.5);
+ PARM(integer, 1, "roundpolysides", none, none) RANGE(5,16)
+	 LABELREF(roundpolysides.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+roundpolypinchbloat.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ roundpolypinchbloat.label = PARM_LABEL("Pinch/Bloat", "roundpolypinchbloat") WIDTH(1.5);
+ PARM(float, 1, "roundpolypinchbloat", none, none) RANGE(0.40000000000000002,40)
+	 LABELREF(roundpolypinchbloat.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cloverspokes.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cloverspokes.label = PARM_LABEL("Number of Spokes", "cloverspokes") WIDTH(1.5);
+ PARM(integer, 1, "cloverspokes", none, none) RANGE(1,20)
+	 LABELREF(cloverspokes.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cloverpinchbloat.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cloverpinchbloat.label = PARM_LABEL("Pinch/Bloat", "cloverpinchbloat") WIDTH(1.5);
+ PARM(float, 1, "cloverpinchbloat", none, none) RANGE(0.10000000000000001,10)
+	 LABELREF(cloverpinchbloat.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cloverspokelook.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cloverspokelook.label = PARM_LABEL("Spoke Look", "cloverspokelook") WIDTH(1.5);
+ PARM(float, 1, "cloverspokelook", none, none) RANGE(0.5,256)
+	 LABELREF(cloverspokelook.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+flowerspokes.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ flowerspokes.label = PARM_LABEL("Number of Spokes", "flowerspokes") WIDTH(1.5);
+ PARM(integer, 1, "flowerspokes", none, none) RANGE(2,20)
+	 LABELREF(flowerspokes.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+flowerpinchbloat.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ flowerpinchbloat.label = PARM_LABEL("Pinch/Bloat", "flowerpinchbloat") WIDTH(1.5);
+ PARM(float, 1, "flowerpinchbloat", none, none) RANGE(0.050000000000000003,5)
+	 LABELREF(flowerpinchbloat.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+flowerspokelook.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ flowerspokelook.label = PARM_LABEL("Spoke Look", "flowerspokelook") WIDTH(1.5);
+ PARM(float, 1, "flowerspokelook", none, none) RANGE(2,2.7999999999999998)
+	 LABELREF(flowerspokelook.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sunspokes.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sunspokes.label = PARM_LABEL("Number of Spokes", "sunspokes") WIDTH(1.5);
+ PARM(integer, 1, "sunspokes", none, none) RANGE(5,20)
+	 LABELREF(sunspokes.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sunpinchbloat.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sunpinchbloat.label = PARM_LABEL("Pinch/Bloat", "sunpinchbloat") WIDTH(1.5);
+ PARM(float, 1, "sunpinchbloat", none, none) RANGE(0.085000000000000006,4.5)
+	 LABELREF(sunpinchbloat.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+eyepinchbloat.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ eyepinchbloat.label = PARM_LABEL("Pinch/Bloat", "eyepinchbloat") WIDTH(1.5);
+ PARM(float, 1, "eyepinchbloat", none, none) RANGE(0.25,1.8)
+	 LABELREF(eyepinchbloat.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+teardroppinchbloat.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ teardroppinchbloat.label = PARM_LABEL("Pinch/Bloat", "teardroppinchbloat") WIDTH(1.5);
+ PARM(float, 1, "teardroppinchbloat", none, none) RANGE(0.10000000000000001,1.3999999999999999)
+	 LABELREF(teardroppinchbloat.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+custompointnum.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ custompointnum.label = PARM_LABEL("Number of Points", "custompointnum") WIDTH(1.5);
+ PARM(integer, 1, "custompointnum", none, none) RANGE(128,4096)
+	 LABELREF(custompointnum.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+customa.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ customa.label = PARM_LABEL("a", "customa") WIDTH(1.5);
+ PARM(float, 1, "customa", none, none) RANGE(0.050000000000000003,10)
+	 LABELREF(customa.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+customb.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ customb.label = PARM_LABEL("b", "customb") WIDTH(1.5);
+ PARM(float, 1, "customb", none, none) RANGE(0.050000000000000003,10)
+	 LABELREF(customb.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+customm.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ customm.label = PARM_LABEL("m", "customm") WIDTH(1.5);
+ PARM(float, 1, "customm", none, none) RANGE(1,10)
+	 LABELREF(customm.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+customn1.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ customn1.label = PARM_LABEL("n1", "customn1") WIDTH(1.5);
+ PARM(float, 1, "customn1", none, none) RANGE(0.25,10)
+	 LABELREF(customn1.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+customn2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ customn2.label = PARM_LABEL("n2", "customn2") WIDTH(1.5);
+ PARM(float, 1, "customn2", none, none) RANGE(0.25,10)
+	 LABELREF(customn2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+customn3.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ customn3.label = PARM_LABEL("n3", "customn3") WIDTH(1.5);
+ PARM(float, 1, "customn3", none, none) RANGE(0.25,10)
+	 LABELREF(customn3.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+width.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ width.label = PARM_LABEL("Width", "width") WIDTH(1.5);
+ PARM(float, 1, "width", none, none) RANGE(0,10)
+	 LABELREF(width.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+height.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height.label = PARM_LABEL("Height", "height") WIDTH(1.5);
+ PARM(float, 1, "height", none, none) RANGE(0,10)
+	 LABELREF(height.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fillshape.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fillshape", "Fill Shape") toggle VALUE(fillshape.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+roundcorners.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("roundcorners", "Rounded Corners") toggle VALUE(roundcorners.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+distance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ distance.label = PARM_LABEL("Distance", "distance") WIDTH(1.5);
+ PARM(float, 1, "distance", none, none) RANGE(0.01,1)
+	 LABELREF(distance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+divisions.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divisions.label = PARM_LABEL("Divisions", "divisions") WIDTH(1.5);
+ PARM(integer, 1, "divisions", none, none) RANGE(2,12)
+	 LABELREF(divisions.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+resample.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("resample", "Resample") toggle VALUE(resample.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+seglength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seglength.label = PARM_LABEL("Segment Length", "seglength") WIDTH(1.5);
+ PARM(float, 1, "seglength", none, none) RANGE(0.01,1)
+	 LABELREF(seglength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+treatpolysas.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Treat Polygons As", "treatpolysas") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    treatpolysas.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+triangulate.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("triangulate", "Triangulate") toggle VALUE(triangulate.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sizing.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Edge Lengths", "sizing") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    sizing.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+targetsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ targetsize.label = PARM_LABEL("Target Size", "targetsize") WIDTH(1.5);
+ PARM(float, 1, "targetsize", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(targetsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+minsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minsize.label = PARM_LABEL("Min Size", "minsize") WIDTH(1.5);
+ PARM(float, 1, "minsize", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(minsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxsize.label = PARM_LABEL("Max Size", "maxsize") WIDTH(1.5);
+ PARM(float, 1, "maxsize", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(maxsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+trianglu.gad = 
+
+GROUP simple "Triangulate" flat 
+{ 
+    VALUE(trianglu.gad.val) LAYOUT(vertical) HSTRETCH 
+	    triangulate.gad;		
+	    sizing.gad;		
+	    targetsize.gad;		
+	    minsize.gad;		
+	    maxsize.gad;		
+} 
+
+resamp.gad = 
+
+GROUP simple "Resample" flat 
+{ 
+    VALUE(resamp.gad.val) LAYOUT(vertical) HSTRETCH 
+	    resample.gad;		
+	    seglength.gad;		
+	    treatpolysas.gad;		
+} 
+
+roundedcorners.gad = 
+
+GROUP simple "Rounded Corners" flat 
+{ 
+    VALUE(roundedcorners.gad.val) LAYOUT(vertical) HSTRETCH 
+	    roundcorners.gad;		
+	    distance.gad;		
+	    divisions.gad;		
+} 
+
+shapebasics.gad = 
+
+GROUP simple "Shape Basics" flat 
+{ 
+    VALUE(shapebasics.gad.val) LAYOUT(vertical) HSTRETCH 
+	    width.gad;		
+	    height.gad;		
+	    fillshape.gad;		
+} 
+
+custom.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "custom.gad"
+    { 
+	VALUE(custom.gad.val) STRETCH(1,0)
+
+	TAB "Custom Parameters"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    custompointnum.gad;		
+	    customa.gad;		
+	    customb.gad;		
+	    customm.gad;		
+	    customn1.gad;		
+	    customn2.gad;		
+	    customn3.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+teardrop.gad = 
+
+GROUP simple "Teardrop" flat 
+{ 
+    VALUE(teardrop.gad.val) LAYOUT(vertical) HSTRETCH 
+	    teardroppinchbloat.gad;		
+} 
+
+eye.gad = 
+
+GROUP simple "Eye" flat 
+{ 
+    VALUE(eye.gad.val) LAYOUT(vertical) HSTRETCH 
+	    eyepinchbloat.gad;		
+} 
+
+sunburst.gad = 
+
+GROUP simple "Sunburst" flat 
+{ 
+    VALUE(sunburst.gad.val) LAYOUT(vertical) HSTRETCH 
+	    sunspokes.gad;		
+	    sunpinchbloat.gad;		
+} 
+
+flower.gad = 
+
+GROUP simple "Flower" flat 
+{ 
+    VALUE(flower.gad.val) LAYOUT(vertical) HSTRETCH 
+	    flowerspokes.gad;		
+	    flowerpinchbloat.gad;		
+	    flowerspokelook.gad;		
+} 
+
+clover.gad = 
+
+GROUP simple "Clover" flat 
+{ 
+    VALUE(clover.gad.val) LAYOUT(vertical) HSTRETCH 
+	    cloverspokes.gad;		
+	    cloverpinchbloat.gad;		
+	    cloverspokelook.gad;		
+} 
+
+roundedpoly.gad = 
+
+GROUP simple "Rounded Polygon" flat 
+{ 
+    VALUE(roundedpoly.gad.val) LAYOUT(vertical) HSTRETCH 
+	    roundpolysides.gad;		
+	    roundpolypinchbloat.gad;		
+} 
+
+star.gad = 
+
+GROUP simple "Star" flat 
+{ 
+    VALUE(star.gad.val) LAYOUT(vertical) HSTRETCH 
+	    starspokes.gad;		
+	    starpinchbloat.gad;		
+} 
+
+polygon.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "polygon.gad"
+    { 
+	VALUE(polygon.gad.val) STRETCH(1,0)
+
+	TAB "Polygon"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    polysides.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+triangle.gad = 
+
+GROUP simple "Triangle" flat 
+{ 
+    VALUE(triangle.gad.val) LAYOUT(vertical) HSTRETCH 
+	    triangletype.gad;		
+	    isoscelesratio.gad;		
+} 
+
+circle.gad = 
+
+GROUP simple "Circle" flat 
+{ 
+    VALUE(circle.gad.val) LAYOUT(vertical) HSTRETCH 
+	    circpointnum.gad;		
+} 
+
+shapesettings.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "shapesettings.gad"
+    { 
+	VALUE(shapesettings.gad.val) STRETCH(1,0)
+
+	TAB "Shape Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    shapeselect.gad;		
+	    circle.gad;		
+	    triangle.gad;		
+	    polygon.gad;		
+	    star.gad;		
+	    roundedpoly.gad;		
+	    clover.gad;		
+	    flower.gad;		
+	    sunburst.gad;		
+	    eye.gad;		
+	    teardrop.gad;		
+	    custom.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    shapesettings.gad; 
+    shapebasics.gad; 
+    roundedcorners.gad; 
+    resamp.gad; 
+    trianglu.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

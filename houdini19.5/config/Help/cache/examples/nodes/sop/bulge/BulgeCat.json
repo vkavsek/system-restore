@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["BulgeCat"]}, {"type": "para", "indent": 0, "text": ["Create a simple cat head by using the Bulge SOP combined with metaballs and a NURBS sphere."], "extent": [0, 92]}], "examplefor": "/nodes/sop/bulge", "examplefile": "/examples/nodes/sop/bulge/BulgeCat.otl"}

@@ -1,0 +1,88 @@
+// Magic: eeb66e9
+// Automatically generated PSI dialog (PSI version 19.0.498)
+// Fri Feb 11 09:59:02 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+r.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ r.label = PARM_LABEL("R", "r") WIDTH(1.5);
+ PARM(float, 1, "r", none, none) RANGE(0,1)
+	 LABELREF(r.label) HSTRETCH;
+
+    r.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(r.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+g.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ g.label = PARM_LABEL("G", "g") WIDTH(1.5);
+ PARM(float, 1, "g", none, none) RANGE(0,1)
+	 LABELREF(g.label) HSTRETCH;
+
+    g.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(g.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+
+b.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ b.label = PARM_LABEL("B", "b") WIDTH(1.5);
+ PARM(float, 1, "b", none, none) RANGE(0,1)
+	 LABELREF(b.label) HSTRETCH;
+
+    b.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(b.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+  { WIDTH(0.1) }
+}
+rgb.gad = NULL { }
+r.gad = NULL { }
+g.gad = NULL { }
+b.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+    rgb.gad; 
+    r.gad; 
+    g.gad; 
+    b.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

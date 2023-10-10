@@ -1,0 +1,277 @@
+// Magic: 9c6b9d9e
+// Automatically generated PSI dialog (PSI version 19.5.435)
+// Fri Dec 30 01:07:59 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+foin.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+        LAYOUT(horizontal) HSTRETCH
+        { WIDTH(1.5) }
+        { WIDTH(0.08) }
+        LABEL VALUE(foin.val[0]) HSTRETCH;
+    }
+    { HEIGHT(0.05) }
+}
+
+sepparm.gad = 
+
+{
+
+    LAYOUT(vertical) HSTRETCH
+
+    { HEIGHT(0.070590) }
+}
+
+targetsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ targetsize.label = PARM_LABEL("Remesh Target Size", "targetsize") WIDTH(1.5);
+ PARM(float, 1, "targetsize", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(targetsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+remview.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("remview", "Remesh view") toggle VALUE(remview.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+nhead.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+         LAYOUT(horizontal) HSTRETCH
+         { WIDTH(0.05) }
+         LABEL VALUE(nhead.val[0]) HSTRETCH;
+    }
+    SEPARATOR HEIGHT(0.02) BGCOLOR("GroupHeaderOpen0") LOOKFLAT;
+    { HEIGHT(0.05) }
+}
+
+thresholddist.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ thresholddist.label = PARM_LABEL("Distance Threshold", "thresholddist") WIDTH(1.5);
+ PARM(float, 1, "thresholddist", none, none) RANGE(0,10)
+	 LABELREF(thresholddist.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+blendwidth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ blendwidth.label = PARM_LABEL("Blend Width", "blendwidth") WIDTH(1.5);
+ PARM(float, 1, "blendwidth", none, none) RANGE(0,10)
+	 LABELREF(blendwidth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+nhead2.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+         LAYOUT(horizontal) HSTRETCH
+         { WIDTH(0.05) }
+         LABEL VALUE(nhead2.val[0]) HSTRETCH;
+    }
+    SEPARATOR HEIGHT(0.02) BGCOLOR("GroupHeaderOpen0") LOOKFLAT;
+    { HEIGHT(0.05) }
+}
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Noise View") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    type.label = PARM_LABEL_SIMPLE("Noise Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+freq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   freq.label = PARM_LABEL("Frequency", "freq") WIDTH(1.5);
+   PARM(float, 3, "freq", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(freq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 3, "offset", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+amp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amp.label = PARM_LABEL("Amplitude", "amp") WIDTH(1.5);
+ PARM(float, 1, "amp", none, none) RANGE(-1,1)
+	 LABELREF(amp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vohe.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+         LAYOUT(horizontal) HSTRETCH
+         { WIDTH(0.05) }
+         LABEL VALUE(vohe.val[0]) HSTRETCH;
+    }
+    SEPARATOR HEIGHT(0.02) BGCOLOR("GroupHeaderOpen0") LOOKFLAT;
+    { HEIGHT(0.05) }
+}
+
+voxelsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxelsize.label = PARM_LABEL("Voxel Size", "voxelsize") WIDTH(1.5);
+ PARM(float, 1, "voxelsize", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(voxelsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vohe2.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+         LAYOUT(horizontal) HSTRETCH
+         { WIDTH(0.05) }
+         LABEL VALUE(vohe2.val[0]) HSTRETCH;
+    }
+    SEPARATOR HEIGHT(0.02) BGCOLOR("GroupHeaderOpen0") LOOKFLAT;
+    { HEIGHT(0.05) }
+}
+
+move_to_rest.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ move_to_rest.label = PARM_LABEL("Move To Rest", "move_to_rest") WIDTH(1.5);
+ PARM(float, 1, "move_to_rest", none, none) RANGE(0,1)
+	 LABELREF(move_to_rest.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    foin.gad; 
+    sepparm.gad; 
+    targetsize.gad; 
+    remview.gad; 
+    nhead.gad; 
+    thresholddist.gad; 
+    blendwidth.gad; 
+    nhead2.gad; 
+    input.gad; 
+    type.gad; 
+    freq.gad; 
+    offset.gad; 
+    amp.gad; 
+    rough.gad; 
+    vohe.gad; 
+    voxelsize.gad; 
+    vohe2.gad; 
+    move_to_rest.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

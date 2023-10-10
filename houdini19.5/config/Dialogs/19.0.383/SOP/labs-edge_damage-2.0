@@ -1,0 +1,781 @@
+// Magic: eb88e799
+// Automatically generated PSI dialog (PSI version 19.0.383)
+// Wed Nov  3 21:50:59 2021
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+damagemode.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+damagemode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Method", "damagemode") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    damagemode.buttonstrip;
+
+    {  }
+
+    {  }
+}
+
+visualize_damage.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visualize_damage", "Visualize Damage") toggle VALUE(visualize_damage.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+seed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seed.label = PARM_LABEL("Seed", "seed") WIDTH(1.5);
+ PARM(float, 1, "seed", none, none) RANGE(0,100)
+	 LABELREF(seed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+mask_attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    mask_attribute.label = PARM_LABEL("Mask Attribute", "mask_attribute") WIDTH(1.5);
+    PARM_FIELD(string, "mask_attribute") VALUE(mask_attribute.val) 
+	LABELREF(mask_attribute.label) HSTRETCH;
+
+    mask_attribute.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+amount_damage.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amount_damage.label = PARM_LABEL("Amount", "amount_damage") WIDTH(1.5);
+ PARM(float, 1, "amount_damage", none, none) RANGE(0,20)
+	 LABELREF(amount_damage.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vdb_damage_quality.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ vdb_damage_quality.label = PARM_LABEL("Resolution", "vdb_damage_quality") WIDTH(1.5);
+ PARM(float, 1, "vdb_damage_quality", none, none) RANGE(0,1)
+	 LABELREF(vdb_damage_quality.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Process Input") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vdb_direction.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ vdb_direction.label = PARM_LABEL("Direction", "vdb_direction") WIDTH(1.5);
+ PARM(float, 1, "vdb_direction", none, none) RANGE(-1,1)
+	 LABELREF(vdb_direction.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+vdb_mask_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ vdb_mask_amount.label = PARM_LABEL("Mask Strength", "vdb_mask_amount") WIDTH(1.5);
+ PARM(float, 1, "vdb_mask_amount", none, none) RANGE(0,1)
+	 LABELREF(vdb_mask_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+boolean_normal.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ boolean_normal.label = PARM_LABEL("Cusp Angle", "boolean_normal") WIDTH(1.5);
+ PARM(float, 1, "boolean_normal", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(boolean_normal.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colors_samples.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ colors_samples.label = PARM_LABEL("Samples", "colors_samples") WIDTH(1.5);
+ PARM(integer, 1, "colors_samples", none, none) RANGE(1,32)
+	LOCK_RANGE_MIN LABELREF(colors_samples.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colors_relax.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ colors_relax.label = PARM_LABEL("Relax", "colors_relax") WIDTH(1.5);
+ PARM(integer, 1, "colors_relax", none, none) RANGE(0,100)
+	 LABELREF(colors_relax.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colors_curve_tolerance.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   colors_curve_tolerance.label = PARM_LABEL( "Curvature Tolerance", "colors_curve_tolerance" ) WIDTH(1.5);
+   PARM(float, 1, "colors_curve_tolerance", none, none) RANGE(0, 20)
+	LABELREF( colors_curve_tolerance.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+colors_contrast.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ colors_contrast.label = PARM_LABEL("Contrast", "colors_contrast") WIDTH(1.5);
+ PARM(float, 1, "colors_contrast", none, none) RANGE(1,5)
+	 LABELREF(colors_contrast.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colors_brightness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ colors_brightness.label = PARM_LABEL("Brightness", "colors_brightness") WIDTH(1.5);
+ PARM(float, 1, "colors_brightness", none, none) RANGE(0.5,10)
+	 LABELREF(colors_brightness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colors_ramp.si_rampedit = FLOAT_RAMP VALUE(colors_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+colors_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	colors_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(colors_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+colors_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(colors_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(colors_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    colors_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(colors_ramp.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    colors_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(colors_ramp.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+colors_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    colors_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	colors_ramp.buttons.gad VSTRETCH;
+
+	colors_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+colors_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Ramp", "colors_ramp");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(colors_ramp.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(colors_ramp.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	colors_ramp.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	colors_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(colors_ramp.hideparms.val) HSTRETCH
+	    colors_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+enable_voxel.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_voxel", "Voxelize") toggle VALUE(enable_voxel.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+voxel_res.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxel_res.label = PARM_LABEL("Voxel Size", "voxel_res") WIDTH(1.5);
+ PARM(float, 1, "voxel_res", none, none) RANGE(0.00050000000000000001,0.10000000000000001)
+	 LABELREF(voxel_res.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+voxel_smooth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxel_smooth.label = PARM_LABEL("Smoothing Iterations", "voxel_smooth") WIDTH(1.5);
+ PARM(integer, 1, "voxel_smooth", none, none) RANGE(0,20)
+	 LABELREF(voxel_smooth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+adv_loop_over.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("adv_loop_over", "Per Piece") toggle VALUE(adv_loop_over.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+adv_auto_name.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("adv_auto_name", "Create Piece Attribute") toggle VALUE(adv_auto_name.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+adv_attribute_loop.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    adv_attribute_loop.label = PARM_LABEL("Piece Attribute", "adv_attribute_loop") WIDTH(1.5);
+    PARM_FIELD(string, "adv_attribute_loop") VALUE(adv_attribute_loop.val) 
+	LABELREF(adv_attribute_loop.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+adv_boolean_loop.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("adv_boolean_loop", "Union") toggle VALUE(adv_boolean_loop.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_displace.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_displace", "Displacement") toggle VALUE(enable_displace.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+displace.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ displace.label = PARM_LABEL("Amount", "displace") WIDTH(1.5);
+ PARM(float, 1, "displace", none, none) RANGE(-1,1)
+	 LABELREF(displace.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+blur.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ blur.label = PARM_LABEL("Blur", "blur") WIDTH(1.5);
+ PARM(integer, 1, "blur", none, none) RANGE(0,100)
+	 LABELREF(blur.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+blur_range.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ blur_range.label = PARM_LABEL("Blur Range", "blur_range") WIDTH(1.5);
+ PARM(integer, 1, "blur_range", none, none) RANGE(0,10)
+	 LABELREF(blur_range.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+sharpen.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sharpen.label = PARM_LABEL("Sharpen", "sharpen") WIDTH(1.5);
+ PARM(float, 1, "sharpen", none, none) RANGE(0,1)
+	 LABELREF(sharpen.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sharpen_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sharpen_amount.label = PARM_LABEL("Sharpening Iterations", "sharpen_amount") WIDTH(1.5);
+ PARM(integer, 1, "sharpen_amount", none, none) RANGE(0,1000)
+	 LABELREF(sharpen_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+enable_noise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_noise", "Noise") toggle VALUE(enable_noise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+centernoise.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("centernoise", "Center Noise") toggle VALUE(centernoise.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+noise_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ noise_amount.label = PARM_LABEL("Height", "noise_amount") WIDTH(1.5);
+ PARM(float, 1, "noise_amount", none, none) RANGE(0,5)
+	 LABELREF(noise_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noise_size.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ noise_size.label = PARM_LABEL("Element Size", "noise_size") WIDTH(1.5);
+ PARM(float, 1, "noise_size", none, none) RANGE(0,5)
+	 LABELREF(noise_size.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noise_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Noise Type", "noise_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    noise_type.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+noise_rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ noise_rough.label = PARM_LABEL("Roughness", "noise_rough") WIDTH(1.5);
+ PARM(float, 1, "noise_rough", none, none) RANGE(0,1)
+	 LABELREF(noise_rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+post_blur.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ post_blur.label = PARM_LABEL("Post Blur", "post_blur") WIDTH(1.5);
+ PARM(float, 1, "post_blur", none, none) RANGE(0,50)
+	LOCK_RANGE_MIN LABELREF(post_blur.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+enable_normal.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+enable_normal.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+enable_normal.gad = PARM_BUTTON("enable_normal", "") toggle VALUE(enable_normal.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+normal_amount.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ normal_amount.label = PARM_LABEL("Normal", "normal_amount") WIDTH(1.32);
+ PARM(float, 1, "normal_amount", none, none) RANGE(0,180)
+	LOCK_RANGE LABELREF(normal_amount.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+extract_largest.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("extract_largest", "Extract Largest Piece") toggle VALUE(extract_largest.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder6.gad = 
+GROUP collapsible "Post Processing" flat  
+{
+    VALUE(folder6.gad.val) LAYOUT(vertical) HSTRETCH
+	    post_blur.gad;		
+	    enable_normal.row.join;		
+	    extract_largest.gad;		
+} 
+
+folder3_2.gad = 
+
+GROUP simple "Noise" flat 
+{ 
+    VALUE(folder3_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_noise.gad;		
+	    centernoise.gad;		
+	    noise_amount.gad;		
+	    noise_size.gad;		
+	    noise_type.gad;		
+	    noise_rough.gad;		
+} 
+
+folder4.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH
+	    blur.gad;		
+	    blur_range.gad;		
+	    sepparm.gad;		
+	    sharpen.gad;		
+	    sharpen_amount.gad;		
+} 
+
+folder3_3.gad = 
+
+GROUP simple "Displacement" flat 
+{ 
+    VALUE(folder3_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_displace.gad;		
+	    displace.gad;		
+	    folder4.gad;		
+} 
+
+folder2.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH
+	    adv_loop_over.gad;		
+	    adv_auto_name.gad;		
+	    adv_attribute_loop.gad;		
+	    adv_boolean_loop.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "Voxelization" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    enable_voxel.gad;		
+	    voxel_res.gad;		
+	    voxel_smooth.gad;		
+	    folder2.gad;		
+} 
+
+folder0.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH
+	    colors_samples.gad;		
+	    colors_relax.gad;		
+	    colors_curve_tolerance.gad;		
+	    colors_contrast.gad;		
+	    colors_brightness.gad;		
+	    colors_ramp.gad;		
+} 
+
+folder7.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder7.gad.val) LAYOUT(vertical) HSTRETCH
+	    input.gad;		
+	    vdb_direction.gad;		
+	    sepparm4.gad;		
+	    vdb_mask_amount.gad;		
+	    boolean_normal.gad;		
+} 
+
+folder3_1.gad = 
+
+GROUP simple "Damage Controls" flat 
+{ 
+    VALUE(folder3_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    amount_damage.gad;		
+	    vdb_damage_quality.gad;		
+	    folder7.gad;		
+	    folder0.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    damagemode.row.join; 
+    seed.gad; 
+    mask_attribute.gad; 
+    folder3_1.gad; 
+    folder3.gad; 
+    folder3_3.gad; 
+    folder3_2.gad; 
+    folder6.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

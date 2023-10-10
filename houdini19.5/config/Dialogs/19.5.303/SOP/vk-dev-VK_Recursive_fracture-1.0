@@ -1,0 +1,370 @@
+// Magic: e1a1a797
+// Automatically generated PSI dialog (PSI version 19.5.303)
+// Thu Dec  8 17:58:35 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+attrib_loop.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    attrib_loop.label = PARM_LABEL("Loop Attrib", "attrib_loop") WIDTH(1.5);
+    PARM_FIELD(string, "attrib_loop") VALUE(attrib_loop.val) 
+	LABELREF(attrib_loop.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+noiselab.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+         LAYOUT(horizontal) HSTRETCH
+         { WIDTH(0.05) }
+         LABEL VALUE(noiselab.val[0]) HSTRETCH;
+    }
+    SEPARATOR HEIGHT(0.02) BGCOLOR("GroupHeaderOpen0") LOOKFLAT;
+    { HEIGHT(0.05) }
+}
+
+freq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   freq.label = PARM_LABEL("Frequency", "freq") WIDTH(1.5);
+   PARM(float, 3, "freq", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(freq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 3, "offset", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+amp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amp.label = PARM_LABEL("Amplitude", "amp") WIDTH(1.5);
+ PARM(float, 1, "amp", none, none) RANGE(0,0.20000000000000001)
+	 LABELREF(amp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+rough.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noisetype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    noisetype.label = PARM_LABEL_SIMPLE("Noise Type", "noisetype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    noisetype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+voxelsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxelsize.label = PARM_LABEL("Volume voxel size", "voxelsize") WIDTH(1.5);
+ PARM(float, 1, "voxelsize", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(voxelsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noiselab2.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+         LAYOUT(horizontal) HSTRETCH
+         { WIDTH(0.05) }
+         LABEL VALUE(noiselab2.val[0]) HSTRETCH;
+    }
+    SEPARATOR HEIGHT(0.02) BGCOLOR("GroupHeaderOpen0") LOOKFLAT;
+    { HEIGHT(0.05) }
+}
+
+freq4.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   freq4.label = PARM_LABEL("Frequency", "freq4") WIDTH(1.5);
+   PARM(float, 3, "freq4", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(freq4.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+offset4.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offset4.label = PARM_LABEL("Offset", "offset4") WIDTH(1.5);
+   PARM(float, 3, "offset4", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(offset4.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+amp2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ amp2.label = PARM_LABEL("Amplitude", "amp2") WIDTH(1.5);
+ PARM(float, 1, "amp2", none, none) RANGE(0,1)
+	 LABELREF(amp2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+noisetype2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    noisetype2.label = PARM_LABEL_SIMPLE("Noise Type", "noisetype2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    noisetype2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+rough2.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ rough2.label = PARM_LABEL("Roughness", "rough2") WIDTH(1.5);
+ PARM(float, 1, "rough2", none, none) RANGE(0,1)
+	 LABELREF(rough2.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+Volume.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Volume", "Volume preview") toggle VALUE(Volume.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+npts.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ npts.label = PARM_LABEL("Scatter points", "npts") WIDTH(1.5);
+ PARM(integer, 1, "npts", none, none) RANGE(1,100000)
+	 LABELREF(npts.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+emergencylimit.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ emergencylimit.label = PARM_LABEL("Max Point Limit", "emergencylimit") WIDTH(1.5);
+ PARM(integer, 1, "emergencylimit", none, none) RANGE(1000,10000000)
+	 LABELREF(emergencylimit.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Pt Jitter Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+axisscale.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   axisscale.label = PARM_LABEL("Pt Jitter Axis Scales", "axisscale") WIDTH(1.5);
+   PARM(float, 3, "axisscale", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(axisscale.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+scatterseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scatterseed.label = PARM_LABEL("Scatter seed offset", "scatterseed") WIDTH(1.5);
+ PARM(float, 1, "scatterseed", none, none) RANGE(-10,10)
+	 LABELREF(scatterseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+input.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("input", "Scatter preview") toggle VALUE(input.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+folder1.gad = 
+
+{
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH SPACING(0.02)
+	    noiselab.gad;		
+	    freq.gad;		
+	    offset.gad;		
+	    amp.gad;		
+	    rough.gad;		
+	    noisetype.gad;		
+} 
+
+folder0.gad = 
+GROUP collapsible "Fracture controls" flat   
+{
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH
+	    folder1.gad;		
+	    sepparm2.gad;		
+	    voxelsize.gad;		
+	    noiselab2.gad;		
+	    freq4.gad;		
+	    offset4.gad;		
+	    amp2.gad;		
+	    noisetype2.gad;		
+	    rough2.gad;		
+	    Volume.gad;		
+	    sepparm.gad;		
+	    npts.gad;		
+	    emergencylimit.gad;		
+	    scale.gad;		
+	    axisscale.gad;		
+	    scatterseed.gad;		
+	    input.gad;		
+} 
+
+maincont.gad = 
+GROUP collapsible "Main Controls" flat   
+{
+    VALUE(maincont.gad.val) LAYOUT(vertical) HSTRETCH
+	    attrib_loop.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    maincont.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,931 @@
+// Magic: e6f3eea0
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon May 30 20:55:59 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+inputtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Input Type", "inputtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    inputtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+surfacedistance.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ surfacedistance.label = PARM_LABEL("Connection Distance", "surfacedistance") WIDTH(1.5);
+ PARM(float, 1, "surfacedistance", none, none) RANGE(0,30)
+	 LABELREF(surfacedistance.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+surfacedensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ surfacedensity.label = PARM_LABEL("Cable Density", "surfacedensity") WIDTH(1.5);
+ PARM(float, 1, "surfacedensity", none, none) RANGE(0.10000000000000001,1000)
+	 LABELREF(surfacedensity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+surfaceblend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ surfaceblend.label = PARM_LABEL("Merge Cable Ends", "surfaceblend") WIDTH(1.5);
+ PARM(float, 1, "surfaceblend", none, none) RANGE(0,1)
+	 LABELREF(surfaceblend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+curveamountcable.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ curveamountcable.label = PARM_LABEL("Number of Main Cables", "curveamountcable") WIDTH(1.5);
+ PARM(integer, 1, "curveamountcable", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(curveamountcable.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+treatpolysas.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Treat Polygons As", "treatpolysas") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    treatpolysas.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+curvespacing.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ curvespacing.label = PARM_LABEL("Spacing", "curvespacing") WIDTH(1.5);
+ PARM(float, 1, "curvespacing", none, none) RANGE(0.014999999999999999,0.5)
+	 LABELREF(curvespacing.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+curvevariation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ curvevariation.label = PARM_LABEL("Spacing Variation", "curvevariation") WIDTH(1.5);
+ PARM(float, 1, "curvevariation", none, none) RANGE(0,20)
+	LOCK_RANGE_MIN LABELREF(curvevariation.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+globalseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ globalseed.label = PARM_LABEL("Spacing Offset Seed", "globalseed") WIDTH(1.5);
+ PARM(float, 1, "globalseed", none, none) RANGE(0,10)
+	 LABELREF(globalseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+geoamountcable.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ geoamountcable.label = PARM_LABEL("Number of Main Cables", "geoamountcable") WIDTH(1.5);
+ PARM(integer, 1, "geoamountcable", none, none) RANGE(1,20)
+	 LABELREF(geoamountcable.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+geocurvetype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Treat Curves As", "geocurvetype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    geocurvetype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mainscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mainscale.label = PARM_LABEL("Main Radius", "mainscale") WIDTH(1.5);
+ PARM(float, 1, "mainscale", none, none) RANGE(0,1)
+	 LABELREF(mainscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+randradius.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("randradius", "Random Scale") toggle VALUE(randradius.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+minscale.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+minscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minscale.label = PARM_LABEL("Min Scale", "minscale") WIDTH(1.5);
+ PARM(float, 1, "minscale", none, none) RANGE(0,2)
+	 LABELREF(minscale.label) HSTRETCH;
+
+  {  }
+}
+
+maxscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ maxscale.label = PARM_LABEL("Max Scale", "maxscale") ;
+ PARM(float, 1, "maxscale", none, none) RANGE(0,10)
+	 LABELREF(maxscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+scaleseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scaleseed.label = PARM_LABEL("Seed", "scaleseed") WIDTH(1.5);
+ PARM(float, 1, "scaleseed", none, none) RANGE(0,10)
+	 LABELREF(scaleseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+resolutioncable.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ resolutioncable.label = PARM_LABEL("Resolution", "resolutioncable") WIDTH(1.5);
+ PARM(float, 1, "resolutioncable", none, none) RANGE(0.02,1)
+	LOCK_RANGE_MIN LABELREF(resolutioncable.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+divisions.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divisions.label = PARM_LABEL("Columns", "divisions") WIDTH(1.5);
+ PARM(integer, 1, "divisions", none, none) RANGE(3,24)
+	LOCK_RANGE_MIN LABELREF(divisions.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+addends.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("addends", "Add Ends") toggle VALUE(addends.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+simtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Simulation Type", "simtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    simtype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+mingravity.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+mingravity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ mingravity.label = PARM_LABEL("Min", "mingravity") WIDTH(1.5);
+ PARM(float, 1, "mingravity", none, none) RANGE(0,1)
+	 LABELREF(mingravity.label) HSTRETCH;
+
+  {  }
+}
+
+maxgravity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ maxgravity.label = PARM_LABEL("Max", "maxgravity") ;
+ PARM(float, 1, "maxgravity", none, none) RANGE(0,1)
+	 LABELREF(maxgravity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+seedgravity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ seedgravity.label = PARM_LABEL("Seed", "seedgravity") WIDTH(1.5);
+ PARM(float, 1, "seedgravity", none, none) RANGE(0,1)
+	 LABELREF(seedgravity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+boostgravity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ boostgravity.label = PARM_LABEL("Gravity Multiplier", "boostgravity") WIDTH(1.5);
+ PARM(float, 1, "boostgravity", none, none) RANGE(0,20)
+	 LABELREF(boostgravity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+resimulate.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("resimulate", "Reset Simulation")
+	push VALUE(resimulate.val);
+
+    { WIDTH(0.1) }
+}
+
+maincablesim.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("maincablesim", "Simulate Main Cable") toggle VALUE(maincablesim.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+framesim.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ framesim.label = PARM_LABEL("Frame", "framesim") WIDTH(1.5);
+ PARM(integer, 1, "framesim", none, none) RANGE(0,50)
+	 LABELREF(framesim.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+stretch.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ stretch.label = PARM_LABEL("Cable Stretch", "stretch") WIDTH(1.5);
+ PARM(float, 1, "stretch", none, none) RANGE(0.90000000000000002,1.5)
+	 LABELREF(stretch.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ scale.label = PARM_LABEL("Add Random Stretch", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,10)
+	 LABELREF(scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+substeps.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ substeps.label = PARM_LABEL("Substeps", "substeps") WIDTH(1.5);
+ PARM(integer, 1, "substeps", none, none) RANGE(1,10)
+	 LABELREF(substeps.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+staticthreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ staticthreshold.label = PARM_LABEL("Friction", "staticthreshold") WIDTH(1.5);
+ PARM(float, 1, "staticthreshold", none, none) RANGE(0,10)
+	 LABELREF(staticthreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+subcables.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("subcables", "Enable") toggle VALUE(subcables.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Number of Sub Cables", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(1,10)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+subscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subscale.label = PARM_LABEL("Sub Radius", "subscale") WIDTH(1.5);
+ PARM(float, 1, "subscale", none, none) RANGE(0,0.10000000000000001)
+	 LABELREF(subscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+subrandradius.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("subrandradius", "Random Scale") toggle VALUE(subrandradius.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+subminscale.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+subminscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subminscale.label = PARM_LABEL("Min Scale", "subminscale") WIDTH(1.5);
+ PARM(float, 1, "subminscale", none, none) RANGE(0,2)
+	 LABELREF(subminscale.label) HSTRETCH;
+
+  {  }
+}
+
+submaxscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ submaxscale.label = PARM_LABEL("Max Scale", "submaxscale") ;
+ PARM(float, 1, "submaxscale", none, none) RANGE(0,10)
+	 LABELREF(submaxscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+subscaleseed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subscaleseed.label = PARM_LABEL("Seed", "subscaleseed") WIDTH(1.5);
+ PARM(float, 1, "subscaleseed", none, none) RANGE(0,10)
+	 LABELREF(subscaleseed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+subrange.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subrange.label = PARM_LABEL("Range", "subrange") WIDTH(1.5);
+ PARM(float, 1, "subrange", none, none) RANGE(0,15)
+	 LABELREF(subrange.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+subrings.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subrings.label = PARM_LABEL("Twist", "subrings") WIDTH(1.5);
+ PARM(float, 1, "subrings", none, none) RANGE(0,5)
+	 LABELREF(subrings.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+subresolution.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subresolution.label = PARM_LABEL("Resolution", "subresolution") WIDTH(1.5);
+ PARM(float, 1, "subresolution", none, none) RANGE(0.10000000000000001,10)
+	LOCK_RANGE_MIN LABELREF(subresolution.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+subcolumns.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subcolumns.label = PARM_LABEL("Columns", "subcolumns") WIDTH(1.5);
+ PARM(integer, 1, "subcolumns", none, none) RANGE(3,24)
+	LOCK_RANGE_MIN LABELREF(subcolumns.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+treatpolysas2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Treat Polygons As", "treatpolysas2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    treatpolysas2.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+presim.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("presim", "Add Pre Simulation") toggle VALUE(presim.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+postsim.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("postsim", "Add Post Simulation") toggle VALUE(postsim.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+detangle.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("detangle", "Enable") toggle VALUE(detangle.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+resolveclipping.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("resolveclipping", "Resolve Collision Clipping") toggle VALUE(resolveclipping.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+detanglemain.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Detangle Options", "detanglemain") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    detanglemain.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+iterationdetangle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterationdetangle.label = PARM_LABEL("Iterations", "iterationdetangle") WIDTH(1.5);
+ PARM(integer, 1, "iterationdetangle", none, none) RANGE(1,100)
+	 LABELREF(iterationdetangle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+smoothdetangle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smoothdetangle.label = PARM_LABEL("Smooth Amount", "smoothdetangle") WIDTH(1.5);
+ PARM(float, 1, "smoothdetangle", none, none) RANGE(0,50)
+	LOCK_RANGE_MIN LABELREF(smoothdetangle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+colors.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("colors", "Enable Vertex Color") toggle VALUE(colors.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+message.gad =
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+    {
+        LAYOUT(horizontal) HSTRETCH
+        { WIDTH(1.5) }
+        { WIDTH(0.08) }
+        LABEL VALUE(message.val[0]) HSTRETCH;
+    }
+    { HEIGHT(0.05) }
+}
+
+sx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sx.label = PARM_LABEL("Scale", "sx") WIDTH(1.5);
+ PARM(float, 1, "sx", none, none) RANGE(0.5,2)
+	 LABELREF(sx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+tx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ tx.label = PARM_LABEL("Offset", "tx") WIDTH(1.5);
+ PARM(float, 1, "tx", none, none) RANGE(0,10)
+	 LABELREF(tx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder5_1.gad = 
+
+GROUP simple "Wire Simulation" flat 
+{ 
+    VALUE(folder5_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    resimulate.gad;		
+	    maincablesim.gad;		
+	    framesim.gad;		
+	    stretch.gad;		
+	    scale.gad;		
+	    substeps.gad;		
+	    staticthreshold.gad;		
+} 
+
+folder5.gad = 
+
+GROUP simple "Psuedo Gravity" flat 
+{ 
+    VALUE(folder5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    mingravity.row.join;		
+	    seedgravity.gad;		
+	    boostgravity.gad;		
+} 
+
+folder1_1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder1_1.gad"
+    { 
+	VALUE(folder1_1.gad.val) STRETCH(1,0)
+
+	TAB "Simulation"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    simtype.gad;		
+	    folder5.gad;		
+	    folder5_1.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Sub Cables"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    subcables.gad;		
+	    iterations.gad;		
+	    subscale.gad;		
+	    subrandradius.gad;		
+	    subminscale.row.join;		
+	    subscaleseed.gad;		
+	    subrange.gad;		
+	    subrings.gad;		
+	    subresolution.gad;		
+	    subcolumns.gad;		
+	    treatpolysas2.gad;		
+	    presim.gad;		
+	    postsim.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Detangle"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    detangle.gad;		
+	    resolveclipping.gad;		
+	    detanglemain.gad;		
+	    iterationdetangle.gad;		
+	    smoothdetangle.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Color"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    colors.gad;		
+	    message.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "UV"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    sx.gad;		
+	    tx.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+folder1.gad = 
+
+GROUP simple "Main Cable Settings" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    mainscale.gad;		
+	    randradius.gad;		
+	    minscale.row.join;		
+	    scaleseed.gad;		
+	    resolutioncable.gad;		
+	    divisions.gad;		
+} 
+
+folder4.gad = 
+
+GROUP simple "Through Geometry" flat 
+{ 
+    VALUE(folder4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    geoamountcable.gad;		
+	    geocurvetype.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "Main Curve Settings" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    curveamountcable.gad;		
+	    treatpolysas.gad;		
+	    curvespacing.gad;		
+	    curvevariation.gad;		
+	    globalseed.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Surface Settings" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    surfacedistance.gad;		
+	    surfacedensity.gad;		
+	    surfaceblend.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    inputtype.gad; 
+    folder0.gad; 
+    folder3.gad; 
+    folder4.gad; 
+    folder1.gad; 
+    addends.gad; 
+    folder1_1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

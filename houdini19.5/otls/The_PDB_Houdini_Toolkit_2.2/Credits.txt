@@ -1,0 +1,25 @@
+Hi Everyone .
+
+Here are the people you can thank for making this toolset happen.
+
+First off, the entire Gridmarkets team. 
+If Mark and Rosa hadn't talked me into looking into the science rotue, 
+I probably would have never decided to work with proteins.
+
+They also had access to an amazing team of scientists for me to bounce questions off of. Which was fantastic. 
+Thank you all for tolerating me and being open minded.
+
+Thanks to Michael Drummond, Adam Ferestad, Mark Ross, Adam Katz, Christopher Rutledage, and Rosa Altimiras.
+
+If you would like to learn from the pros , then I highly recomend these webincars of the basics of protein folding.
+
+Concepts, Types and Applications of Molecular Docking with Demonstrations by Jitesh Doshi: 
+https://www.youtube.com/watch?v=NLrjHq89fYM&t=7216s
+
+How to Study Protein-Ligand Interaction through Molecular Docking by 
+VCU Libraries: https://www.youtube.com/watch?v=rVXrbTeaywc
+
+I also want to thank the orginal PBD Houdini Kings. 
+Dr. Jeroen Claus, The Entagma Team, and Stuart Jantzen
+
+Kate Xagoraris

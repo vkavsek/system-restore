@@ -1,0 +1,231 @@
+// Magic: 8015d81b
+// Automatically generated PSI dialog (PSI version 19.5.493)
+// Mon Jan 23 21:36:02 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+mAreaMethod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    mAreaMethod.label = PARM_LABEL_SIMPLE("Stacking Method", "mAreaMethod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mAreaMethod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bUseThreshold.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bUseThreshold", "Combine Similar by Threshold") toggle VALUE(bUseThreshold.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fSimThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ fSimThreshold.label = PARM_LABEL("Similarity Threshold", "fSimThreshold") WIDTH(1.5);
+ PARM(integer, 1, "fSimThreshold", none, none) RANGE(0,10)
+	LOCK_RANGE LABELREF(fSimThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+bSplitShells.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bSplitShells", "Split Stacked Shells") toggle VALUE(bSplitShells.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+iSplitThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iSplitThreshold.label = PARM_LABEL("Splitting Threshold", "iSplitThreshold") WIDTH(1.5);
+ PARM(integer, 1, "iSplitThreshold", none, none) RANGE(0,10)
+	 LABELREF(iSplitThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iNumSplits.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iNumSplits.label = PARM_LABEL("Numer of Splits", "iNumSplits") WIDTH(1.5);
+ PARM(integer, 1, "iNumSplits", none, none) RANGE(0,10)
+	 LABELREF(iNumSplits.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bVisualizeSplits.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bVisualizeSplits", "Visualize Splits") toggle VALUE(bVisualizeSplits.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+padding.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ padding.label = PARM_LABEL("Padding", "padding") WIDTH(1.5);
+ PARM(integer, 1, "padding", none, none) RANGE(0,1000)
+	LOCK_RANGE_MIN LABELREF(padding.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+paddingboundary.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("paddingboundary", "Apply Padding to Tile Boundaries") toggle VALUE(paddingboundary.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+correctareas.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("correctareas", "Correct Island Area Proportions") toggle VALUE(correctareas.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+axisalignislands.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("axisalignislands", "Axis-Align Islands") toggle VALUE(axisalignislands.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+optimizewastedspace.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("optimizewastedspace", "Optimize Wasted Space") toggle VALUE(optimizewastedspace.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    mAreaMethod.gad; 
+    bUseThreshold.gad; 
+    fSimThreshold.gad; 
+    sepparm.gad; 
+    bSplitShells.gad; 
+    iSplitThreshold.gad; 
+    iNumSplits.gad; 
+    bVisualizeSplits.gad; 
+    sepparm2.gad; 
+    padding.gad; 
+    paddingboundary.gad; 
+    correctareas.gad; 
+    axisalignislands.gad; 
+    optimizewastedspace.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

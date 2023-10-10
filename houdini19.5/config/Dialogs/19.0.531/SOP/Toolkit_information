@@ -1,0 +1,42 @@
+// Magic: a04bed60
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May  8 18:41:14 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+file_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ file_path.label = PARM_LABEL("File Path", "file_path") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "file_path") LABELREF(file_path.label)
+	VALUE(file_path.val) HSTRETCH;
+
+    file_path.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(file_path.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    file_path.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

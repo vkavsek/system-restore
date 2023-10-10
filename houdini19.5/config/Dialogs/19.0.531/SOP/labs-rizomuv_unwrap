@@ -1,0 +1,643 @@
+// Magic: 1b4df51f
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon May 16 00:44:36 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+cook.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+cook.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("cook", "Cook")
+	push VALUE(cook.val);
+
+    {  }
+}
+
+auto_cook.gad = ROW
+{
+    
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("auto_cook", "Auto Cook") toggle VALUE(auto_cook.val);
+
+    {  }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+outgoingUV.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    outgoingUV.label = PARM_LABEL("UV Attrib", "outgoingUV") WIDTH(1.5);
+    PARM_FIELD(string, "outgoingUV") VALUE(outgoingUV.val) 
+	LABELREF(outgoingUV.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+uv_tiles_offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   uv_tiles_offset.label = PARM_LABEL("UDIM Tile Offset (x/y)", "uv_tiles_offset") WIDTH(1.5);
+   PARM(integer, 2, "uv_tiles_offset", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(uv_tiles_offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Method", "method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_leaf.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_leaf", "Enable Leaf") toggle VALUE(enable_leaf.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_branch.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_branch", "Enable Branch") toggle VALUE(enable_branch.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_trunk.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_trunk", "Enable Trunk") toggle VALUE(enable_trunk.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+force.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ force.label = PARM_LABEL("Force", "force") WIDTH(1.5);
+ PARM(float, 1, "force", none, none) RANGE(0,0.98999999999999999)
+	 LABELREF(force.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fix_revolution_shapes.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fix_revolution_shapes", "Revol Shapes") toggle VALUE(fix_revolution_shapes.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+enable_island_count.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enable_island_count", "Enable Island Count") toggle VALUE(enable_island_count.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+island_count.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ island_count.label = PARM_LABEL("Island Count", "island_count") WIDTH(1.5);
+ PARM(integer, 1, "island_count", none, none) RANGE(1,100)
+	 LABELREF(island_count.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sharp_edge_angle.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ sharp_edge_angle.label = PARM_LABEL("Sharp Edge Angle", "sharp_edge_angle") WIDTH(1.5);
+ PARM(float, 1, "sharp_edge_angle", none, none) RANGE(0,180)
+	 LABELREF(sharp_edge_angle.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+xpos_ypos.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xpos_ypos.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("xpos_ypos", "X+Y+") toggle VALUE(xpos_ypos.val);
+
+    {  }
+
+    {  }
+}
+
+xpos_zpos.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("xpos_zpos", "X+Z+") toggle VALUE(xpos_zpos.val);
+
+    {  }
+
+    {  }
+}
+
+xpos_yneg.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("xpos_yneg", "X+Y-") toggle VALUE(xpos_yneg.val);
+
+    {  }
+
+    {  }
+}
+
+xpos_zneg.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("xpos_zneg", "X+Z-") toggle VALUE(xpos_zneg.val);
+
+    {  }
+
+    {  }
+}
+
+ypos_zpos.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("ypos_zpos", "Y+Z+") toggle VALUE(ypos_zpos.val);
+
+    {  }
+
+    {  }
+}
+
+yneg_zpos.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("yneg_zpos", "Y-Z+") toggle VALUE(yneg_zpos.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+yneg_zneg.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+yneg_zneg.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("yneg_zneg", "Y-Z-") toggle VALUE(yneg_zneg.val);
+
+    {  }
+
+    {  }
+}
+
+ypos_zneg.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("ypos_zneg", "Y+Z-") toggle VALUE(ypos_zneg.val);
+
+    {  }
+
+    {  }
+}
+
+xneg_ypos.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("xneg_ypos", "X-Y+") toggle VALUE(xneg_ypos.val);
+
+    {  }
+
+    {  }
+}
+
+xneg_zpos.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("xneg_zpos", "X-Z+") toggle VALUE(xneg_zpos.val);
+
+    {  }
+
+    {  }
+}
+
+xneg_yneg.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("xneg_yneg", "X-Y-") toggle VALUE(xneg_yneg.val);
+
+    {  }
+
+    {  }
+}
+
+xneg_zneg.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("xneg_zneg", "X-Z-") toggle VALUE(xneg_zneg.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+seam_group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    seam_group.label = PARM_LABEL("Seam Groups", "seam_group") WIDTH(1.5);
+    PARM_FIELD(string, "seam_group") VALUE(seam_group.val) 
+	LABELREF(seam_group.label) HSTRETCH;
+
+    seam_group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+select_handles.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+select_handles.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("select_handles", "Cut Handles") toggle VALUE(select_handles.val);
+
+    {  }
+
+    {  }
+}
+
+select_hole_links.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("select_hole_links", "Link Holes") toggle VALUE(select_hole_links.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+on_detail_remover.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+on_detail_remover.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+on_detail_remover.gad = PARM_BUTTON("on_detail_remover", "") toggle VALUE(on_detail_remover.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+detail_remover.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ detail_remover.label = PARM_LABEL("Detail Remover", "detail_remover") WIDTH(1.32);
+ PARM(float, 1, "detail_remover", none, none) RANGE(0,1)
+	 LABELREF(detail_remover.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+on_stretch_control.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+on_stretch_control.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+on_stretch_control.gad = PARM_BUTTON("on_stretch_control", "") toggle VALUE(on_stretch_control.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+stretch_control.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ stretch_control.label = PARM_LABEL("Stretch Control", "stretch_control") WIDTH(1.32);
+ PARM(float, 1, "stretch_control", none, none) RANGE(0,0.98999999999999999)
+	 LABELREF(stretch_control.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+on_reweld.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+on_reweld.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+on_reweld.gad = PARM_BUTTON("on_reweld", "") toggle VALUE(on_reweld.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+reweld_threshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ reweld_threshold.label = PARM_LABEL("Reweld Threshold", "reweld_threshold") WIDTH(1.32);
+ PARM(float, 1, "reweld_threshold", none, none) RANGE(0.001,10)
+	 LABELREF(reweld_threshold.label) HSTRETCH;
+
+  {  }
+}
+}	
+
+reweld_poly_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ reweld_poly_max.label = PARM_LABEL("Reweld Poly Max", "reweld_poly_max") ;
+ PARM(integer, 1, "reweld_poly_max", none, none) RANGE(1,100)
+	 LABELREF(reweld_poly_max.label) HSTRETCH;
+
+  {  }
+}
+
+reweld_length_max.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ reweld_length_max.label = PARM_LABEL("Reweld Length Max", "reweld_length_max") ;
+ PARM(float, 1, "reweld_length_max", none, none) RANGE(0,1)
+	 LABELREF(reweld_length_max.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+on_size_limiter.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+on_size_limiter.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+on_size_limiter.gad = PARM_BUTTON("on_size_limiter", "") toggle VALUE(on_size_limiter.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+size_limiter.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ size_limiter.label = PARM_LABEL("Size Limiter", "size_limiter") WIDTH(1.32);
+ PARM(integer, 1, "size_limiter", none, none) RANGE(1,10)
+	 LABELREF(size_limiter.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+templocation.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ templocation.label = PARM_LABEL("Temp Obj Location", "templocation") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "templocation") LABELREF(templocation.label)
+	VALUE(templocation.val) HSTRETCH;
+
+    templocation.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(templocation.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+rizomloc.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ rizomloc.label = PARM_LABEL("Rizom Location", "rizomloc") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "rizomloc") LABELREF(rizomloc.label)
+	VALUE(rizomloc.val) HSTRETCH;
+
+    rizomloc.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(rizomloc.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+folder2.gad = 
+
+GROUP simple "Settings" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    templocation.gad;		
+	    rizomloc.gad;		
+} 
+
+folder1.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH
+	    select_handles.row.join;		
+	    on_detail_remover.row.join;		
+	    on_stretch_control.row.join;		
+	    on_reweld.row.join;		
+	    on_size_limiter.row.join;		
+	    folder2.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Method" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    method.gad;		
+	    enable_leaf.gad;		
+	    enable_branch.gad;		
+	    enable_trunk.gad;		
+	    force.gad;		
+	    fix_revolution_shapes.gad;		
+	    enable_island_count.gad;		
+	    island_count.gad;		
+	    sharp_edge_angle.gad;		
+	    xpos_ypos.row.join;		
+	    yneg_zneg.row.join;		
+	    seam_group.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "UV Settings" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    outgoingUV.gad;		
+	    uv_tiles_offset.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cook.row.join; 
+    folder3.gad; 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

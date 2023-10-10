@@ -1,0 +1,54 @@
+// Magic: e905dd77
+// Automatically generated PSI dialog (PSI version 19.0.445)
+// Mon Nov 29 08:30:06 2021
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+showenforced.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+showenforced.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("showenforced", "Visualize Enforced Edges") toggle VALUE(showenforced.val);
+
+    {  }
+
+    {  }
+}
+
+showunenforced.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("showunenforced", "Visualize Unenforced Segments") toggle VALUE(showunenforced.val);
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    showenforced.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

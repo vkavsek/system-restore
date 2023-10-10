@@ -1,0 +1,167 @@
+// Magic: 954c0f3a
+// Automatically generated PSI dialog (PSI version 19.5.493)
+// Tue Jan 31 20:34:28 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+basegroup.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    basegroup.label = PARM_LABEL("Base Group", "basegroup") WIDTH(1.5);
+    PARM_FIELD(string, "basegroup") VALUE(basegroup.val) 
+	LABELREF(basegroup.label) HSTRETCH;
+
+    basegroup.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(basegroup.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+fillmode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    fillmode.label = PARM_LABEL_SIMPLE("Fill Mode", "fillmode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    fillmode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+grouptype.gad = NULL { }
+
+post_remesh.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("post_remesh", "Post Remesh") toggle VALUE(post_remesh.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+target_edge.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ target_edge.label = PARM_LABEL("Target Edge Length", "target_edge") WIDTH(1.5);
+ PARM(float, 1, "target_edge", none, none) RANGE(0.001,1)
+	LOCK_RANGE_MIN LABELREF(target_edge.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+reproject_onto_original.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("reproject_onto_original", "Reproject onto Original") toggle VALUE(reproject_onto_original.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+smooth_borders.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("smooth_borders", "Smooth Borders") toggle VALUE(smooth_borders.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+influence.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ influence.label = PARM_LABEL("Influence", "influence") WIDTH(1.5);
+ PARM(integer, 1, "influence", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(influence.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Blurring Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,100)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+fd_smoothing.gad = 
+
+GROUP simple "Smoothing" flat 
+{ 
+    VALUE(fd_smoothing.gad.val) LAYOUT(vertical) HSTRETCH 
+	    smooth_borders.gad;		
+	    influence.gad;		
+	    iterations.gad;		
+} 
+
+fd_remesh.gad = 
+
+GROUP simple "Remesh" flat 
+{ 
+    VALUE(fd_remesh.gad.val) LAYOUT(vertical) HSTRETCH 
+	    post_remesh.gad;		
+	    target_edge.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    basegroup.gad; 
+    fillmode.gad; 
+    grouptype.gad; 
+    fd_remesh.gad; 
+    reproject_onto_original.gad; 
+    fd_smoothing.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

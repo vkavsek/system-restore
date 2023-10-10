@@ -1,0 +1,701 @@
+Scheme:	untitled_dark_clr
+
+#define DRKBASECLR	0.13 0.13 0.13
+#define DRKBASE		GREY(0.38)
+#define DRKGRADHIGH	GREY(0.15)
+#define DRKGRADLOWCLR	GREY(0.00) //0.23 0.23 0.23
+#define DRKGRADLOW	GREY(0.16)
+#define DRKGRADMID	GREY(0.10) //DRKGRADLOW
+#define DRKBORDER	GREY(0.11)
+#define WELL		GREY(0.13)
+#define LISTA		GREY(0.12) //DRKBASE
+#define LISTB		GREY(0.14) //DRKGRADLOW
+
+#define ORANGE1		0.85 0.54 0.14
+#define ORANGE2		0.55 0.34 0.04
+#define ORANGE3		0.35 0.24 0.14
+#define BLUE1		0.14 0.54 0.85
+#define BLUE2		0.04 0.34 0.55
+#define BLUE3		0.09 0.14 0.25
+#define BLUE4		0.233 0.282 0.374
+#define TXT1		0.85 0.54 0.14
+#define TXT2		0.55 0.34 0.04
+#define RED1		0.8 0.08 0.0
+#define RED2		0.3 0.08 0.0
+
+////////////////////////////////////////////////////////////////////////
+
+#define UNK		1 0 1
+
+#define GREY(g)		g g g
+#define BLACK		GREY(0)
+#define WHITE		GREY(0.50)
+#define DARK		GREY(0.14)
+#define ARROW		0.93 0.53 0.13 //GREY(0.9)
+
+// Color Palette
+
+#define SHADOW1		GREY(0.07)
+#define SHADOW1_5	GREY(0.12)
+#define SHADOW2		GREY(0.53)
+#define SHADOW3		0.85 0.54 0.14 //GREY(0.33)
+#define SHADOW3_5	GREY(0.18)
+#define SHADOW4		GREY(0.13)
+#define SHADOW5		GREY(0.05)
+
+#define PRESSED_HIGH	GREY(0.28) //SHADOW4
+#define PRESSED_LOW		GREY(0.18) //SHADOW2
+
+#define HELP_BG		1 1 0.88
+#define HELP_F1_BG	0.88 0.97 1
+
+#define SELECTION_BASE		HSV 40 0.825 0.725
+#define SELECTION_HIGHLIGHT2	1 0.9 0.5
+#define SELECTION_SHADOW	1 0.4 0
+
+#define ERROR			1 0 0
+
+////////////////////////////////////////////////////////////////////////
+
+#define BASE		GREY(0.151569)
+#define BASE_ALT		GREY(0.151569)
+
+#define EMPTY			GREY(0.68) //DRKBASE
+
+#define TEXT			GREY(0.64)
+
+#define EDIT_BG	GREY(0.0)
+#define EDIT_BG_HIGHLIGHT	0.0 0.0 0.0 //GREY(0.05)
+#define EDIT_BG_OUTLINE		0.13 0.0 0.0 //GREY(0.33)
+
+#define GRAD_HI			GREY(0.03) //DRKGRADHIGH
+#define GRAD_LOW		GREY(0.23) //DRKGRADLOW
+
+#define BUTTON_DISABLE		GREY(0.5)
+#define BUTTON_SEL		SELECTION_BASE
+#define BUTTON_PRESS		SELECTION_BASE
+
+
+////////////////////////////////////////////////////////////////////////
+
+// Color correction for the icons --------------------------------------------
+
+IconBrightness:	1
+IconContrast:	1.2
+IconGamma:	0.8
+IconSaturation:	1
+
+// New UI Resources ----------------------------------------------------------
+
+//
+// Watch out when adjusting BackColor.  If white lines appear in the UI, you 
+//  may need to adjust the BorderDark as well due to automatic contrast code
+//   which flips the foreground color from dark to light when the 
+//    contrast between the foreground and background is too low.   
+//	
+BackColor:		GREY(0.211) //DRKGRADLOW
+
+ButtonGradHi:		GREY(0.16)
+ButtonGradLow:		GREY(0.14) //DRKGRADLOW
+ButtonNonActiveGradLow:	GREY(0.12)      // Low end of gradient on non-selected tabs
+
+// These are used for tons of borders all over the place, but
+// NOT for buttons >:-(
+ButtonShadowLight:	BLUE2 //GREY(0.00)
+ButtonShadowMed:	GREY(0.00) //BLACK
+ButtonShadowMedDark:	BLUE3 //GREY(0.10)
+ButtonShadowDark:	GREY(0.20) //BLACK //BLUE3 //GREY(0.06)
+ButtonShadow:		GREY(0.00) //BLACK
+
+ToolbarBevelLight:	GREY(0.05)
+ToolbarBevelDark:	GREY(0.06)
+ToolbarFlatGradHi:	GREY(0.24) //DRKBASE      // Top/left end of gradient
+ToolbarFlatGradLo:	GREY(0.28) //DRKBASE      // Bottom/right end of gradient
+
+DialogBlendBG:		GREY(0.22) //DRKBASE	// messages, etc
+
+ButtonText:				0.70 0.70 0.70 //ORANGE1 //TEXT
+ButtonPressedText:		GREY(0.0) //WHITE
+ButtonPressedGradHi:	ORANGE2 //BUTTON_PRESS // 0.45 0.45 0.2
+ButtonPressedGradLow:	ORANGE1 //BUTTON_PRESS // 0.45 0.45 0.2
+
+ButtonMenuArrowHi:	GREY(0.25)
+ButtonMenuArrowLow:	GREY(0.15)
+ButtonMenuArrow:	ARROW
+
+ButtonArrow:			ARROW
+ButtonArrowDisabled:	DRKGRADLOW
+ButtonArrowPressed:		GREY(0.0) //BUTTON_PRESS
+
+MenuBG:				GREY(0.12) //DRKGRADLOW
+MenuText:			GREY(0.66) //TEXT
+MenuTextDisabled:	GREY(0.28) //SHADOW2
+MenuTextHotkey:		BLUE1 //0.85 0.54 0.14 //SHADOW4
+MenuHighlight:		BLUE2 //SHADOW3
+MenuShadow:			0.05 0.24 0.44 //BLUE3 //SHADOW5
+MenuTextSelected:	BLUE1 //0.85 0.54 0.14 //WHITE
+MenuSelectedBG:		0.0 0.0 0.0 //DRKGRADHIGH
+MenuTitleBG:		BLACK //DRKGRADHIGH
+InvertedMenuBackground:	GREY(0.15)
+
+// Colors for Ramp (Float) parameters.
+RampBG:				GREY(0.12)
+RampFG:				0.0 0.08 0.17 //GREY(0.25)
+RampCurve:			BLUE1 //GREY(0.4)
+RampKeyBG:			0.3 0.08 0.0 //BLACK
+RampKeyFG:			0.8 0.08 0.0
+RampKeyHoverBG:		0.6 0.08 0.0 //SELECTION_HILIGHT2
+RampKeyHoverFG:		0.6 0.4 0.0 //SELECTION_BASE
+RampMarkerHover:	0.6 0.08 0.0 //BUTTON_SEL
+
+Separator:	BLUE2 //GREY(0.2)
+												
+CheckBG:			BLACK //EDIT_BG
+CheckLocated:		BLUE1 //BUTTON_SEL
+CheckColor:			BLUE1 //TEXT
+												
+RadioBG:			BLACK //EDIT_BG
+RadioBorder:		BLUE2 //GREY(0.75)
+RadioDot:			BLUE1 //TEXT
+RadioDotHighlight:	BUTTON_SEL
+
+TextboxBG:				GREY(0.05) //EDIT_BG
+TextboxBorderPrimary:	BLUE3 //GREY(0.02) //EDIT_BG_OUTLINE
+TextboxBorderHighlight:	GREY(0.04) //EDIT_BG_HIGHLIGHT
+TextboxError:			ERROR
+
+TextboxFeedbackFG:	GREY(0.25)
+TextboxFeedbackBG:	UNK
+SelectedTextFG:		BLACK
+SelectedTextBG:		ORANGE1 //SELECTION_BASE
+
+SliderTopBorder:		GREY(0.14) //BLACK
+SliderBottomBorder:		GREY(0.14) //BLACK
+SliderAdvancedBevel:	GREY(0.14) //0.85 0.54 0.14 //GREY(0.3)
+SliderAdvancedGroove:	0.85 0.54 0.04 //GREY(0.2)
+SliderRemainingBevel:	GREY(0.14) //0.14 0.54 0.85 //GREY(0.4)
+SliderRemainingGroove:	0.04 0.54 0.85 //GREY(0.3)
+SliderTick:				GREY(0.211) //BLACK
+SliderRangeBrackets:	GREY(0.211) //BLACK
+
+SliderThumbTopBevel:		GREY(0.05)
+SliderThumbBottomBevel:		GREY(0.05)
+SliderThumbTopBorder:		GREY(0.22) //BLACK
+SliderThumbBottomBorder:	GREY(0.22) //BLACK
+SliderThumbRangeArrow:		GREY(0.211) //BLACK
+
+LadderBG:		0.0 0.08 0.17 //EDIT_BG
+LadderText:		TEXT
+LadderHighlight:	BLACK //RED2 //SELECTION_BASE
+LadderOutline:		BLUE1 //GREY(0.5)
+LadderShadow:		UNK
+
+ScrollbarUpperBorder:		GREY(0.14) //BLACK //DRKBASE
+ScrollbarBottomBorder:		GREY(0.14) //BLACK
+ScrollbarWell:				GREY(0.22) //WELL
+ScrollbarWellShadow1:		GREY(0.22) //WELL
+ScrollbarWellShadow2:		GREY(0.22) //WELL
+ScrollbarWellShadow3:		GREY(0.22) //WELL
+ScrollbarWellShadowBlend12:	GREY(0.22) //WELL
+ScrollbarWellShadowBlend13:	GREY(0.22) //WELL
+ScrollbarWellShadowBlend22:	GREY(0.22) //WELL
+ScrollbarWellShadowBlend23:	GREY(0.22) //WELL
+ScrollbarWellShadowBlend32:	GREY(0.22) //WELL
+ScrollbarWellShadowBlend33:	GREY(0.22) //WELL
+
+
+ScrollbarThumbTopBorder:	GREY(0.2) //BLUE3 //GREY(0.5)
+ScrollbarThumbBottomBorder:	GREY(0.2) //BLUE3 //GREY(0.5)
+ScrollbarThumbBevel:		GREY(0.2) //BLUE1 //GREY(0.1)
+ScrollbarThumbGrippyBase:	BLUE1 //BLACK
+ScrollbarThumbGrippyEdge:	BLUE2 //BLACK
+
+ScrollbarButtonTopBorder:		BLUE3 //DRKGRADHIGH
+ScrollbarButtonBottomBorder:	BLACK
+ScrollbarButtonBetweenBorder:	BLUE3 //DRKBASE
+ScrollbarButtonBevel:			GREY(0.14)
+ScrollbarButtonArrow:			BLUE1 //ARROW
+
+ScrollArrow:				BLUE1 //ARROW
+ScrollArrowSelected:		BLUE2 //BUTTON_SEL
+ScrollArrowDisabled:		BLUE3 //DRKGRADMID
+
+ProgressMeterPercentLabelLeft:		GREY(1.0) //BLACK
+ProgressMeterPercentLabelRight:		GREY(1.0) //WHITE
+ProgressMeterTopBorder:				BLUE3 //SHADOW3
+ProgressMeterBottomBorder:			BLUE3 //SHADOW4
+ProgressMeterWellGradHi:			BLUE4 //WELL
+ProgressMeterWellGradLo:			BLUE4 //WELL
+ProgressMeterBevelTop:				RED1 //WHITE
+ProgressMeterBevelBottom:			RED2 //SELECTION_SHADOW
+ProgressMeterGradHi:				RED1 //SELECTION_HIGHLIGHT2
+ProgressMeterGradLo:				RED2 //SELECTION_BASE
+ProgressMeterText:					GREY(1.0) //TEXT
+
+ListShadow:					BLUE2 //GREY(0.16)
+ListHighlight:				BLUE2 //GREY(0.22)
+ListBorder:					GREY(0.16)
+ListBG:						BASE_ALT 	// clrs bg in download clr scheme window
+ListEntry1:					LISTA
+ListEntry2:					LISTB
+ListEntrySelected:			BLUE2 //SELECTION_BASE
+ListTitleShadow:			GREY(0.0)
+ListTitleHighlight:			GREY(0.0)
+ListTitleGradHi:			GREY(0.09) //DRKGRADLOW
+ListTitleGradLow:			GREY(0.04) //BASE_ALT
+ListTitleHighlightGradHi:	BLUE2 //HSV 36 1 0.8
+ListTitleHighlightGradLow:	BLUE2 //HSV 36 1 0.8
+ListText:					BLUE1 //TEXT		// clrs text in download clr scheme window
+ListAltText:				SHADOW3
+
+// Divider line between spreadsheet columns
+SSBorder:	0.04 0.24 0.45 //GREY(0.1)
+
+InfoBG:		GREY(0.00) //BLACK
+InfoText:	BLUE1 //TEXT
+
+PopupHelpBG:		BLACK
+PopupExtraHelpBG:	HSV 220 0.425 0.4
+
+ShelfGradHi:		GREY(0.18) //DRKGRADHIGH
+ShelfGradMidHi:		GREY(0.12) //DRKGRADMID
+ShelfGradMidLow:	GREY(0.05) //DRKGRADMID
+ShelfGradLow:		GREY(0.00) //DRKGRADLOW
+
+// This does not appear to be used
+ShelfBG:		EMPTY
+
+ShelfEmptyBG:			GREY(0.22)//BLUE4 //EMPTY
+ShelfTabActiveHi:		0.04 0.24 0.45 //BLACK //DRKGRADHIGH
+ShelfTabActiveLow:		0.04 0.14 0.25 //BLACK //DRKGRADHIGH
+ShelfTabInactiveHi:		BLUE3 //DRKBASE
+ShelfTabInactiveLow:	BLUE3 //GREY(0.29) //DRKBASE
+
+PaneTabActiveHi:	0.04 0.24 0.45 //DRKGRADHIGH
+PaneTabActiveLow:	0.04 0.14 0.25 //DRKGRADHIGH
+PaneTabInactiveHi:	BLUE3 //0.04 0.10 0.15 //DRKBASE
+PaneTabInactiveLow:	BLUE3 //0.04 0.10 0.15 //DRKBASE
+PaneTabEdges:		BLACK //BLUE2 //GREY(0.0)
+PaneEmptyBG:		GREY(0.22) //BLUE4 //EMPTY
+PaneBorder:			GREY(0.0) //BLUE2
+PaneHeaderGradHi:	GREY(0.40) //DRKGRADHIGH
+PaneHeaderGradLow:	GREY(0.26) //DRKGRADLOW
+PaneTabShadow:		GREY(0.1)
+
+PathGadgetArrow1:	BLUE2 //GREY(0.5)
+PathGadgetArrow2:	BLUE1 //GREY(0.45)
+PathGadgetArrow3:	BLUE2 //GREY(0.4)
+//
+PathGadgetArrow1Selected:	BLUE2 //SELECTION_BASE  //0.5 0.5 0.3
+PathGadgetArrow2Selected:	BLUE2 //SELECTION_BASE  //0.45 0.45 0.25
+PathGadgetArrow3Selected:	BLUE2 //SELECTION_BASE  //0.4 0.4 0.2
+//
+PathGadgetPrimaryBorder:	BLACK
+PathGadgetSecondaryBorder:	BLACK
+//
+PathGadgetPrimaryBorderSelected:	SHADOW5
+PathGadgetSecondaryBorderSelected:	SHADOW4
+//
+PathGadgetBevel:		0.06 0.06 0.06 //GREY(0.36)
+PathGadgetBevelSelected:	0.06 0.06 0.06 //GREY(0.50)
+//
+PathGadgetText:		BLUE1 //GREY(0.9)
+//
+PathGadgetGradHi:	GREY(0.08) //0.08 0.15 0.25 
+PathGadgetGradLow:	GREY(0.14) //0.03 0.08 0.18
+//
+PathGadgetGradHiSelected:		BLUE2 //HSV 210 0.21 0.28
+PathGadgetGradLowSelected:		BLUE3 //HSV 210 0.25 0.24
+//
+PathGadgetHistoryButtonBevel:		BLACK //ARROW
+PathGadgetHistoryButtonBevelSelected:	BLACK
+
+ViewportBorder:		BLUE2 //DRKBASE
+ViewportDividers:	BLUE2 //GREY(0.4)
+
+TreeNodeBG:				LISTA
+TreeNodeAlternateBG:	LISTB
+TreeNodeSelectedBG:		BLUE2 //SELECTION_BASE
+TreeNodeSelectedFG:		0.0 0.0 0.0
+TreeNodeReservedParmFG:	SHADOW3		// also appears to not be in use anymore
+TreeLine:				BLUE2 //ARROW
+
+NodeConnectionDefaultBG:	BLUE2 //GREY(0.5)
+NodeConnectionTextBG:		GREY(0.22) //
+NodeConnectionGlow:			0.0 0.8 1.0 //HSV 40 0.5 1
+NodeConnectionArrowLight:	GREY(0.0) //BLACK
+NodeConnectionArrowDark:	BLACK
+NodeConnectionBevel:		GREY(0.42)
+NodeConnectionTopBorder:	GREY(0.00)
+NodeConnectionBottomBorder:	GREY(0.0)
+
+NodeButtonGrad:				GREY(0.44)
+NodeButtonSelectedGrad:		UNK // NodeButtonSelectedGrad does not seem to be used anymore
+NodeButtonBevel:			GREY(0.44)
+NodeButtonBevelSelected:	UNK 
+NodeSeparator:				GREY(0.22)
+NodeSeparatorEnabled:		GREY(0.02)
+NodeError:					ERROR
+NodeWarningBG:				BLACK
+NodeWarningFG:				1.0 0.87 0
+NodeDefaultBG:				GREY(0.06) //DRKBASE
+NodeHighlight:				0 0.68 0.94
+NodeDebugFG:				0.741 0.988 1
+
+NodeTemplateFlag:		#FF 66 FF
+NodeSelectableTemplateFlag:	#CC 33 CC
+NodeBypassFlag:			1.0 1.0 0
+NodeRenderFlag:			0.666 0.5 1.0
+NodeDisplayFlag:		0 0.4 0.8
+NodeDisplayAndRenderFlag:	0 0.68 0.94
+NodeSelectableFlag:		0.4 0.8 0
+NodeExportFlag:			0.75 0.4 0.0
+NodeAudioFlag:			0.0 0.5 0.5
+NodeThumbnailFlag:		0.35 0.6 0.2
+NodeLockFlag:			#FF 33 00
+NodeSoftLockFlag:		#C4 E3 61 
+NodeLoadedWithUnloadFlagOn:	1.0 0.0 1.0
+NodeDebugFlag:	0.741 0.988 1
+
+NetworkSelection:		HSV 65 1 0.95
+NetworkCurrent:			HSV 45 1 0.95
+NetworkBackground:		GREY(0.14) //BLACK //DRKBASE
+NetworkDisplayHighlight:	0.257655 0.396379 0.521569
+NetworkRenderHighlight:		0.375148 0.310776 0.498039
+NetworkOverviewDragger:		BLUE1 //WHITE
+
+NetworkGrid:			GREY(0.10)
+
+NetworkWireNormal:		BLUE2 //GREY(.55)
+NetworkWireActive:		ORANGE1 //HSV 45 0.6 0.55
+NetworkWireActiveLight:		ORANGE1 //HSV 45 0.65 0.8
+NetworkWireHighlight:		ORANGE2 //1.0 1.0 0.0
+NetworkWireShadow:		BLACK
+NetworkWireExtraNormal:		HSV 160 0.6 0.55
+NetworkWireExtraActive:		HSV 0 0.6 0.55
+NetworkWireExtraActiveLight:	HSV 0 0.65 0.8
+NetworkWireIKNormal:		HSV 240 0.6 0.55
+NetworkWireIKActive:		HSV 240 0.6 0.55
+NetworkWireIKActiveLight:	HSV 240 0.65 0.8
+NetworkWireOutputOverrideNormal:	1.0 1.0 1.0
+NetworkWireOutputOverrideHighlight:	1.0 0.784 0.0
+
+StatusBarMessageFG:	TEXT
+StatusBarMessageBG:	GREY(0.1)
+//
+StatusBarPromptFG:	TEXT
+StatusBarPromptBG:	HSV 40 0.6 0.6
+//
+StatusBarWarningFG:	TEXT
+StatusBarWarningBG:	HSV 0 0.6 0.5
+//
+StatusBarErrorFG:	TEXT
+StatusBarErrorBG:	HSV 0 1 1
+
+DopeSheetCurrentFrameFG:	WHITE
+DopeSheetCurrentFrameBG:	BLACK
+DopeSheetIndicatorLine:		WHITE
+DopeSheetKnob:			GREY(0.2)
+DopeSheetKnobPendingKey:	SELECTION_BASE
+DopeSheetKnobOutlier:		1 1 0
+DopeSheetKeyActive:		0.263 0.522 0
+DopeSheetKeyPartial:		0 1 0
+DopeSheetKeyPending:		SELECTION_BASE
+DopeSheetKeyMuted:		GREY(0.2)
+DopeSheetKeyOverlay:		1 0 0
+DopeSheetKeyDisabled:		0.5 0 1
+DopeSheetTimeline:		GREY(0.7)
+DopeSheetTimelineAudio:		GREY(0.5)
+DopeSheetTickLarge:		GREY(0.8)
+DopeSheetTickSmall:		GREY(0.55)
+DopeSheetTickSmallAudio:	GREY(0.35)
+DopeSheetEndMarker:		GREY(0.3)
+DopeSheetTickNumber:		GREY(0.5)
+DopeSheetRangeNumber:		GREY(0.3)
+DopeSheetRowDisabled:		BLACK
+DopeSheetRowLight:		DRKBASE
+DopeSheetRowDark:		BASE_ALT
+DopeSheetColLine:		GREY(0.7)
+DopeSheetRowLine:		GREY(0.7)
+DopeSheetViewLock:		1 1 0.5
+DopeSheetSelection:		1 1 0
+DopeSheetSelectionHover:	1 1 0.5
+DopeSheetSelectionActive:	1 1 0.5
+DopeSheetSelectionInactive:	1 1 0
+DopeSheetSelectionInactiveLock:	1 0 1
+DopeSheetSelectionText:		BLACK
+DopeSheetOverwriteHover:	1 0 0
+DopeSheetOverwriteActive:	0.7 0 0
+DopeSheetOverwriteInactive:	0.9 0 0
+DopeSheetSpreadSheetText:	BLACK
+DopeSheetSpreadSheetDisabled:	0.07 0 0
+
+BorderLight:	BLACK
+BorderDark:	DRKBORDER
+
+
+MplayInspectBox:	GREY(0.8)
+MplayInspectBorder:	GREY(0.3)
+MplayInspectText:	BLACK
+MplayColorCorrectWarn:	1 1 0.75 
+//
+// The following colors are used on the top control panels
+// within the desktop panes to indicate the current data type.
+// These are Tints, not colors, so beware of modifying the saturation
+// or brightness.
+//
+ObjectColor:		HSV 210 0.50 1.75
+SopColor:		HSV 100 0.50 2
+DopColor:		HSV 0 0.50 2
+PopNetColor:		HSV 170 0.50 1.75
+PopColor:		HSV 170 0.50 1.75
+ShopColor:		HSV 340 0.50 1.75
+VopNetColor:		HSV 260 0.50 1.75
+VopColor:		HSV 260 0.50 1.75
+ChopNetColor:		HSV 60 0.50 1.75
+ChopColor:		HSV 60 0.50 1.75
+CopNet2Color:		HSV 40 0.50 2
+Cop2Color:		HSV 40 0.50 2
+OutputColor:		1.0 0.0 0.0 //HSV 20 0.20 2
+RootColor:		HSV 0 0 1
+
+
+// Old UI Resources ----------------------------------------------------------
+
+ForegroundColor:	BLACK
+BackgroundColor:	UNK
+TextColor:		TEXT
+PaperColor:		BLACK
+
+ButtonColor:		DRKGRADHIGH
+ButtonStripColor:	UNK
+
+ListTitleColor:		EDIT_BG
+ListEntryColor:		GREY(0.62)
+ListEntrySelectedColor:	0.93 0.86 0.51
+
+MenuBarColor:		GREY(0.75)
+MenuColor:		GREY(0.70)
+BlueSelectedMenuColor:	0.125 0.125 1
+
+SliderColor:		GREY(0.65)
+SliderThumbColor:	GREY(0.68)
+InputColor:		GREY(0.70)
+RadioColor:		BLUE2 //GREY(0.60)
+
+SelectOnColor:	0.8 0.8 0.0
+SelectOffColor:	0.55 0.55 0
+
+IconBackgroundColor:	GREY(0.211) //BLACK
+IconOutlineColor:	GREY(0.211) //GREY(0.0)
+IconShadowColor:	BLACK
+IconLocatedColor:	UNK
+
+DisabledTextColor:		GREY(0.00) //ARROW
+DisabledTextDropShadowColor:	GREY(0.2)
+PopupHelpBackgroundColor:	SELECTION_HIGHLIGHT2
+
+ParmSyntaxPlainColor:		WHITE			// White	#ffffff
+ParmSyntaxStringColor:		HSV 120 0.5  0.80	// Green	#66cc66
+ParmSyntaxVarColor:		HSV 60	0.5  0.93	// Pale Yellow	#eded77
+ParmSyntaxFuncColor:		HSV 180 0.5  0.80	// Cyan		#66cccc
+ParmSyntaxKeywordColor:		HSV 300 0.5  0.93	// Magenta	#ed77ed
+ParmSyntaxQuoteColor:		HSV 238 0.40 0.38 	// Dark Blue	#3a3b61
+ParmSyntaxNumberColor:		HSV 150 0.5  0.90	// Pale Green	#73e5ac
+ParmSyntaxRefColor:		HSV 34	0.5  0.87	// Pale Orange	#deae6f
+ParmSyntaxCommentColor:		HSV 60	0.5  0.93	// Pale Yellow	#eded77
+ParmSyntaxErrorColor:		HSV 0	0.8	1	// Red		#ff3333
+
+ParmParenMatchColor:		HSV 120 0.6	1	// Bright Green	#66ff66
+ParmQuoteMatchColor:		HSV 180	0.6	1	// Bright Cyan	#66ffff
+ParmMisMatchColor:		HSV 0	0.6	1	// Pale Red	#ff6666
+
+EditorSyntaxPlainColor:		WHITE			// White	#ffffff
+EditorSyntaxStringColor:	HSV 120 0.5  0.80	// Green	#66cc66
+EditorSyntaxVarColor:		HSV 60	0.5  0.93	// Pale Yellow	#eded77
+EditorSyntaxFuncColor:		HSV 180 0.5  0.80	// Cyan		#66cccc
+EditorSyntaxKeywordColor:	HSV 300 0.5  0.93	// Magenta	#ed77ed
+EditorSyntaxQuoteColor:		HSV 238 0.40 0.38	// Dark Blue	#3a3b61
+EditorSyntaxNumberColor:	HSV 150 0.5  0.90	// Pale Green	#73e5ac
+EditorSyntaxRefColor:		HSV 34	0.5  0.87	// Pale Orange	#deae6f
+EditorSyntaxCommentColor:	HSV 60	0.5  0.93	// Pale Yellow	#eded77
+EditorSyntaxErrorColor:		HSV 0	0.8	1	// Red		#ff3333
+
+
+// Note:	the luminance levels of most of these colors should be similar
+// so that none of them stands out too much and so that the text
+// in the parameter fields will be readable.
+//
+
+LockedColor:		HSV 200		0.0		0.22	// Parameter is locked
+PendingColor:		HSV 60		0.7		0.2	// Pending change 
+IsKeyColor:			HSV 120		0.7		0.25	// Keyframe
+IsSoftKeyColor:		HSV 86		0.39	1	// constant() or raw() usually.
+IsNotKeyColor:		HSV 180		0.7		0.3	// Channel, not at a key. (Expression)
+DisabledColor:		HSV 207		0.37	0.35	// Channel is disabled from dopesheet
+ChannelLockedColor:	HSV 0		0		0.2	// Has "lock()" expression
+OverrideColor:		HSV 45		1		0.35	// Parameter is overridden by chop
+OtherLanguageColor:	HSV 349		0.8		0.20	// Expr language differs from node lang.
+AutoTakeExcluded:  	HSV 42      0.37    0.21    // Exluded from take, and auto-take is on.
+
+NonDefAccentColor:	UNK					// Accent for non-default parms
+ChanRefAccentColor:	UNK					// Accent for !!ch()!! parms
+DisabledAccentColor:	UNK					// Accents are this color when disabled
+
+//
+// Parm border colors indicating that the parm has a handle associated with it:
+
+// handle is invisible, probably XCF
+InvisibleHandleColor:	0.70 0.00 0.00		// See rows/columns in Torus SOP
+// handle is visible, eg. xform handle
+VisibleHandleColor:	0.00 0.50 0.50
+// handle is active
+ActiveHandleColor:	SELECTION_BASE
+
+//
+// The following are used for the flag buttons in the group and node
+// tiles and listers.
+
+SelectOnColor:		0.75	0.75	0
+SelectOffColor:		0.56	0.56	0
+DisplayOnColor:		0.3	0.5	1
+DisplayOffColor:	0.2	0.3	0.6
+TemplateOnColor:	1	0.5	1
+TemplateOffColor:	0.75	0.37	0.75
+BypassOnColor:		1	0.5	0
+BypassOffColor:		0.5	0.25	0
+SelectableOnColor:	0.6	0.35	0.2
+SelectableOffColor:	0.4	0.2	0.15
+ExposeOnColor:		1	0	0
+ExposeOffColor:		0.6	0	0
+CurrentColor:		0.25	0.85	0.25
+
+SplitBarColor:		BLUE3 //DRKGRADHIGH
+SplitBarPaneOutline:	BLUE3 //DRKGRADHIGH
+SplitBarGrippyColor:	ARROW
+SplitBarHighlight:	SELECTION_BASE
+PlayBarOnColor:		0.05	0.8	0.05
+PlayBarOffColor:	0.25	0.25	0.25
+PlayBarDisabledColor:	0.4	0.4	0.4
+PlayBarResetColor:	1	1	0.0
+PlayBarNoPending:	0	0.8	0
+PlayBarNoPending2:	0	1	0
+PlayBarPending:		0.75	0.75	0.5
+PlayBarPending2:	1	1	0.5
+PlayBarAudioWaveColor:	0.643	0.643	0.643
+PlayBarStartEndFieldBG:	EDIT_BG
+
+// The following are used for the indicator colours in the info button
+ErrorFlag:	0.9	0.1	0.1
+WarningFlag:	1	1	0
+MessageFlag:	0.8	0.8	0.8	
+FilteredFlag:	0.6	0.6	0.6
+
+// The NoSaveFlag color is used in the resource managers for .nosave files
+NoSaveFlag:	0.0	0.4	0.1
+
+// The following colors are for the status bar
+MessageColor:	0.0	0.0	0.0
+PromptColor:	0.3	0.4	0.9
+WarningColor:	0.85	0.25	0.0
+ErrorColor:	ERROR
+
+// The following color is for the SHOP viewer
+ShopViewTitleColor	1.0	1.0	0.0
+
+// The following colors are for Vop input/output labels
+VopInOutVector4Color:	0.6		1.0		0.4
+VopInOutVectorColor:	0.12	0.8		0.0
+VopInOutNormalColor:	0.5		0.5		1.0
+VopInOutColorColor:		0.84	0.49	0.1
+VopInOutFloatColor:		0.2		0.5		0.3
+VopInOutIntColor:		0.15	0.68	0.88
+VopInOutStringColor:	0.75	0.55	0.03
+VopInOutMatrix3Color:	0.5		0.3		0.7
+VopInOutPointColor:		0.7		0.3		0.7
+VopInOutMatrix4Color:	0.75	0.50	0.99
+VopInOutBsdfColor:		0.95	0.75	0.34
+VopInOutMultiColor:		0.9		0.9		0.9
+VopErrorColor:			ERROR
+
+// The colors for SHOP input output labels
+ShopInOutSurfaceColor:		0.9	0.7	0.6
+ShopInOutShadowColor:		0.2	0.2	0.3
+ShopInOutDisplaceColor:		0.6	0.7	0.9
+ShopInOutGeometryColor:		0.7	0.9	0.7
+ShopInOutLightColor:		0.9	0.9	0.6
+ShopInOutFogColor:		0.7	0.7	0.7
+ShopInOutPropertiesColor:	0.5	0.8	0.9
+ShopInOutShaderColor:		0.9	0.9	0.9
+ShopInOutImage3dColor:		0.4	0.9	0.7
+
+// The following colors are for Dop input/output labels
+DopInOutObjectColor:	0.65	0.65	0.65
+DopInOutDataColor:	0.50	0.80	0.50
+DopInOutRelDataColor:	0.20	0.60	0.20
+DopInOutAnyColor:	0.9	0.9	0.9
+
+// The following colors are for simple spreadsheets (ie. tables)
+SSTableBackgroundColor:	0.9	0.9	0.9
+SSTableSelectedColor:	0.125	0.125	1.0
+
+// The following colors are for parameter spreadsheets
+ParmSheetEmptyColor:	0.65	0.65	0.65
+ParmSheetHeaderColor:	0.60	0.60	0.60
+
+// The following color is used for buttons that simulate a hyper-text link
+HyperTextLinkColor:	0.0	0.0	1.0
+
+// The following colors are used to highlight the names of operators that have
+// a given property (e.g. modified parameters)
+// Houdini's list mode tries to be smart and changes the value based on
+// some arbitrary thing.  (Network BG color?)  Anyway, leaving the value
+// at one seems to force it into a happy state.
+OpNameNoneColor:	TEXT
+OpNameCommentsColor:	HSV 240 0.6 1
+OpNameAnimatedColor:	UNK
+OpNameModifiedColor:	UNK
+OpNameChoppedColor:	UNK
+OpNameSyncedColor:	HSV 200 0.6 1
+OpNameUnsyncedColor:	HSV 0   0.6 1
+OpNameSubnetColor:	HSV 240 0.3 1
+
+// The following color is used for the text in the parameter title bar that
+// indicates how many nodes are selected
+ParmTitleBarNumSelectedColor:	1.0	1.0	0.0
+
+// The following color is used for the text in the take label to indicate that
+// the auto take mode is enabled
+AutoTakeModeColor:	0.40	0.70	0.40
+
+// These colors are used by the operator type manager.
+OTLUnusedColor:	0.70	0.10	0.10
+OTLOutOfDateColor:	0.70	0.70	0.10
+OTLPreferredColor:	0.20	0.70	0.20
+
+// These colors are used by the simulation tree view.
+SIMAltRepColor:		0.20	0.70	0.20
+SIMObjectColor:		0.00	0.00	0.00
+SIMDataColor:		0.00	0.00	0.00
+SIMRelDataColor:	0.00	0.00	0.00
+SIMRecordColor:		0.00	0.00	0.00
+SIMAffectorsColor:	0.00	0.00	0.00
+SIMGroupsColor:		0.00	0.00	0.00
+SIMEngineColor:		0.00	0.00	0.00
+SIMEngineInterpColor:	0.70	0.70	0.10
+SIMAffectorColor:	0.10	0.10	0.60
+SIMMutualColor:		0.20	0.70	0.20
+SIMAlmostMutualColor:	0.70	0.70	0.10
+
+// These colors are used by the linker tree views.
+LinkerPartialLinkColor:	GREY(0.8)
+
+// The following colors are used by the network editor in list mode
+OpListHeaderBGColor:	GREY(0.7)
+OpListSplitterColor:	BLACK
+OpListSelectionBGColor:	BLUE2 //SELECTION_BASE
+OpListSelectionFGColor:	WHITE
+
+// These colors are used by the file dependency dialog
+FileDepAcceptColor:		0.0 1.0 0.0
+FileDepRejectColor:		1.0 0.0 0.0

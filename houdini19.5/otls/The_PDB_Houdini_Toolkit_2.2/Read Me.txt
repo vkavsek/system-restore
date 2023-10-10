@@ -1,0 +1,43 @@
+Hi Everyone .
+
+Thanks for downloading this toolset.
+
+The plan is to keep this toolkit open source so Houdini can be used more in protein renders. 
+Currently building the toolkit in Houdini LC untill I am happy with the toolkit. Rather get all the kinks worked out and then 
+make a commerical version, than waste money and time. 
+
+So far this toolet is in its V.2.2 Build and the wish list is for this as follows:
+
+- Allow for more accurate animations 
+- Better Animation and folding for proteins overall
+- Covalent Bond Visualizer HDA
+- Custom Materials for Mantra and Karma
+- HDAs with better protein folding solves.
+- Polarity visualziation
+- Atomic Bond Visualization
+- CVS file handing/importing
+- Density Solve Checker
+- DOFs Solver and Visualizer
+- Water Molecule Isolation
+
+
+So far this toolkit can build your standard ball and stick/wireframe models, spacefilling diagrams, and ribbon models. As well as:
+
+-Rough animation techniques through noise.
+-Creation of wireframe models
+-Isolation of Carbon/Oxygen/Nitrogen elements
+-Creation of Space filling Diagrams
+-Creation of Ribbon Diagrams
+-Correct count of Atoms, Elements per Amino acid, and Chains.
+-Better Wireframe, Space filling, and Ribbon creation
+-Better isolation and visualization of Amino acids.
+-Animation using temperature factor HDAs
+-Chain isolation HDAs
+-Functions for working with open and closed virus proteins.  
+- HDAs for visualizing sequences, Ribonucleotides, and Deoxyribonucleotides
+- Application of atomic properites
+
+Let me know if you have an suggestions!
+
+
+Kate Xagoraris

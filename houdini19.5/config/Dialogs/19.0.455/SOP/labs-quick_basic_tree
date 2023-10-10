@@ -1,0 +1,386 @@
+// Magic: fd02b24a
+// Automatically generated PSI dialog (PSI version 19.0.455)
+// Wed Dec 29 20:13:11 2021
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+growgen.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ growgen.label = PARM_LABEL("Growth Generations", "growgen") WIDTH(1.5);
+ PARM(integer, 1, "growgen", none, none) RANGE(0,10)
+	 LABELREF(growgen.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+treeres.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ treeres.label = PARM_LABEL("Resample Resolution", "treeres") WIDTH(1.5);
+ PARM(float, 1, "treeres", none, none) RANGE(0,0.20000000000000001)
+	LOCK_RANGE_MIN LABELREF(treeres.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+cols.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ cols.label = PARM_LABEL("Branch Resolution", "cols") WIDTH(1.5);
+ PARM(integer, 1, "cols", none, none) RANGE(1,24)
+	LOCK_RANGE_MIN LABELREF(cols.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+radius.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ radius.label = PARM_LABEL("Radius Scale", "radius") WIDTH(1.5);
+ PARM(float, 1, "radius", none, none) RANGE(0,1)
+	 LABELREF(radius.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bLeaves.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bLeaves", "Leaves") toggle VALUE(bLeaves.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+distortamnt.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ distortamnt.label = PARM_LABEL("Amplitude", "distortamnt") WIDTH(1.5);
+ PARM(float, 1, "distortamnt", none, none) RANGE(-1,1)
+	 LABELREF(distortamnt.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+elementsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ elementsize.label = PARM_LABEL("Element Size", "elementsize") WIDTH(1.5);
+ PARM(float, 1, "elementsize", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(elementsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+heightmask.si_rampedit = FLOAT_RAMP VALUE(heightmask.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+heightmask.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    ROW
+    {
+	JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	heightmask.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(heightmask.pointno.val) HSTRETCH;
+    }
+}
+
+heightmask.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(heightmask.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(heightmask.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    heightmask.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls", "h.pane.parms.toggle_ramp_parms")
+		VALUE(heightmask.toggle.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    heightmask.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp", "h.pane.parms.toggle_ramp_size")
+		VALUE(heightmask.togglerampsize.val)
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+heightmask.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    heightmask.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	heightmask.buttons.gad VSTRETCH;
+
+	heightmask.si_rampedit HSTRETCH;
+    }
+}
+
+heightmask.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+    HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Height Mask", "heightmask");
+
+	{ HSTRETCH }
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_x" VALUE(heightmask.reverse.val)
+		LOOKFLAT HELP("Reverse Domain") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	ACTION_ICONBUTTON "BUTTONS_ramp_flip_y" VALUE(heightmask.complement.val)
+		LOOKFLAT HELP("Complement Ramp") UI_FLAT_ICON_BTN_SIZE_SMALL;
+	heightmask.presets
+	    = ACTION_MENU_ICONBUTTON "BUTTONS_gear"
+		LOOKFLAT HELP("Presets") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) HSTRETCH
+
+	heightmask.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(heightmask.hideparms.val) HSTRETCH
+	    heightmask.multiramp;
+	    {}
+	}
+    }
+}
+
+branchlift.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ branchlift.label = PARM_LABEL("Overall Lift", "branchlift") WIDTH(1.5);
+ PARM(float, 1, "branchlift", none, none) RANGE(0,90)
+	 LABELREF(branchlift.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+branchprune.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ branchprune.label = PARM_LABEL("Prune Rate Per Generation", "branchprune") WIDTH(1.5);
+ PARM(float, 1, "branchprune", none, none) RANGE(0,1)
+	 LABELREF(branchprune.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+branchstart.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ branchstart.label = PARM_LABEL("Start", "branchstart") WIDTH(1.5);
+ PARM(float, 1, "branchstart", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(branchstart.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+branchend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ branchend.label = PARM_LABEL("End", "branchend") WIDTH(1.5);
+ PARM(float, 1, "branchend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(branchend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+minx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ minx.label = PARM_LABEL("Min Bend Angle", "minx") WIDTH(1.5);
+ PARM(float, 1, "minx", none, none) RANGE(0,180)
+	 LABELREF(minx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+maxx.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ maxx.label = PARM_LABEL("Max Bend Angle", "maxx") WIDTH(1.5);
+ PARM(float, 1, "maxx", none, none) RANGE(0,180)
+	 LABELREF(maxx.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+leafprune.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ leafprune.label = PARM_LABEL("Prune Ratio", "leafprune") WIDTH(1.5);
+ PARM(float, 1, "leafprune", none, none) RANGE(0,1)
+	 LABELREF(leafprune.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder0.gad = 
+
+GROUP simple "Branch Bend" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    minx.gad;		
+	    maxx.gad;		
+} 
+
+xn__GrowableAreaPerBranch_ztaed.gad = 
+
+GROUP simple "Growable Area Per Branch" flat 
+{ 
+    VALUE(xn__GrowableAreaPerBranch_ztaed.gad.val) LAYOUT(vertical) HSTRETCH 
+	    branchstart.gad;		
+	    branchend.gad;		
+} 
+
+branches.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "branches.gad"
+    { 
+	VALUE(branches.gad.val) STRETCH(1,0)
+
+	TAB "Branches"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    branchlift.gad;		
+	    branchprune.gad;		
+	    xn__GrowableAreaPerBranch_ztaed.gad;		
+	    folder0.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Leaves"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    leafprune.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+shapenoise.gad = 
+GROUP collapsible "Shape Distort" flat  
+{
+    VALUE(shapenoise.gad.val) LAYOUT(vertical) HSTRETCH
+	    distortamnt.gad;		
+	    elementsize.gad;		
+	    heightmask.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Quick Settings" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    growgen.gad;		
+	    treeres.gad;		
+	    cols.gad;		
+	    radius.gad;		
+	    bLeaves.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    folder1.gad; 
+    shapenoise.gad; 
+    branches.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,438 @@
+// Magic: c63070ef
+// Automatically generated PSI dialog (PSI version 19.0.498)
+// Mon Jan 17 11:35:57 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+cook.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+cook.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("cook", "Cook")
+	push VALUE(cook.val);
+
+    {  }
+}
+
+reload.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("reload", "Reload")
+	push VALUE(reload.val);
+
+    {  }
+}
+
+manual_mode.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("manual_mode", "Manual Mode") toggle VALUE(manual_mode.val);
+
+    {  }
+
+    {  }
+}
+
+bExportLog.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bExportLog", "Use Log") toggle VALUE(bExportLog.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+textureSide.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Texture Side", "textureSide") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    textureSide.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+downscale.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Texture Downscale", "downscale") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    downscale.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+outputTextureFileType.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Texture File Type", "outputTextureFileType") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    outputTextureFileType.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+unwrapMethod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Unwrap Method", "unwrapMethod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    unwrapMethod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+useUDIM.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("useUDIM", "Use UDIM UVs") toggle VALUE(useUDIM.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+fillHoles.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fillHoles", "Fill Holes") toggle VALUE(fillHoles.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+correctEV.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("correctEV", "Correct Exposure") toggle VALUE(correctEV.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+padding.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ padding.label = PARM_LABEL("Padding", "padding") WIDTH(1.5);
+ PARM(integer, 1, "padding", none, none) RANGE(0,100)
+	 LABELREF(padding.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+multiBandDownscale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ multiBandDownscale.label = PARM_LABEL("Multi Band Downscale", "multiBandDownscale") WIDTH(1.5);
+ PARM(integer, 1, "multiBandDownscale", none, none) RANGE(0,8)
+	LOCK_RANGE_MIN LABELREF(multiBandDownscale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+useScore.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("useScore", "Use Score") toggle VALUE(useScore.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bestScoreThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ bestScoreThreshold.label = PARM_LABEL("Best Score Threshold", "bestScoreThreshold") WIDTH(1.5);
+ PARM(float, 1, "bestScoreThreshold", none, none) RANGE(0,1)
+	 LABELREF(bestScoreThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+angleHardThreshold.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ angleHardThreshold.label = PARM_LABEL("Angle Hard Threshold", "angleHardThreshold") WIDTH(1.5);
+ PARM(float, 1, "angleHardThreshold", none, none) RANGE(0,180)
+	 LABELREF(angleHardThreshold.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+processColorspace.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Process Colorspace", "processColorspace") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    processColorspace.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+forceVisibleByAllVertices.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("forceVisibleByAllVertices", "Force Visible By All Vertices") toggle VALUE(forceVisibleByAllVertices.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+flipNormals.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("flipNormals", "Flip Normals") toggle VALUE(flipNormals.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+visibilityRemappingMethod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Visibility Remapping Method", "visibilityRemappingMethod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    visibilityRemappingMethod.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+subdivisionTargetRatio.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ subdivisionTargetRatio.label = PARM_LABEL("Subdivision Target Ratio", "subdivisionTargetRatio") WIDTH(1.5);
+ PARM(float, 1, "subdivisionTargetRatio", none, none) RANGE(0,1)
+	 LABELREF(subdivisionTargetRatio.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+bCustomImages.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bCustomImages", "Use Custom Images for Texturing") toggle VALUE(bCustomImages.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+customTextureImages.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ customTextureImages.label = PARM_LABEL("Custom Texturing Images", "customTextureImages") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "customTextureImages") LABELREF(customTextureImages.label)
+	VALUE(customTextureImages.val) HSTRETCH;
+
+    customTextureImages.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(customTextureImages.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+enablecustomenv.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+enablecustomenv.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+{ WIDTH(0.18) }
+enablecustomenv.gad = PARM_BUTTON("enablecustomenv", "") toggle VALUE(enablecustomenv.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+customenv.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    {  }
+
+    customenv.label = PARM_LABEL("Environment", "customenv") WIDTH(1.32);
+    PARM_FIELD(string, "customenv") VALUE(customenv.val) 
+	LABELREF(customenv.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	
+}	// Template join.bot
+
+
+folder2.gad = 
+GROUP collapsible "Environment" flat  
+{
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH
+	    enablecustomenv.row.join;		
+} 
+
+folder1.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH
+	    padding.gad;		
+	    multiBandDownscale.gad;		
+	    useScore.gad;		
+	    bestScoreThreshold.gad;		
+	    angleHardThreshold.gad;		
+	    processColorspace.gad;		
+	    forceVisibleByAllVertices.gad;		
+	    flipNormals.gad;		
+	    visibilityRemappingMethod.gad;		
+	    subdivisionTargetRatio.gad;		
+	    bCustomImages.gad;		
+	    customTextureImages.gad;		
+} 
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Texturing"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    textureSide.gad;		
+	    downscale.gad;		
+	    outputTextureFileType.gad;		
+	    unwrapMethod.gad;		
+	    useUDIM.gad;		
+	    fillHoles.gad;		
+	    correctEV.gad;		
+	    folder1.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cook.row.join; 
+    folder0.gad; 
+    folder2.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

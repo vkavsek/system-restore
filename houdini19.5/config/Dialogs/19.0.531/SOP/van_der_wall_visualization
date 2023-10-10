@@ -1,0 +1,120 @@
+// Magic: ee965f05
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May  8 17:15:00 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+Recenter.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("Recenter", "Recenter")
+	push VALUE(Recenter.val);
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+pow.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ pow.label = PARM_LABEL("Field Multiplier", "pow") WIDTH(1.5);
+ PARM(float, 1, "pow", none, none) RANGE(1,5)
+	 LABELREF(pow.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+traillen.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ traillen.label = PARM_LABEL("Trail Length", "traillen") WIDTH(1.5);
+ PARM(float, 1, "traillen", none, none) RANGE(0,10)
+	 LABELREF(traillen.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+atom_model_on.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("atom_model_on", "atom model on") toggle VALUE(atom_model_on.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+ramprange.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   ramprange.label = PARM_LABEL("Color Range", "ramprange") WIDTH(1.5);
+   PARM(float, 2, "ramprange", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(ramprange.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    Recenter.gad; 
+    sepparm.gad; 
+    pow.gad; 
+    traillen.gad; 
+    sepparm2.gad; 
+    atom_model_on.gad; 
+    ramprange.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

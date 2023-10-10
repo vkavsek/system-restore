@@ -1,0 +1,127 @@
+// Magic: 958976f9
+// Automatically generated PSI dialog (PSI version 19.5.303)
+// Mon Jan 23 12:21:43 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+width.gad = NULL { }
+id_max.gad = NULL { }
+P_array_adding.gad = NULL { }
+P_array_unite.gad = NULL { }
+P_array_del.gad = NULL { }
+P_array_del_guide.gad = NULL { }
+curson_pos.gad = NULL { }
+
+extrude_depth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ extrude_depth.label = PARM_LABEL("extrusion height", "extrude_depth") WIDTH(1.5);
+ PARM(float, 1, "extrude_depth", none, none) RANGE(0,10)
+	 LABELREF(extrude_depth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+with_area.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("with_area", "with area?") toggle VALUE(with_area.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+snap_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ snap_strength.label = PARM_LABEL("Snap strength", "snap_strength") WIDTH(1.5);
+ PARM(float, 1, "snap_strength", none, none) RANGE(0,1)
+	 LABELREF(snap_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+single_cut.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("single_cut", "single cut?") toggle VALUE(single_cut.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+div_count.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ div_count.label = PARM_LABEL("cutting div count", "div_count") WIDTH(1.5);
+ PARM(integer, 1, "div_count", none, none) RANGE(0,10)
+	 LABELREF(div_count.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder0.gad = 
+
+GROUP simple "CUT" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    snap_strength.gad;		
+	    single_cut.gad;		
+	    div_count.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "EXTRUSION" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    extrude_depth.gad;		
+	    with_area.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    width.gad; 
+    id_max.gad; 
+    P_array_adding.gad; 
+    P_array_unite.gad; 
+    P_array_del.gad; 
+    P_array_del_guide.gad; 
+    curson_pos.gad; 
+    folder1.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

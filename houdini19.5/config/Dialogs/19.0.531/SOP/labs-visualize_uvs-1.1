@@ -1,0 +1,198 @@
+// Magic: c05e1fec
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sat May 21 11:29:09 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+uvattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    uvattrib.label = PARM_LABEL("UV Attribute", "uvattrib") WIDTH(1.5);
+    PARM_FIELD(string, "uvattrib") VALUE(uvattrib.val) 
+	LABELREF(uvattrib.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+grid_texture.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ grid_texture.label = PARM_LABEL("Texture Map", "grid_texture") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "grid_texture") LABELREF(grid_texture.label)
+	VALUE(grid_texture.val) HSTRETCH;
+
+    grid_texture.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(grid_texture.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+grid_tiling.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   grid_tiling.label = PARM_LABEL("Texture Tiling", "grid_tiling") WIDTH(1.5);
+   PARM(float, 2, "grid_tiling", none, none, "X,Y")
+	RANGE(0,10)  LABELREF(grid_tiling.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+visualize_islands.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("visualize_islands", "Visualize UV Islands") toggle VALUE(visualize_islands.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+worldspace.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+worldspace.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("worldspace", "View in Worldspace") toggle VALUE(worldspace.val);
+
+    {  }
+
+    {  }
+}
+
+blend.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ blend.label = PARM_LABEL("Blend", "blend") ;
+ PARM(float, 1, "blend", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(blend.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+vis_seams.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+vis_seams.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("vis_seams", "Visualize Seams") toggle VALUE(vis_seams.val);
+
+    {  }
+
+    {  }
+}
+
+thickness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ thickness.label = PARM_LABEL("Thickness", "thickness") ;
+ PARM(float, 1, "thickness", none, none) RANGE(0,0.10000000000000001)
+	LOCK_RANGE_MIN LABELREF(thickness.label) HSTRETCH;
+
+  {  }
+}
+
+color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    {  }
+
+    color.label = PARM_LABEL("Color", "color") ;
+    PARM(float, 3, "color", none, COLOR, "R,G,B") 
+	LABELREF(color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+folder1.gad = 
+
+GROUP simple "Visualization" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    visualize_islands.gad;		
+	    worldspace.row.join;		
+	    vis_seams.row.join;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Shader" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    grid_texture.gad;		
+	    grid_tiling.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    uvattrib.gad; 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

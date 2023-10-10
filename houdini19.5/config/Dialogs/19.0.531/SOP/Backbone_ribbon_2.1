@@ -1,0 +1,135 @@
+// Magic: 67b4604f
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May  8 21:40:21 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+Color_AminoAcid.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Color_AminoAcid", "Color AminoAcid On") toggle VALUE(Color_AminoAcid.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+AminoAcid_Text_On.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AminoAcid_Text_On", "AminoAcid Text On") toggle VALUE(AminoAcid_Text_On.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+Color_AminoAcid2.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Color_AminoAcid2.label = PARM_LABEL("Color AminoAcid", "Color_AminoAcid2") WIDTH(1.5);
+    PARM(float, 3, "Color_AminoAcid2", none, COLOR, "R,G,B") 
+	LABELREF(Color_AminoAcid2.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Aminoacid_Selection.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Aminoacid Selection", "Aminoacid_Selection") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    Aminoacid_Selection.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+Color_Chain.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    Color_Chain.label = PARM_LABEL("Color Chain", "Color_Chain") WIDTH(1.5);
+    PARM(float, 3, "Color_Chain", none, COLOR, "R,G,B") 
+	LABELREF(Color_Chain.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+Chain_Thickness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ Chain_Thickness.label = PARM_LABEL("Chain Thickness", "Chain_Thickness") WIDTH(1.5);
+ PARM(float, 1, "Chain_Thickness", none, none) RANGE(0,10)
+	 LABELREF(Chain_Thickness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    Color_AminoAcid.gad; 
+    AminoAcid_Text_On.gad; 
+    sepparm2.gad; 
+    Color_AminoAcid2.gad; 
+    Aminoacid_Selection.gad; 
+    sepparm.gad; 
+    Color_Chain.gad; 
+    Chain_Thickness.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

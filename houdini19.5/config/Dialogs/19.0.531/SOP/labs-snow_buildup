@@ -1,0 +1,261 @@
+// Magic: 7995e1fd
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Mon Apr  4 22:44:15 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+dir.gad = ROW 
+{
+    HSTRETCH
+   { WIDTH(0.18) }
+
+    dir.label = PARM_LABEL("Direction", "dir") WIDTH(1.5);
+    PARM(float, 3, "dir", none, none) LABELREF(dir.label)
+	HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+angle.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   angle.label = PARM_LABEL( "Spread Angle", "angle" ) WIDTH(1.5);
+   PARM(float, 1, "angle", none, none) RANGE(0, 180)
+	LABELREF( angle.label ) HSTRETCH;
+
+   { WIDTH(0.1) }
+}
+
+npts.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ npts.label = PARM_LABEL("Number of Snow Points", "npts") WIDTH(1.5);
+ PARM(integer, 1, "npts", none, none) RANGE(1,100000)
+	 LABELREF(npts.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+snowflake_min_max.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   snowflake_min_max.label = PARM_LABEL("Point Size (Min/Max)", "snowflake_min_max") WIDTH(1.5);
+   PARM(float, 2, "snowflake_min_max", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(snowflake_min_max.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+res_preset.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("VDB Resolution Preset", "res_preset") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    res_preset.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+resolution.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ resolution.label = PARM_LABEL("Resolution", "resolution") WIDTH(1.5);
+ PARM(float, 1, "resolution", none, none) RANGE(0,10)
+	 LABELREF(resolution.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+smooth_iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ smooth_iterations.label = PARM_LABEL("Smooth Iterations", "smooth_iterations") WIDTH(1.5);
+ PARM(float, 1, "smooth_iterations", none, none) RANGE(0,10)
+	 LABELREF(smooth_iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dilate_erode.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ dilate_erode.label = PARM_LABEL("Dilate/Erode", "dilate_erode") WIDTH(1.5);
+ PARM(float, 1, "dilate_erode", none, none) RANGE(-10,10)
+	 LABELREF(dilate_erode.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+iterations.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ iterations.label = PARM_LABEL("Blurring Iterations", "iterations") WIDTH(1.5);
+ PARM(integer, 1, "iterations", none, none) RANGE(0,100)
+	 LABELREF(iterations.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    color.label = PARM_LABEL("Color", "color") WIDTH(1.5);
+    PARM(float, 3, "color", none, COLOR, "R,G,B") 
+	LABELREF(color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+polyreduce.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+polyreduce.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("polyreduce", "Reduce to # Polys") toggle VALUE(polyreduce.val);
+
+    {  }
+
+    {  }
+}
+
+reduction_count.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ PARM(integer, 1, "reduction_count", none, none) RANGE(1,10000)
+	LOCK_RANGE_MIN HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+boolean_against_original.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+boolean_against_original.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("boolean_against_original", "Boolean Against Original") toggle VALUE(boolean_against_original.val);
+
+    {  }
+
+    {  }
+}
+
+keep_original.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keep_original", "Keep Original") toggle VALUE(keep_original.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+cleanup.gad = 
+
+GROUP simple "Clean Up" flat 
+{ 
+    VALUE(cleanup.gad.val) LAYOUT(vertical) HSTRETCH 
+	    polyreduce.row.join;		
+	    boolean_against_original.row.join;		
+} 
+
+meshing_options.gad = 
+
+GROUP simple "Meshing Options" flat 
+{ 
+    VALUE(meshing_options.gad.val) LAYOUT(vertical) HSTRETCH 
+	    smooth_iterations.gad;		
+	    dilate_erode.gad;		
+	    iterations.gad;		
+	    color.gad;		
+} 
+
+folder0.gad = 
+GROUP collapsible "Advanced" flat  
+{
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH
+	    res_preset.gad;		
+	    resolution.gad;		
+} 
+
+scattering_options.gad = 
+
+GROUP simple "Scattering Options" flat 
+{ 
+    VALUE(scattering_options.gad.val) LAYOUT(vertical) HSTRETCH 
+	    dir.gad;		
+	    angle.gad;		
+	    npts.gad;		
+	    snowflake_min_max.gad;		
+	    folder0.gad;		
+} 
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    scattering_options.gad; 
+    meshing_options.gad; 
+    cleanup.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

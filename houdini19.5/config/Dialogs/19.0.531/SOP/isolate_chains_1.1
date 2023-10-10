@@ -1,0 +1,69 @@
+// Magic: 973a92ec
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sun May 22 12:43:54 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+Text_On.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Text_On", "Text On") toggle VALUE(Text_On.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+Remove_Sugars.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Remove_Sugars", "Remove Sugars") toggle VALUE(Remove_Sugars.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+input.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ input.label = PARM_LABEL("Switch Chain", "input") WIDTH(1.5);
+ PARM(integer, 1, "input", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(input.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    Text_On.gad; 
+    Remove_Sugars.gad; 
+    input.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,12 @@
+{
+	"env": [
+		{
+			"MOPS": "/home/vk/Programs/Houdini-ADD/MOPS/"
+		},
+		{
+			"HOUDINI_PYTHONWARNINGS": "ignore"
+		},
+	],
+	"path": "$MOPS"
+	
+}

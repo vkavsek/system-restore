@@ -1,0 +1,1 @@
+{"type": "root", "attrs": {"type": "example"}, "body": [{"type": "title", "indent": 0, "text": ["MeasureArea"]}, {"type": "para", "indent": 0, "text": ["This example demonstrates how to create groups based on the area of a primitive using the Measure SOP."], "extent": [0, 103]}], "examplefor": "/nodes/sop/measure", "examplefile": "/examples/nodes/sop/measure/MeasureArea.hda"}

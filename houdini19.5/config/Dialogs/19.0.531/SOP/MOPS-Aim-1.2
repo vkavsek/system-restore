@@ -1,0 +1,582 @@
+// Magic: 4bb8202b
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Sat Jun 11 14:44:48 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+grouptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Group Type", "grouptype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    grouptype.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_falloff.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_falloff", "Do Falloff") toggle VALUE(do_falloff.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+falloff_attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    falloff_attribute.label = PARM_LABEL("Falloff Attribute", "falloff_attribute") WIDTH(1.5);
+    PARM_FIELD(string, "falloff_attribute") VALUE(falloff_attribute.val) 
+	LABELREF(falloff_attribute.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+aim_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Aim Method", "aim_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    aim_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+aim.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   aim.label = PARM_LABEL("Aim Vector", "aim") WIDTH(1.5);
+   PARM(float, 3, "aim", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(aim.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+use_attr.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_attr", "Use Attribute") toggle VALUE(use_attr.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+aim_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    aim_attr.label = PARM_LABEL("Attribute Name", "aim_attr") WIDTH(1.5);
+    PARM_FIELD(string, "aim_attr") VALUE(aim_attr.val) 
+	LABELREF(aim_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+aim_pos.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   aim_pos.label = PARM_LABEL("Aim Position", "aim_pos") WIDTH(1.5);
+   PARM(float, 3, "aim_pos", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(aim_pos.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+show_aim_guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_aim_guide", "Show Aim Guide") toggle VALUE(show_aim_guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+aim_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ aim_scale.label = PARM_LABEL("Guide Scale", "aim_scale") WIDTH(1.5);
+ PARM(float, 1, "aim_scale", none, none) RANGE(0,10)
+	 LABELREF(aim_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    color.label = PARM_LABEL("Color", "color") WIDTH(1.5);
+    PARM(float, 3, "color", none, COLOR, "R,G,B") 
+	LABELREF(color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+match_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    match_attr.label = PARM_LABEL("Match Attribute", "match_attr") WIDTH(1.5);
+    PARM_FIELD(string, "match_attr") VALUE(match_attr.val) 
+	LABELREF(match_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+up_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Up Method", "up_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    up_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+up.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   up.label = PARM_LABEL("Up", "up") WIDTH(1.5);
+   PARM(float, 3, "up", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(up.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+use_attr2.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_attr2", "Use Attribute") toggle VALUE(use_attr2.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+up_attr.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    up_attr.label = PARM_LABEL("Attribute Name", "up_attr") WIDTH(1.5);
+    PARM_FIELD(string, "up_attr") VALUE(up_attr.val) 
+	LABELREF(up_attr.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+up_pos.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   up_pos.label = PARM_LABEL("Up Position", "up_pos") WIDTH(1.5);
+   PARM(float, 3, "up_pos", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(up_pos.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+show_up_guide.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_up_guide", "Show Up Guide") toggle VALUE(show_up_guide.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+up_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ up_scale.label = PARM_LABEL("Guide Scale", "up_scale") WIDTH(1.5);
+ PARM(float, 1, "up_scale", none, none) RANGE(0,10)
+	 LABELREF(up_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+color2.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    color2.label = PARM_LABEL("Color", "color2") WIDTH(1.5);
+    PARM(float, 3, "color2", none, COLOR, "R,G,B") 
+	LABELREF(color2.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+match_attr2.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    match_attr2.label = PARM_LABEL("Match Attribute", "match_attr2") WIDTH(1.5);
+    PARM_FIELD(string, "match_attr2") VALUE(match_attr2.val) 
+	LABELREF(match_attr2.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+aim_axis.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Aim Axis", "aim_axis") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    aim_axis.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+up_axis.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Up Axis", "up_axis") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    up_axis.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invert_aim.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_aim", "Invert Aim") toggle VALUE(invert_aim.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+invert_up.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("invert_up", "Invert Up") toggle VALUE(invert_up.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+constrain_up_axis.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("constrain_up_axis", "Constrain Around Up") toggle VALUE(constrain_up_axis.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+do_vexpression.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_vexpression", "Do VEXpression") toggle VALUE(do_vexpression.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+vexpression.gad = ROW
+{
+
+    HSTRETCH JUSTIFY(left, top) HMARGIN(0.18, 0.1)
+        NO_MARGIN_SPACING_SCALE
+
+    vexpression.label = PARM_LABEL("VEXpression", "vexpression");
+
+    MULTILINE_PARM_FIELD ("vexpression") 
+
+    	LABELREF(vexpression.label) 
+
+    	VALUE(vexpression.val) 
+    	SYNTAX("vex") 
+    	LINES(8,40) 
+    	HSTRETCH;
+
+    {
+
+	LAYOUT(vertical)
+	{
+	    SIZE(0, 0.26)
+	}
+
+    }
+
+}
+has_aim_input.gad = NULL { }
+has_up_input.gad = NULL { }
+aim_handle_on.gad = NULL { }
+up_handle_on.gad = NULL { }
+
+folder7.gad = 
+
+GROUP simple "Up to Points" flat 
+{ 
+    VALUE(folder7.gad.val) LAYOUT(vertical) HSTRETCH 
+	    match_attr2.gad;		
+} 
+
+folder6.gad = 
+
+GROUP simple "Up to Object" flat 
+{ 
+    VALUE(folder6.gad.val) LAYOUT(vertical) HSTRETCH 
+	    up_pos.gad;		
+	    show_up_guide.gad;		
+	    up_scale.gad;		
+	    color2.gad;		
+} 
+
+folder5.gad = 
+
+GROUP simple "Up Vector" flat 
+{ 
+    VALUE(folder5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    up.gad;		
+	    use_attr2.gad;		
+	    up_attr.gad;		
+} 
+
+folder3.gad = 
+
+GROUP simple "Aim at Points" flat 
+{ 
+    VALUE(folder3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    match_attr.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Aim at Object" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    aim_pos.gad;		
+	    show_aim_guide.gad;		
+	    aim_scale.gad;		
+	    color.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Aim Vector" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    aim.gad;		
+	    use_attr.gad;		
+	    aim_attr.gad;		
+} 
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Aim"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    aim_method.gad;		
+	    folder1.gad;		
+	    folder2.gad;		
+	    folder3.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Up"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    up_method.gad;		
+	    folder5.gad;		
+	    folder6.gad;		
+	    folder7.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Orientation"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    aim_axis.gad;		
+	    up_axis.gad;		
+	    invert_aim.gad;		
+	    invert_up.gad;		
+	    constrain_up_axis.gad;		
+	    do_vexpression.gad;		
+	    vexpression.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    grouptype.gad; 
+    do_falloff.gad; 
+    falloff_attribute.gad; 
+    sepparm.gad; 
+    folder0.gad; 
+    has_aim_input.gad; 
+    has_up_input.gad; 
+    aim_handle_on.gad; 
+    up_handle_on.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

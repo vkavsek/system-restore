@@ -1,0 +1,185 @@
+// Magic: 7525eb7c
+// Automatically generated PSI dialog (PSI version 19.5.435)
+// Tue Dec 27 22:47:25 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+tempexpand.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ tempexpand.label = PARM_LABEL("Expansion from Temp", "tempexpand") WIDTH(1.5);
+ PARM(float, 1, "tempexpand", none, none) RANGE(0,1)
+	 LABELREF(tempexpand.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+temperature0.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ temperature0.label = PARM_LABEL("Ambient Temp (K)", "temperature0") WIDTH(1.5);
+ PARM(float, 1, "temperature0", none, none) RANGE(300,3000)
+	 LABELREF(temperature0.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+temperature1.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ temperature1.label = PARM_LABEL("Reference Temp (K)", "temperature1") WIDTH(1.5);
+ PARM(float, 1, "temperature1", none, none) RANGE(300,3000)
+	 LABELREF(temperature1.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+vis_oldtemperature_showguide.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+vis_oldtemperature_showguide.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0, 0) NO_MARGIN_SPACING_SCALE
+
+vis_oldtemperature_showguide.gad = PARM_BUTTON("vis_oldtemperature_showguide", "") toggle VALUE(vis_oldtemperature_showguide.val) RETAIN_SIZE_WHEN_HIDDEN;
+
+vis_oldtemperature_guideplaneval.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ {  }
+
+ vis_oldtemperature_guideplaneval.label = PARM_LABEL("Old Temp", "vis_oldtemperature_guideplaneval") WIDTH(1.32);
+ PARM(float, 1, "vis_oldtemperature_guideplaneval", none, none) RANGE(-1,1)
+	LOCK_RANGE LABELREF(vis_oldtemperature_guideplaneval.label) HSTRETCH;
+
+  {  }
+}
+}	
+
+vis_oldtemperature_guideplane.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+    {  }
+
+    vis_oldtemperature_guideplane.menu;
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+
+bind_temperature.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    bind_temperature.label = PARM_LABEL("Temperature", "bind_temperature") WIDTH(1.5);
+    PARM_FIELD(string, "bind_temperature") VALUE(bind_temperature.val) 
+	LABELREF(bind_temperature.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bind_oldtemperature.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    bind_oldtemperature.label = PARM_LABEL("Old Temperature", "bind_oldtemperature") WIDTH(1.5);
+    PARM_FIELD(string, "bind_oldtemperature") VALUE(bind_oldtemperature.val) 
+	LABELREF(bind_oldtemperature.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+bind_divergence.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    bind_divergence.label = PARM_LABEL("Divergence", "bind_divergence") WIDTH(1.5);
+    PARM_FIELD(string, "bind_divergence") VALUE(bind_divergence.val) 
+	LABELREF(bind_divergence.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+timescale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ timescale.label = PARM_LABEL("Time Scale", "timescale") WIDTH(1.5);
+ PARM(float, 1, "timescale", none, none) RANGE(0,10)
+	 LABELREF(timescale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+folder0.gad = 
+GROUP collapsible "Bindings" flat   
+{
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH
+	    bind_temperature.gad;		
+	    bind_oldtemperature.gad;		
+	    bind_divergence.gad;		
+} 
+
+folder1.gad = 
+
+GROUP simple "Visualize" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    vis_oldtemperature_showguide.row.join;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Properties" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    temperature0.gad;		
+	    temperature1.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    tempexpand.gad; 
+    folder2.gad; 
+    folder1.gad; 
+    folder0.gad; 
+    timescale.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

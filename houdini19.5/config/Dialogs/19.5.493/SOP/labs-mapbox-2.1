@@ -1,0 +1,492 @@
+// Magic: c76abaf
+// Automatically generated PSI dialog (PSI version 19.5.493)
+// Mon Jan 30 19:09:20 2023
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+cache_lat_lon_zoom.gad = NULL { }
+cache_offsets.gad = NULL { }
+total_size.gad = NULL { }
+bounds.gad = NULL { }
+refresh.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+refresh.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("refresh", "Refresh")
+	push VALUE(refresh.val);
+
+    {  }
+}
+
+manual_mode.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("manual_mode", "Manual Mode") toggle VALUE(manual_mode.val);
+
+    {  }
+
+    {  }
+}
+}	// Template join.bot
+
+
+api_key.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    api_key.label = PARM_LABEL("Mapbox API Key", "api_key") WIDTH(1.5);
+    PARM_FIELD(string, "api_key") VALUE(api_key.val) 
+	LABELREF(api_key.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+lat_lon_zoom.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+  HMARGIN(0.18, 0.1) NO_MARGIN_SPACING_SCALE
+
+lat_lon_zoom.gad = ROW
+{
+   HSTRETCH
+   {  }
+
+   lat_lon_zoom.label = PARM_LABEL("Lat Lon Zoom", "lat_lon_zoom") WIDTH(1.5);
+   PARM(float, 3, "lat_lon_zoom", none, none, "X,Y,Z")
+	RANGE(-180,180) LOCK_RANGE LABELREF(lat_lon_zoom.label)
+	HSTRETCH;
+
+    {  }
+}
+
+lookup.gad = ROW
+{
+    JUSTIFY(left, center)
+    {  }
+
+    PARM_BUTTON("lookup", "Look Up")
+	push VALUE(lookup.val);
+
+    {  }
+}
+}	// Template join.bot
+
+
+offsets.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   offsets.label = PARM_LABEL("Offsets", "offsets") WIDTH(1.5);
+   PARM(float, 2, "offsets", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(offsets.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+mapstyle.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    mapstyle.label = PARM_LABEL_SIMPLE("Style", "mapstyle") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    mapstyle.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+customstyle.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    customstyle.label = PARM_LABEL("Mapbox Style", "customstyle") WIDTH(1.5);
+    PARM_FIELD(string, "customstyle") VALUE(customstyle.val) 
+	LABELREF(customstyle.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+attribution.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("attribution", "Attribution") toggle VALUE(attribution.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+terrain_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    terrain_mode.label = PARM_LABEL_SIMPLE("Terrain Mode", "terrain_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    terrain_mode.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+resolution_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ resolution_scale.label = PARM_LABEL("Resolution Scale", "resolution_scale") WIDTH(1.5);
+ PARM(float, 1, "resolution_scale", none, none) RANGE(0,1)
+	 LABELREF(resolution_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+height_scale.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height_scale.label = PARM_LABEL("Height Scale", "height_scale") WIDTH(1.5);
+ PARM(float, 1, "height_scale", none, none) RANGE(0,10)
+	 LABELREF(height_scale.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+height_blur_strength.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ height_blur_strength.label = PARM_LABEL("Height Blur Strength", "height_blur_strength") WIDTH(1.5);
+ PARM(float, 1, "height_blur_strength", none, none) RANGE(0,10)
+	 LABELREF(height_blur_strength.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+downloadosm.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("downloadosm", "Download OSM Data") toggle VALUE(downloadosm.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+offset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+ PARM(float, 1, "offset", none, none) RANGE(0,10)
+	 LABELREF(offset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+snap_to_terrain.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("snap_to_terrain", "Snap To Terrain") toggle VALUE(snap_to_terrain.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+height_from_terrain.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("height_from_terrain", "Building Height From Terrain") toggle VALUE(height_from_terrain.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+color_from_terrain.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("color_from_terrain", "Color From Terrain") toggle VALUE(color_from_terrain.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+resample_curve.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("resample_curve", "Resample OSM Curves") toggle VALUE(resample_curve.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+segment_length.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ segment_length.label = PARM_LABEL("Segment Length", "segment_length") WIDTH(1.5);
+ PARM(float, 1, "segment_length", none, none) RANGE(0,10)
+	 LABELREF(segment_length.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+download_path_color.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ download_path_color.label = PARM_LABEL("Download Path Color", "download_path_color") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "download_path_color") LABELREF(download_path_color.label)
+	VALUE(download_path_color.val) HSTRETCH;
+
+    download_path_color.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(download_path_color.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+download_path_height.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ download_path_height.label = PARM_LABEL("Download Path Height", "download_path_height") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "download_path_height") LABELREF(download_path_height.label)
+	VALUE(download_path_height.val) HSTRETCH;
+
+    download_path_height.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(download_path_height.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+download_path_osm.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+ { WIDTH(0.18) }
+
+ download_path_osm.label = PARM_LABEL("Download Path OSM", "download_path_osm") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "download_path_osm") LABELREF(download_path_osm.label)
+	VALUE(download_path_osm.val) HSTRETCH;
+
+    download_path_osm.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(download_path_osm.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+ { WIDTH(0.1) }
+}
+
+retry_on_download_fail.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("retry_on_download_fail", "Retry On Download Fail") toggle VALUE(retry_on_download_fail.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+mapbox_sales.gad = ROW
+{
+    JUSTIFY(left, center)
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("mapbox_sales", "Contact Mapbox")
+	push VALUE(mapbox_sales.val);
+
+    { WIDTH(0.1) }
+}
+
+fd_settings.gad = 
+
+GROUP simple "Settings" flat 
+{ 
+    VALUE(fd_settings.gad.val) LAYOUT(vertical) HSTRETCH 
+	    offset.gad;		
+	    snap_to_terrain.gad;		
+	    height_from_terrain.gad;		
+	    color_from_terrain.gad;		
+	    resample_curve.gad;		
+	    segment_length.gad;		
+} 
+
+fd_dataprocessing.gad = 
+GROUP collapsible "Data Processing" flat   
+{
+    VALUE(fd_dataprocessing.gad.val) LAYOUT(vertical) HSTRETCH
+	    terrain_mode.gad;		
+	    resolution_scale.gad;		
+	    height_scale.gad;		
+	    height_blur_strength.gad;		
+} 
+
+fd_style.gad = 
+GROUP collapsible "Style" flat   
+{
+    VALUE(fd_style.gad.val) LAYOUT(vertical) HSTRETCH
+	    mapstyle.gad;		
+	    customstyle.gad;		
+	    attribution.gad;		
+} 
+
+fd_basesettings.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 flat "fd_basesettings.gad"
+    { 
+	VALUE(fd_basesettings.gad.val) STRETCH(1,0)
+
+	TAB "Base Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    lat_lon_zoom.row.join;		
+	    offsets.gad;		
+	    fd_style.gad;		
+	    fd_dataprocessing.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "OSM Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    downloadosm.gad;		
+	    fd_settings.gad;		
+
+	    { STRETCH(1,1) }
+	}
+
+	TAB "Local Download Paths"
+	{
+	    LAYOUT(vertical) STRETCH
+
+            HMARGIN(0) VMARGIN(2p) SPACING(0, 2p)
+	    download_path_color.gad;		
+	    download_path_height.gad;		
+	    download_path_osm.gad;		
+	    retry_on_download_fail.gad;		
+
+	    { STRETCH(1,1) }
+	}
+    } 
+}
+
+fd_apikey.gad = 
+GROUP collapsible "API Key" flat   
+{
+    VALUE(fd_apikey.gad.val) LAYOUT(vertical) HSTRETCH
+	    api_key.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    cache_lat_lon_zoom.gad; 
+    cache_offsets.gad; 
+    total_size.gad; 
+    bounds.gad; 
+    refresh.row.join; 
+    fd_apikey.gad; 
+    fd_basesettings.gad; 
+    mapbox_sales.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

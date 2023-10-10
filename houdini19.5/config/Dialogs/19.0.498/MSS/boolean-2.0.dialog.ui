@@ -1,0 +1,101 @@
+// Magic: f533fd8f
+// Automatically generated PSI dialog (PSI version 19.0.498)
+// Sun Jan 30 20:18:50 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+showa.row.join =		
+{
+
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+showa.gad = ROW
+{
+    
+    { WIDTH(0.18) }
+
+    PARM_BUTTON("showa", "Visualize A") toggle VALUE(showa.val);
+
+    {  }
+
+    {  }
+}
+
+showb.gad = ROW
+{
+    
+    {  }
+
+    PARM_BUTTON("showb", "Visualize B") toggle VALUE(showb.val);
+
+    {  }
+
+    {  }
+}
+
+showseams.gad = ROW
+{
+    HSTRETCH
+    {  }
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showseams", "Visualize Seams") toggle VALUE(showseams.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+}	// Template join.bot
+
+
+showinvalidbds.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showinvalidbds", "Visualize Invalid Boundaries") toggle VALUE(showinvalidbds.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+showtinyedges.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("showtinyedges", "Visualize Tiny Seam-Adjacent Edges") toggle VALUE(showtinyedges.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    showa.row.join; 
+    showinvalidbds.gad; 
+    showtinyedges.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

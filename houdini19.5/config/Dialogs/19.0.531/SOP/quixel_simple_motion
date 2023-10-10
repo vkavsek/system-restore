@@ -1,0 +1,369 @@
+// Magic: b80e5d9e
+// Automatically generated PSI dialog (PSI version 19.0.531)
+// Wed Apr 27 00:37:45 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+base_motion_method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Motion Method", "base_motion_method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    base_motion_method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+basespeed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ basespeed.label = PARM_LABEL("Speed", "basespeed") WIDTH(1.5);
+ PARM(float, 1, "basespeed", none, none) RANGE(0,1)
+	 LABELREF(basespeed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm4.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+base_freq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   base_freq.label = PARM_LABEL("Frequency", "base_freq") WIDTH(1.5);
+   PARM(float, 3, "base_freq", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(base_freq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+base_motion_offset.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   base_motion_offset.label = PARM_LABEL("Offset", "base_motion_offset") WIDTH(1.5);
+   PARM(float, 3, "base_motion_offset", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(base_motion_offset.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+connect_geo_offset.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("connect_geo_offset", "Offset by Connected Geo ") toggle VALUE(connect_geo_offset.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+sepparm5.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+base_motion_amp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ base_motion_amp.label = PARM_LABEL("Amplitude", "base_motion_amp") WIDTH(1.5);
+ PARM(float, 1, "base_motion_amp", none, none) RANGE(0,1)
+	 LABELREF(base_motion_amp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+base_axis_strength.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   base_axis_strength.label = PARM_LABEL("Axis Amp Multiplier", "base_axis_strength") WIDTH(1.5);
+   PARM(float, 3, "base_axis_strength", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(base_axis_strength.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+leaf_freq.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   leaf_freq.label = PARM_LABEL("Frequency", "leaf_freq") WIDTH(1.5);
+   PARM(float, 3, "leaf_freq", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(leaf_freq.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+leaf_speed.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ leaf_speed.label = PARM_LABEL("Speed", "leaf_speed") WIDTH(1.5);
+ PARM(float, 1, "leaf_speed", none, none) RANGE(0,1)
+	 LABELREF(leaf_speed.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+leafamp.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ leafamp.label = PARM_LABEL("Amplitude", "leafamp") WIDTH(1.5);
+ PARM(float, 1, "leafamp", none, none) RANGE(0,1)
+	 LABELREF(leafamp.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+show_q_wind.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("show_q_wind", "Visualize Q Wind ") toggle VALUE(show_q_wind.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+improve_q_wind.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("improve_q_wind", "Improve Q Wind") toggle VALUE(improve_q_wind.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+bypass.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("bypass", "Bypass") toggle VALUE(bypass.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+method.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Method", "method") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    method.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+blendwidth.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ blendwidth.label = PARM_LABEL("Blend Width", "blendwidth") WIDTH(1.5);
+ PARM(float, 1, "blendwidth", none, none) RANGE(0,1)
+	 LABELREF(blendwidth.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+voxelsize.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxelsize.label = PARM_LABEL("Voxel Size", "voxelsize") WIDTH(1.5);
+ PARM(float, 1, "voxelsize", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(voxelsize.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH HMARGIN(0.18, 0.1)
+    NO_MARGIN_SPACING_SCALE
+
+    { HEIGHT(0.1) }
+    SEPARATOR;
+    { HEIGHT(0.1) }
+}
+
+operation.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+    { WIDTH(0.18) }
+
+    PARM_LABEL_SIMPLE("Operation", "operation") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    operation.menu;
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+voxeloffset.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ voxeloffset.label = PARM_LABEL("Offset", "voxeloffset") WIDTH(1.5);
+ PARM(float, 1, "voxeloffset", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(voxeloffset.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+vdb.gad = 
+
+GROUP simple "VDB" flat 
+{ 
+    VALUE(vdb.gad.val) LAYOUT(vertical) HSTRETCH 
+	    voxelsize.gad;		
+	    sepparm.gad;		
+	    operation.gad;		
+	    voxeloffset.gad;		
+} 
+
+Improve_Q_Wind.gad = 
+
+GROUP simple "Improve Q Wind" flat 
+{ 
+    VALUE(Improve_Q_Wind.gad.val) LAYOUT(vertical) HSTRETCH 
+	    method.gad;		
+	    blendwidth.gad;		
+	    vdb.gad;		
+} 
+
+main_2.gad = 
+
+GROUP simple "Small Detail Motion" flat 
+{ 
+    VALUE(main_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    leaf_freq.gad;		
+	    leaf_speed.gad;		
+	    leafamp.gad;		
+} 
+
+base.gad = 
+
+GROUP simple "Large Swaying Motion" flat 
+{ 
+    VALUE(base.gad.val) LAYOUT(vertical) HSTRETCH 
+	    base_motion_method.gad;		
+	    basespeed.gad;		
+	    sepparm4.gad;		
+	    base_freq.gad;		
+	    base_motion_offset.gad;		
+	    connect_geo_offset.gad;		
+	    sepparm5.gad;		
+	    base_motion_amp.gad;		
+	    base_axis_strength.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    base.gad; 
+    main_2.gad; 
+    sepparm2.gad; 
+    show_q_wind.gad; 
+    improve_q_wind.gad; 
+    bypass.gad; 
+    Improve_Q_Wind.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

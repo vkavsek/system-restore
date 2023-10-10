@@ -1,0 +1,193 @@
+// Magic: f826b761
+// Automatically generated PSI dialog (PSI version 19.0.445)
+// Fri Nov 26 21:53:47 2021
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+size.gad = ROW
+{
+   HSTRETCH
+   { WIDTH(0.18) }
+
+   size.label = PARM_LABEL("Override Size", "size") WIDTH(1.5);
+   PARM(integer, 2, "size", none, none, "#1,#2")
+	RANGE(1,1000) LOCK_RANGE_MIN LABELREF(size.label)
+	HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+pyro_shader.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("pyro_shader", "Pyro Shader Method") toggle VALUE(pyro_shader.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+tonemap.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tonemap", "tonemap") toggle VALUE(tonemap.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+gamma.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ gamma.label = PARM_LABEL("Gamma", "gamma") WIDTH(1.5);
+ PARM(float, 1, "gamma", none, none) RANGE(0,4)
+	LOCK_RANGE_MIN LABELREF(gamma.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+temperature_0.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ temperature_0.label = PARM_LABEL("temperature low", "temperature_0") WIDTH(1.5);
+ PARM(float, 1, "temperature_0", none, none) RANGE(0,10000)
+	 LABELREF(temperature_0.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+temperature_1.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ temperature_1.label = PARM_LABEL("temperature high", "temperature_1") WIDTH(1.5);
+ PARM(float, 1, "temperature_1", none, none) RANGE(0,10000)
+	 LABELREF(temperature_1.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+adaptation.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ adaptation.label = PARM_LABEL("adaptation", "adaptation") WIDTH(1.5);
+ PARM(float, 1, "adaptation", none, none) RANGE(0,1)
+	 LABELREF(adaptation.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+burn.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ burn.label = PARM_LABEL("burn", "burn") WIDTH(1.5);
+ PARM(float, 1, "burn", none, none) RANGE(0,1)
+	 LABELREF(burn.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+ramp_intensity.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ ramp_intensity.label = PARM_LABEL("Ramp Intensity", "ramp_intensity") WIDTH(1.5);
+ PARM(float, 1, "ramp_intensity", none, none) RANGE(0,30)
+	 LABELREF(ramp_intensity.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+clip_value.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ clip_value.label = PARM_LABEL("Clip Value", "clip_value") WIDTH(1.5);
+ PARM(float, 1, "clip_value", none, none) RANGE(0,1)
+	 LABELREF(clip_value.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+n_inputs.gad = NULL { }
+
+folder1.gad = 
+
+GROUP simple "Intensity Controls" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    adaptation.gad;		
+	    burn.gad;		
+	    ramp_intensity.gad;		
+	    clip_value.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Temperature Controls" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    temperature_0.gad;		
+	    temperature_1.gad;		
+} 
+
+folder2.gad = 
+
+GROUP simple "Global Look Controls" flat 
+{ 
+    VALUE(folder2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    pyro_shader.gad;		
+	    tonemap.gad;		
+	    gamma.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    size.gad; 
+    folder2.gad; 
+    folder0.gad; 
+    folder1.gad; 
+    n_inputs.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

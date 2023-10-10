@@ -1,0 +1,215 @@
+// Magic: 779a8074
+// Automatically generated PSI dialog (PSI version 19.5.435)
+// Tue Dec 13 22:57:29 2022
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.\nShift-click to turn on Select Groups.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+    { WIDTH(0.1) }
+}
+
+connectends.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("connectends", "Connect End Points") toggle VALUE(connectends.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+add_polywire.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("add_polywire", "Thicken") toggle VALUE(add_polywire.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+divs.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ divs.label = PARM_LABEL("Divisions", "divs") WIDTH(1.5);
+ PARM(integer, 1, "divs", none, none) RANGE(1,50)
+	LOCK_RANGE_MIN LABELREF(divs.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+polywire_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+    { WIDTH(0.18) }
+
+    polywire_color.label = PARM_LABEL("Color", "polywire_color") WIDTH(1.5);
+    PARM(float, 4, "polywire_color", none, COLOR, "R,G,B,A") 
+	LABELREF(polywire_color.label) HSTRETCH;
+
+    { WIDTH(0.1) }
+}
+
+poly_wire_thickness.gad = 
+{
+
+ LAYOUT(horizontal) HSTRETCH
+ { WIDTH(0.18) }
+
+ poly_wire_thickness.label = PARM_LABEL("Thickness", "poly_wire_thickness") WIDTH(1.5);
+ PARM(float, 1, "poly_wire_thickness", none, none) RANGE(0.001,0.10000000000000001)
+	 LABELREF(poly_wire_thickness.label) HSTRETCH;
+
+  { WIDTH(0.1) }
+}
+
+transferattr.gad = ROW
+{
+    HSTRETCH
+    { WIDTH(0.18) }
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("transferattr", "Transfer Attributes") toggle VALUE(transferattr.val);
+
+    { HSTRETCH }
+
+    { WIDTH(0.1) }
+}
+
+pointattribs.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    pointattribs.label = PARM_LABEL("Point", "pointattribs") WIDTH(1.5);
+    PARM_FIELD(string, "pointattribs") VALUE(pointattribs.val) 
+	LABELREF(pointattribs.label) HSTRETCH;
+
+    pointattribs.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+vertattribs.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    vertattribs.label = PARM_LABEL("Vertex", "vertattribs") WIDTH(1.5);
+    PARM_FIELD(string, "vertattribs") VALUE(vertattribs.val) 
+	LABELREF(vertattribs.label) HSTRETCH;
+
+    vertattribs.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+primattribs.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    primattribs.label = PARM_LABEL("Primitive", "primattribs") WIDTH(1.5);
+    PARM_FIELD(string, "primattribs") VALUE(primattribs.val) 
+	LABELREF(primattribs.label) HSTRETCH;
+
+    primattribs.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+detailattribs.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    { WIDTH(0.18) }
+
+    detailattribs.label = PARM_LABEL("Detail", "detailattribs") WIDTH(1.5);
+    PARM_FIELD(string, "detailattribs") VALUE(detailattribs.val) 
+	LABELREF(detailattribs.label) HSTRETCH;
+
+    detailattribs.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    { WIDTH(0.1) }
+}
+
+folder1.gad = 
+
+GROUP simple "Attributes" flat 
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    transferattr.gad;		
+	    pointattribs.gad;		
+	    vertattribs.gad;		
+	    primattribs.gad;		
+	    detailattribs.gad;		
+} 
+
+folder0.gad = 
+
+GROUP simple "Thickness" flat 
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    add_polywire.gad;		
+	    divs.gad;		
+	    polywire_color.gad;		
+	    poly_wire_thickness.gad;		
+} 
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH 
+    group.gad; 
+    connectends.gad; 
+    folder0.gad; 
+    folder1.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val_) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}
