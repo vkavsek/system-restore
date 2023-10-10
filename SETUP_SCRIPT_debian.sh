@@ -3,7 +3,7 @@
 ## Installing
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get install fish python3 ruby python3-pip tmux neovim python3-neovim nodejs cmake libfreetype6-dev libfontconfig1-dev libxcb-xkb-dev g++ ruby-dev exa util-linux-user coreutils xdg-utils w3m-img xdotool task
+sudo apt-get install fish python3 ruby python3-pip tmux neovim python3-neovim nodejs cmake libfreetype6-dev libfontconfig1-dev libxcb-xkb-dev g++ ruby-dev exa coreutils xdg-utils w3m-img xdotool curl util-linux
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo npm install -g npm
 sudo npm install -g neovim
