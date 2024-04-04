@@ -5,45 +5,36 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get install fish python3 ruby python3-pip tmux flatpak python3-neovim nodejs cmake libfreetype6-dev libfontconfig1-dev libxcb-xkb-dev g++ ruby-dev coreutils xdg-utils w3m-img xdotool curl util-linux
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# neovim
-wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-sudo mv nvim.appimage /usr/bin/nvim
-sudo chmod +x /usr/bin/nvim
-CUSTOM_NVIM_PATH=/usr/bin/nvim
-set -u
-sudo update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
-sudo update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
-sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
-sudo update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
-sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
+
+#nvim
+sudo apt-get install ninja-build gettext cmake unzip curl build-essential
+cd ~/Programs
+git clone https://github.com/neovim/neovim
+cd neovim && make CMAKE_BUILD_TYPE=Release
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 
 sudo npm install -g npm
 sudo npm install -g neovim
 cargo install alacritty
 cargo install eza
+cargo install cargo-watch
 pip3 install pynvim
-pip3 install tasklib
 gem install neovim
 
 ## Change default shell
 chsh -s $(which fish)
 
-## Copy files and folders
-cp -r .config ~/
-cp -r houdini19.5 ~/
-cp .bashrc ~/
-
 ## Tmux settings
-cp .tmux.conf.local ~/
-cd
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
+# cp .tmux.conf.local ~/
+# cd
+# git clone https://github.com/gpakosz/.tmux.git
+# ln -s -f .tmux/.tmux.conf
 
 #nvim settings
 cd ~/.config
 rm -rf nvim
-git clone https://github.com/vkavsek/nvim_settings.git
-mv nvim_settings nvim
+git clone https://github.com/vkavsek/kickstart.nvim nvim
+
 
 ## FFF installation
 cd
