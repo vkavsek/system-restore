@@ -15,7 +15,7 @@ cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 
 npm install -g npm
 npm install -g neovim
-cargo install alacritty eza cargo-watch rg fd
+cargo install alacritty eza cargo-watch ripgrep fd-find
 sudo gem install neovim
 
 ## Change default shell
