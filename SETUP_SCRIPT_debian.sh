@@ -3,23 +3,20 @@
 ## Installing
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get install fish python3 ruby python3-pip tmux flatpak python3-neovim nodejs cmake libfreetype6-dev libfontconfig1-dev libxcb-xkb-dev g++ ruby-dev coreutils xdg-utils w3m-img xdotool curl util-linux
+sudo apt-get -y install fish python3 ruby python3-pip tmux flatpak python3-neovim python3-pynvim nodejs cmake libfreetype6-dev libfontconfig1-dev libxcb-xkb-dev g++ ruby-dev coreutils xdg-utils w3m-img xdotool curl util-linux ninja-build gettext cmake unzip curl build-essential
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #nvim
-sudo apt-get install ninja-build gettext cmake unzip curl build-essential
+sudo apt-get remove --auto-remove neovim
 cd ~/Programs
 git clone https://github.com/neovim/neovim
 cd neovim && make CMAKE_BUILD_TYPE=Release
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 
-sudo npm install -g npm
-sudo npm install -g neovim
-cargo install alacritty
-cargo install eza
-cargo install cargo-watch
-pip3 install pynvim
-gem install neovim
+npm install -g npm
+npm install -g neovim
+cargo install alacritty eza cargo-watch
+sudo gem install neovim
 
 ## Change default shell
 chsh -s $(which fish)
